@@ -1,0 +1,52 @@
+* {
+padding: 1px;
+font-family: avenir;
+}
+.error {
+background-color: #eee;
+display: inline;
+}
+
+.block {
+border: 1px solid #ccc;
+border-radius: 8px;
+margin: 16px;
+background-color: #222;
+color: #fff;
+display: inline-block;
+}
+
+.inside {
+background-color: #fff;
+display: inline-block;
+}
+
+.parameterBubble {
+border: 1px solid #ccc;
+border-radius: 50px;
+display: inline;
+background-color: #fff;
+color: #222;
+}
+
+.object {
+background-color: #6DDAEB;
+}
+
+.when {
+background-color: #BE3164;
+}
+
+#input {
+width: 99%;
+height: 25%;
+background-color: #eee;
+color: #222;
+font-size: 1em;
+}
+.center {
+text-align: center;
+}
+.detailsInside {
+background-color: #ddd;
+}

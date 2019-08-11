@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Thing</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="thing.css"></link>
+<link rel="stylesheet" href="block types.css"></link>
+</head>
+<body>
+<div class="center">
+<div style="display:none">
+<input type="file" id="hopscotchInput" accept=".hopscotch"></input><br>
+<input type="checkbox" id="images"></input> Don't use image for code displaying when parsing .hopscotch file.<br/></div>
+<textarea id="input"></textarea>
+<br />
+<details>
+<summary>How to use</summary>
+<div class="detailsInside">
+Each block has several parts: the type, the description, the parameters, and any blocks inside of it in the format <pre>type:description parameters {<br>blocks}</pre>
+The types are: scene, object, rule, movement, drawing, looks, variables, control, and custom. You do not need a type for any blocks you can access from the Hopscotch editor.<br> The description is any text as long as it does not have a new line. If you are  doing a block available in the Hopscotch editor, the description is all you need if you do not want any parameters. For example, "Move forward" is perfectly okay.<br>
+Parameters are used with parentheses in the format <pre> key(value)</pre> You cannot have any space before the parentheses. To do multiple parameters, just put them right next to each other. Two parameters without keys right next to each other would be <pre>(value1)(value2)</pre><br>To make the current block a container, add a "{" at the end of the line,  and a "}" at the end of the line containing the last block inside the container. (You can<em>not</em> put a new line before either brackets)<br>An example of the default Draw a trail block (with a different color) would be <pre>Draw a trail color(h(0)s(0)b(0))width(10){
+Move forward(100)}</pre>
+</div>
+</details>
+<div id="output"></div>
+</div>
+<script src="thing.js"></script>
+<script src="parse hopscotch.js"></script>
+<script src="parser.js"></script>
+<script src="shortcuts.js"></script>
+<script src="canvas.js"></script>
+<script src="display.js"></script>
+</body>
+</html>
