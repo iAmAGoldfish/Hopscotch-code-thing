@@ -1,0 +1,220 @@
+{const BlockTypes = {
+main: -1,
+scene: 0,
+object: 1,
+rule: 2,
+movement: 3,
+drawing: 4,
+looks: 5,
+variables: 6,
+control: 7,
+custom: 8,
+"-1": 9
+}
+
+const replacem = {
+ex: '!',
+ob: '{',
+cb: '}',
+device: '📱',
+empty: ' ',
+op: '(',
+cp: ')'
+}
+
+const BlockShortcuts = [
+/*Scene*/['scene'],
+/*Object*/['object','text'],
+/*Rules*/['rule','when'],
+/*Movement*/['movement','move','flip','set speed','turn','change x','change y','set position','set angle'],
+/*Drawing*/['drawing','draw','set trail','clear'],
+/*Looks*/['looks','set color','set size','start sound', 'send to back','set z','set image','grow','set invisibility','change pose','set text','shrink','bring to front'],
+/*Variables*/['variables','set','increase'],
+/*Control*/['control','check','repeat','wait','create','change scene','destroy']
+
+].reverse()
+
+const ParameterTypes = {
+object : 50,
+rule: 52,
+default: 42,
+variable: -1,
+hide: -2
+}
+
+const ObjectTypes = {
+monkey:0,text:1,octopus:2,gorilla:3,cupcake:4,bear:5,dino:6,frog:7,greenman:8,mustache:9,spacepod:10,zombieBear:11,ghoulopus:12,bats:13,frankenrilla:14,jodyWitch:15,cauldron:16,pumpkin:17,broom:18,lantern:19,parrotFlying:20,mandrill:21,mosquito:22,missChief:23,venus:24,jeepers:25,banyan:26,stargirl:27,astro:28,chillanna:29,robo:30,raccoon:31,bird:32,HS_END_OF_CHARACTERS:33,square:34,circle:35,hexagon:36,triangle:37,rightTriangle:38,rectangle:39,heart:40,star:41,arch:42,parallelogram:43,squiggle:44,donut:45,tetrisZ:46,tetrisT:47,tetrisL:48,corner:49,flower:50,threeProngedBoomerang:51,squishedBox:52,bead:53,chevron:54,xShape:55,tetrisLine:56,HS_END_OF_SHAPES:57,toucan:58,anteater:59,crocodile:60,sloth:61,iguana:62,hut:63,penguin:64,winterQueen:65,shyYeti:66,deer:67,elf:68,snowGlobe:69,polarbear:70,sleigh:71,mistletoe:72,snowMan:73,snowflake:74,roundedSquareFullSize:100,squareFullSize:101,circleFullSize:102,hexagonFullSize:103,triangleFullSize:104,rightTriangleFullSize:105,rectangleFullSize:106,heartFullSize:107,starFullSize:108,archFullSize:109,parallelogramTallFullSize:110,squiggleFullSize:111,donutFullSize:112,tetrisZFullSize:113,tetrisTFullSize:114,tetrisLFullSize:115,cornerFullSize:116,flowerFullSize:117,fanbladeFullSize:118,squishedBoxFullSize:119,roundedRightTriangleFullSize:120,arrowRoundedFullSize:121,beadFullSize:122,parallelogramWideFullSize:123,chevronFullSize:124,xFullSize:125,tetrisLineFullSize:126,HS_END_OF_FULL_SIZE_SHAPES:127,HS_NUMBER_OF_OBJECTS:128,image:2e3,nil:1e4,edgeOfScreen:3e4
+}
+
+
+function Block(type, inside, parameters, description) {
+	this.type = type;
+	if (parameters) {
+		this.parameters = parameters;
+	}
+	if (inside) {
+		this.inside = inside;
+	}
+	if (description) {
+		this.description = description;
+	}
+}
+
+function Parameter(type, key, value,parameters) {
+	this.type = type;
+	this.key = key;
+	this.value = value;
+	if (parameters) {
+		this.parameters = parameters;
+	}
+}
+
+function removeValidBlocks(from) {return from.replace(/^when/i,'').replace(/^Move Forward/i,'').replace(/^Turn degrees/i,'').replace(/^Set Position/i,'').replace(/^flip/i,'').replace(/^Change X/i,'').replace(/^Change Y/i,'').replace(/^Set Speed/i,'').replace(/^Set Angle/i,'').replace(/^Set Color/i,'').replace(/^set image/i,'').replace(/^set text/i,'').replace(/^set size/i,'').replace(/^set width/i,'').replace(/^grow/i,'').replace(/^shrink/i,'').replace(/^start sounds/i,'').replace(/^set invisibility/i,'').replace(/^bring to front/i,'').replace(/^change pose/i,'').replace(/^draw a trail/i,'').replace(/^Set trail/i,'').replace(/^clear/i,'').replace(/^check once if/i,'').replace(/^check if else/i,'').replace(/^else/i,'').replace(/^repeat/i,'').replace(/^wait/i,'').replace(/^create a clone/i,'').replace(/^set/i,'').replace(/^Increase/i,'')}
+}
+
+start
+= i:block*
+{
+const re = [];
+i.forEach((block)=>{block.forEach((rb)=>{re.push(rb)});});
+const project = new Block(BlockTypes["main"],re)
+let newProj = project;
+
+
+
+
+const turn = newProj/*.replace(/\[ex\]/g,'!').replace(/\[device\]/g,'📱').replace(/\[ob\]/g,'[').replace(/\[cb\]/g,']')*/;
+
+return turn}
+
+inside "Inside"
+= wsn* "{" wsn* blocks:block* wsn* "}" wsn*
+{
+const re = [];
+blocks.forEach((block)=>{block.forEach((rb)=>{re.push(rb)});});
+return re}
+
+else
+= _* "else"i b:inside
+{return b}
+
+block "Block"
+= _* description:wordSpace+ parameters:parameter* type:type? inside:inside? f:else?  eol
+{
+description = description.join('');
+if (!BlockTypes[type] && type != 'scene') { 
+if (removeValidBlocks(description) != description) {
+BlockShortcuts.forEach((shortcut)=>{
+shortcut.forEach((block)=>{
+const regex = new RegExp('^'+block,'i')
+console.log(block);
+if (description.match(regex)){type = shortcut[0]; console.log(type);}
+});
+});
+}
+/*if (!type) {
+type = 'custom'; }*/}
+const block = new Block(BlockTypes[type], inside,[],description);
+parameters.forEach((parameter)=> {
+parameter.forEach((param)=>{
+block.parameters.push(param);
+});
+});
+
+const re = [block];
+if (f) {
+re.push(new Block(BlockTypes[type],f,undefined,'else'));
+}
+return re
+
+}
+word "Word"
+= l:[a-zA-Z=÷\-×\^%<>≠"'\[\]\+\-_\_\\0-9:/\?,&$#@;☺️*️⃣]+
+{let re = l.join('')
+for (let [key, value] of Object.entries(replacem)) {
+    if (replacem.hasOwnProperty(key)){
+    	const regex = new RegExp('\\[' + key + '\\]','gi');
+    	re = re.replace(regex,value);
+    }
+}
+return re}/e:emoji+{return e.join().replace(/,/g,'')}
+
+
+type "type"
+= _* "!" type:word
+{console.log(BlockTypes[type],type);return type}
+
+
+
+
+parameter "Parameter"
+= key:wordSpace* _* op:"(" _* value:parameterInside? _*  ")" _* /*next:wordSpace* nextParam:parameter?*/
+{if (key) {key = key.join('');}
+if (!value) {return [new Parameter(ParameterTypes.default,key)];}
+const re = [];
+
+const val = new Parameter(42,key,'',[])
+if (value.type == 'value') {
+val.value = value.value
+} else if (value.type == "parameter") {value.value.forEach((parameter)=> {
+parameter.forEach((param)=>{
+val.parameters.push(param);
+});});} else {
+const nval = new Parameter();
+nval.type = ParameterTypes.variable;
+nval.key = value.value[0].key;
+nval.value = value.value[0].value;
+val.parameters = [nval];
+}
+re.push(val);
+/*if (next.join('').length > 0 && nextParam === undefined){
+re.push(new Parameter(ParameterTypes.hide,next.join('')))
+}*/
+return re;}
+/ variable
+
+parameterInside "Variable or parameter or word"
+= value:variable
+{return {type: "variable",value:value}}
+/ value:parameter+
+{return {type: "parameter",value:value}}
+/ value:wordSpace+
+{return {type: "value",value:value.join('')}}
+
+variable "Variable"
+= _* owner:wordSpace* "." name:wordSpace+ _*
+{
+console.log(owner);
+if (owner.length == 0) {
+owner = ['📱'];
+}
+name = name.join('');
+owner = owner.join('')
+const re = [new Parameter(ParameterTypes.variable,owner,name)];
+console.log(re);
+return re}
+
+wordSpace
+= a:word b:_?
+{if (b) {
+return a + b;
+}
+return a}
+
+openP
+= "("
+
+closeP
+= ")"
+
+_ "any whitespace"
+= [\t ]
+
+wsn "Any whitespace or new line"
+= [ \t\n\r]+
+
+eol "End of line"
+= [\n\r]*
+
+emoji "emoji"
+= ("\u00a9"/"\u00ae"/[\u2000-\u3300]/"\ud83c"[\ud000-\udfff]/"\ud83d"[\ud000-\udfff]/"\ud83e"[\ud000-\udfff])

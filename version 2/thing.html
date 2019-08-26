@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Thing</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="thing.css"></link>
+<link rel="stylesheet" href="block types.css"></link>
+</head>
+<body>
+<div class="center">
+<div style="display:none">
+<input type="file" id="hopscotchInput" accept=".hopscotch"></input><br>
+<input type="checkbox" id="images"></input> Don't use image for code displaying when parsing .hopscotch file.<br/></div>
+<textarea id="input"></textarea>
+<br />
+<details>
+<summary>How to use</summary>
+<div class="detailsInside">
+<p>When you see a * in here, that means 0 or more of the item it is after. + means 1 or more and ? means 0 or 1.</p>
+<p><strong>Word</strong></p>
+<p>A word is any letter, number, or keyboard symbol with a few exceptions. Most emojis also work.</p>
+<p>Keyboard symbols that will&nbsp;<em>not</em> work are:</p>
+<ul>
+<li>{</li>
+<li>}</li>
+<li>!</li>
+<li>(</li>
+<li>)</li>
+</ul>
+<p>To use any of these symbols, you can put a special word in between [ and ].</p>
+<p><details><summary>Replacements using [ and ]</summary>You can put the following words anywhere a word is used to get the symbol after the colon.
+<ul>
+<li>[ex]:!</li>
+<li>[ob]:{</li>
+<li>[cb]:}</li>
+<li>[device]:📱</li>
+<li>[empty]:space. Use when you want to display an empty parameter</li>
+<li>[op]:(</li>
+<li>[cp]:)</li>
+<li>[object name]:That object. See objects for a list of object names.</li>
+</ul>
+</details></p>
+<p><strong>Objects</strong></p>
+<details>
+<summary>List of objects</summary>
+<ul id="objectsList">
+<!--Content filled in by display.js-->
+</ul>
+</details>
+<p><strong>Block</strong></p>
+<p>Each project is made up of blocks. Each block looks like this:</p>
+<pre>description:word+ parameters:parameter* type:type? inside:inside? else?</pre>
+<p><strong>Parameter</strong></p>
+<p>Used in blocks. Each parameter looks like this:</p>
+<pre>key:word* (&nbsp; value:Variable?,word?,parameter?&nbsp; )</pre>
+<p>There can be multiple values&nbsp;<em>only</em> if the values are parameters. Parameters with no value (key()) do not display the value. This is usefule for When blocks.</p>
+<p>Example:</p>
+<pre>&nbsp;When(([device]) Is Tapped())</pre>
+<p>&nbsp;If you want to display an empty parameter, put [empty] as the value.</p>
+<p><strong>Variable</strong></p>
+<p>Possible value for a parameter. Each variable looks like this:</p>
+<pre>&nbsp;owner:words* . name:words+</pre>
+<p>&nbsp;If owner is left empty, it will be set to&nbsp;📱. Owner will show up in a regular white parameter bubble to the left of name.</p>
+<p><strong>Type</strong></p>
+<p>Types are used to tell the color of a block. If you are using a block from the editor, a type is unnecessary. Types look like this:</p>
+<pre>! name:word</pre>
+<p>&nbsp;Possible names are:</p>
+<ul>
+<li>scene</li>
+<li>object</li>
+<li>rule</li>
+<li>movement</li>
+<li>drawing</li>
+<li>looks</li>
+<li>variables</li>
+<li>control</li>
+<li>custom</li>
+</ul>
+<p><strong>Inside</strong></p>
+<p>Inside is how you put code inside of a block, for example a check once if. All insides look like this:</p>
+<pre>&nbsp;{<br />block*<br />}</pre>
+<p>&nbsp;The blocks cannot be on the same line as the block that they are inside of. The brackets can go anywhere.</p>
+<p><strong>Else</strong></p>
+<p>Elses are a second inside which has the word 'else' before it. They are mainly used for the check if else blocks. All elses look like this:</p>
+<pre>else blocks:inside&nbsp;</pre>
+</div>
+</details>
+<div id="output"></div>
+</div>
+<script src="thing.js"></script>
+<script src="parse hopscotch.js"></script>
+<script src="parser.js"></script>
+<script src="canvas.js"></script>
+<script src="display.js"></script>
+</body>
+</html>
