@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Broom0.svg" width="150" height="150" version="1.1" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs><path fill="rgb(235, 123, 12)" d=" M 127.770000 210.160000 L 122.670000 210.160000 C 117.380000 213.250000 118.540000 222.200000 116.070000 232.500000 C 111.400000 252.010000 106.080000 276.530000 106.080000 276.530000 C 107.520000 276.530000 109.740000 276.640000 112.170000 276.780000 C 112.730000 273.200000 113.740000 266.850000 113.740000 268.240000 C 113.740000 269.200000 114.210000 273.190000 114.690000 276.950000 C 116.640000 277.080000 118.610000 277.220000 120.340000 277.360000 L 120.750000 268.240000 L 122.360000 277.520000 C 123.240000 277.590000 124.000000 277.650000 124.580000 277.700000 L 124.580000 277.810000 C 124.580000 277.810000 124.820000 277.790000 125.220000 277.760000 C 125.630000 277.790000 125.860000 277.810000 125.860000 277.810000 L 125.860000 277.700000 C 126.450000 277.650000 127.200000 277.590000 128.090000 277.520000 L 129.690000 268.240000 L 130.100000 277.360000 C 131.830000 277.220000 133.800000 277.080000 135.750000 276.950000 C 136.230000 273.190000 136.710000 269.200000 136.710000 268.240000 C 136.710000 266.850000 137.720000 273.200000 138.270000 276.780000 C 140.700000 276.640000 142.920000 276.530000 144.370000 276.530000 C 144.370000 276.530000 139.380000 253.370000 134.580000 233.780000 C 132.120000 223.720000 132.970000 213.190000 127.770000 210.160000 Z"/><path fill="rgb(81, 61, 46)" d=" M 123.180000 217.990000 L 121.140000 229.940000 C 120.480000 233.920000 119.790000 237.890000 119.220000 241.880000 C 118.580000 245.860000 118.060000 249.860000 117.610000 253.870000 C 117.380000 255.870000 117.190000 257.870000 117.060000 259.880000 C 116.910000 261.890000 116.850000 263.910000 116.880000 265.930000 C 116.400000 261.910000 116.570000 257.830000 116.840000 253.800000 C 117.140000 249.760000 117.670000 245.740000 118.240000 241.730000 C 118.890000 237.740000 119.570000 233.750000 120.390000 229.800000 C 121.220000 225.840000 122.110000 221.890000 123.180000 217.990000 Z"/><path fill="rgb(81, 61, 46)" d=" M 125.640000 230.320000 C 125.660000 231.720000 125.610000 233.110000 125.610000 234.510000 L 125.520000 238.690000 L 125.300000 247.050000 C 125.210000 249.830000 125.150000 252.620000 125.100000 255.400000 C 125.080000 256.790000 125.080000 258.180000 125.110000 259.570000 C 125.120000 260.960000 125.190000 262.350000 125.370000 263.740000 C 124.620000 261.030000 124.480000 258.200000 124.330000 255.410000 C 124.200000 252.610000 124.230000 249.820000 124.300000 247.020000 C 124.390000 244.230000 124.520000 241.440000 124.750000 238.650000 C 124.980000 235.870000 125.240000 233.090000 125.640000 230.320000 Z"/><path fill="rgb(81, 61, 46)" d=" M 128.110000 222.650000 C 129.110000 225.800000 129.910000 229.010000 130.640000 232.240000 C 131.380000 235.470000 131.960000 238.730000 132.450000 242.010000 C 132.920000 245.280000 133.290000 248.580000 133.430000 251.900000 C 133.560000 255.210000 133.540000 258.550000 133.040000 261.820000 C 133.070000 260.170000 133.080000 258.520000 132.990000 256.880000 C 132.930000 255.230000 132.810000 253.590000 132.660000 251.950000 C 132.340000 248.680000 131.950000 245.410000 131.460000 242.150000 C 131.000000 238.890000 130.440000 235.640000 129.890000 232.390000 C 129.620000 230.770000 129.320000 229.140000 129.010000 227.520000 L 128.110000 222.650000 Z"/><path fill="rgb(81, 61, 46)" d=" M 129.370000 204.420000 L 121.070000 204.420000 L 122.800000 2.120000 L 127.640000 2.120000 L 129.370000 204.420000 Z"/><path fill="rgb(235, 123, 12)" d=" M 120.060000 205.040000 L 116.820000 194.980000 L 122.010000 194.650000 L 123.310000 198.550000 L 125.260000 194.330000 L 127.530000 194.000000 L 127.860000 197.580000 L 129.800000 193.680000 L 133.050000 194.330000 L 129.370000 204.420000"/><path fill="rgb(251, 50, 43)" d=" M 118.520000 202.510000 L 131.920000 202.510000 L 131.920000 212.080000 L 118.520000 212.080000 L 118.520000 202.510000 Z"/></svg>

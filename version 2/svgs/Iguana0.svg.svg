@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Iguana0.svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs>    <!-- Generated by PaintCode (www.paintcodeapp.com) -->    <g id="iguana0-group">        <path id="iguana0-bezier27" stroke="none" fill="rgb(122, 164, 54)" d="M 32.13,105 C 32.11,105.07 32.09,105.14 32.07,105.21 32.09,105.14 32.11,105.07 32.13,105 Z M 32.13,105"/>        <path id="iguana0-bezier29" stroke="none" fill="rgb(122, 164, 54)" d="M 33.06,102.27 C 33.06,102.28 33.05,102.28 33.05,102.28 33.05,102.28 33.06,102.28 33.06,102.27 Z M 33.06,102.27"/>        <path id="iguana0-bezier30" stroke="none" fill="rgb(122, 164, 54)" d="M 34.32,99.34 C 34.29,99.41 34.25,99.49 34.22,99.56 34.25,99.49 34.29,99.41 34.32,99.34 Z M 34.32,99.34"/>        <path id="iguana0-bezier31" stroke="none" fill="rgb(122, 164, 54)" d="M 22.89,91.71 C 23.51,90.78 24.15,89.86 24.82,88.97 24.15,89.86 23.51,90.78 22.89,91.71 Z M 22.89,91.71"/>        <path id="iguana0-bezier34" stroke="none" fill="rgb(48, 63, 24)" d="M 24.82,88.96 C 24.82,88.96 24.82,88.97 24.82,88.97 24.15,89.86 23.51,90.78 22.89,91.71 22.84,91.78 22.8,91.85 22.75,91.91 20.84,94.8 19.16,97.86 17.78,101.07 L 31.38,108.03 31.38,108.03 C 31.56,107.09 31.8,106.15 32.07,105.21 32.09,105.14 32.11,105.07 32.13,105 32.4,104.08 32.71,103.18 33.05,102.28 33.05,102.28 33.05,102.28 33.06,102.27 33.41,101.36 33.8,100.45 34.22,99.56 34.25,99.49 34.29,99.41 34.32,99.34 34.74,98.46 35.18,97.6 35.65,96.75 31.79,93.96 27.8,91.09 24.82,88.96 Z M 24.82,88.96"/>        <ellipse id="iguana0-oval10" stroke="none" fill="rgb(75, 100, 35)" cx="0" cy="-0" rx="1.35" ry="2.35" transform="translate(32.15, 136.52) rotate(-39.7)"/>        <path id="iguana0-bezier" stroke="none" fill="rgb(75, 100, 35)" d="M 209.03,217.33 C 209.03,217.33 229.62,216.88 230.67,215.38 231.73,213.88 217.57,214.89 209.16,214.74 207.62,214.71 205.1,214.55 202.45,214.53 196.7,212.84 188.09,205.17 203.99,180.85 L 183.92,183.59 C 183.92,183.59 168.76,214.09 194.14,219.53 202.11,221.64 223.84,225.84 226.12,224.27 228.87,222.37 207.72,219.13 207.72,219.13 207.72,219.13 232.24,221.58 233.83,219.48 235.41,217.37 209.03,217.33 209.03,217.33 Z M 209.03,217.33"/>        <path id="iguana0-bezier2" stroke="none" fill="rgb(75, 100, 35)" d="M 85.34,193.49 L 97.56,204.54 83.59,218.21 C 83.59,218.21 120.07,227.53 122.97,225.78 125.88,224.04 100.17,219.67 100.17,219.67 100.17,219.67 124.9,223.74 126.64,221.7 128.39,219.67 101.63,217.92 101.63,217.92 101.63,217.92 124.76,218.82 125.93,217.37 127.09,215.91 110.35,213.85 101.92,215.3 101.92,215.3 110.65,209.19 113.55,204.83 113.55,204.83 111.52,189.42 103.08,182.43 L 85.34,193.49 Z M 85.34,193.49"/>        <path id="iguana0-bezier3" stroke="none" fill="rgb(39, 50, 20)" d="M 256.14,130.95 C 256.14,130.95 255.98,142.87 260.06,144.62 260.06,144.62 212.9,182.57 203.56,134.66 L 205.07,132.32 256.14,130.95 Z M 256.14,130.95"/>        <path id="iguana0-bezier4" stroke="none" fill="rgb(255, 255, 255)" d="M 254.44,147.45 C 253.53,146.14 252.11,144.84 251.14,144.78 247.42,144.55 247.53,148.29 247.83,150.37 246.52,148.95 245.97,147.72 243.85,148.06 241.34,148.47 241.58,150.29 242.01,152.31 240.83,151.58 240.69,149.95 239.15,150.01 237.18,150.09 236.05,152.62 235.84,154.14 234.98,153.05 234.36,150.9 232.57,151.14 230.48,151.43 230.41,153.94 230.35,155.36 229.85,153.87 229.09,151.04 226.79,151.67 225.66,151.97 224.47,153.81 223.73,155.58 230.99,156.55 240.92,154.7 254.44,147.45 Z M 254.44,147.45"/>        <path id="iguana0-bezier5" stroke="none" fill="rgb(255, 255, 255)" d="M 218.16,147.13 C 220.9,147.66 222.47,144.65 222.94,142.65 220.55,142.65 218.21,142.4 215.98,141.84 215.64,143.61 214.82,146.48 218.16,147.13 Z M 218.16,147.13"/>        <path id="iguana0-bezier6" stroke="none" fill="rgb(255, 255, 255)" d="M 208.39,139.03 C 207.77,141.18 208.16,143.94 209.83,145.08 213.4,147.5 215.13,144.33 215.88,141.82 215.51,141.72 215.14,141.63 214.77,141.52 213.19,141.03 210.63,140.18 208.39,139.03 Z M 208.39,139.03"/>        <path id="iguana0-bezier7" stroke="none" fill="rgb(255, 255, 255)" d="M 223.04,142.65 C 223.09,144.4 224.12,146.5 226.28,146.86 229.37,147.36 230.52,144.33 230.88,142.27 230.68,143.91 231.13,146.56 233.55,146.5 236.46,146.43 237.5,142.68 237.3,140.84 237.85,142.73 239.49,145.74 242.43,144.81 244.19,144.26 244.93,142.36 244.84,140.73 245.66,142.24 247.36,143.66 249.05,142.84 250.85,141.96 250.36,138.82 249.55,137.09 251.2,139.49 254.51,140.94 255.28,136.83 255.55,135.38 255.29,134.13 254.75,132.98 246.69,137.25 234.29,142.65 223.04,142.65 Z M 223.04,142.65"/>        <path id="iguana0-bezier8" stroke="none" fill="rgb(75, 100, 35)" d="M 193.19,113.26 C 195.99,112.13 195.42,110.17 215.04,112.3 215.2,112.28 215.41,112.28 215.64,112.3 211.96,110.05 203.56,105.46 196.31,105.5 L 198.55,109.18 C 198.55,109.18 187.22,108.02 178.4,115.7 L 183.33,116.65 C 183.33,116.65 175.24,122.36 170.38,134.45 L 175.54,132.21 C 175.54,132.21 169.2,143.57 168.74,148.49 L 172.16,148.83 C 174.16,141.29 181.21,118.14 193.19,113.26 Z M 193.19,113.26"/>        <path id="iguana0-bezier9" stroke="none" fill="rgb(122, 164, 54)" d="M 197.97,151.32 C 196.18,151.33 194.71,149.18 194.69,146.53 194.68,143.87 196.12,141.7 197.92,141.69 199.71,141.68 201.18,143.83 201.2,146.49 201.21,149.15 199.77,151.31 197.97,151.32 Z M 191.54,141.47 C 189.67,141.48 188.15,139.33 188.13,136.67 188.12,134.02 189.62,131.85 191.49,131.84 193.35,131.83 194.88,133.98 194.9,136.64 194.91,139.29 193.41,141.46 191.54,141.47 Z M 188.22,151.9 C 187.07,151.9 186.13,150.28 186.11,148.26 186.1,146.25 187.03,144.62 188.18,144.61 189.33,144.6 190.27,146.23 190.28,148.24 190.29,150.25 189.37,151.89 188.22,151.9 Z M 254.44,147.45 C 240.92,154.7 230.99,156.55 223.73,155.58 206.76,153.31 204.29,135.69 204.29,135.69 204.99,136.98 206.58,138.1 208.39,139.03 210.63,140.18 213.19,141.03 214.77,141.52 215.14,141.63 215.51,141.72 215.88,141.82 215.91,141.83 215.94,141.84 215.98,141.84 218.21,142.4 220.55,142.65 222.94,142.65 222.97,142.65 223,142.65 223.04,142.65 234.29,142.65 246.69,137.25 254.75,132.98 255.95,132.34 257.07,131.73 258.06,131.16 246.03,124.59 221.24,112.7 215.64,112.3 215.41,112.28 215.2,112.28 215.04,112.3 195.42,110.17 195.99,112.13 193.19,113.26 181.21,118.14 174.16,141.29 172.16,148.83 171.76,150.32 171.56,151.21 171.56,151.21 184.15,197.37 203.74,191.72 203.74,191.72 212.94,188.62 218.52,181.58 220.41,170.55 241.37,166.2 255.26,153.11 260.9,143.75 258.66,145.12 256.51,146.34 254.44,147.45 Z M 254.44,147.45"/>        <ellipse id="iguana0-oval" stroke="none" fill="rgb(75, 100, 35)" cx="0" cy="-0" rx="3.25" ry="4.8" transform="translate(197.95, 146.52) rotate(-0.3)"/>        <ellipse id="iguana0-oval2" stroke="none" fill="rgb(75, 100, 35)" cx="0" cy="-0" rx="3.4" ry="4.8" transform="translate(191.5, 136.67) rotate(-0.35)"/>        <ellipse id="iguana0-oval3" stroke="none" fill="rgb(75, 100, 35)" cx="0" cy="-0" rx="2.1" ry="3.65" transform="translate(188.2, 148.27) rotate(-0.3)"/>        <ellipse id="iguana0-oval4" stroke="none" fill="rgb(39, 50, 20)" cx="0" cy="-0" rx="1.75" ry="3.3" transform="translate(210.5, 122.47) rotate(-7)"/>        <ellipse id="iguana0-oval5" stroke="none" fill="rgb(39, 50, 20)" cx="0" cy="-0" rx="1.75" ry="3.3" transform="translate(224.2, 119.97) rotate(-7.05)"/>        <path id="iguana0-bezier10" stroke="none" fill="rgb(39, 50, 20)" d="M 204.88,119.15 C 209.82,115.99 215.41,114.22 221.13,113.07 222.65,112.76 222.65,110.65 220.9,111 214.68,112.26 208.73,114.3 203.36,117.73 201.85,118.7 203.61,119.96 204.88,119.15 Z M 204.88,119.15"/>        <path id="iguana0-bezier11" stroke="none" fill="rgb(75, 100, 35)" d="M 151.08,165.61 C 152.4,165.23 153.69,164.76 154.94,164.22 156.59,163.51 158.18,162.66 159.68,161.67 160.9,160.88 162.06,160 163.16,159.03 163.8,158.47 165.76,156.39 167.78,154.19 164.71,153 161.4,152.35 157.67,152.54 L 161.7,155.92 C 157.55,156.02 153.46,156.35 149.48,157.27 L 154.47,160.75 C 148.84,160.05 143.2,159.68 137.57,160.75 L 143.2,164.45 C 137.53,162.95 132.35,163.02 126.22,162.72 126.91,164.3 127.71,165.5 127.89,166.51 135.59,167.71 143.62,167.78 151.08,165.61 Z M 151.08,165.61"/>        <path id="iguana0-bezier12" stroke="none" fill="rgb(122, 164, 54)" d="M 178.86,198.95 C 173.22,200.3 167.49,201.29 161.74,202.07 167.49,201.3 173.22,200.3 178.86,198.95 Z M 178.86,198.95"/>        <path id="iguana0-bezier13" stroke="none" fill="rgb(122, 164, 54)" d="M 97.32,157.02 C 97.98,157.27 98.61,157.53 99.2,157.77 98.61,157.53 97.98,157.27 97.32,157.02 Z M 97.32,157.02"/>        <path id="iguana0-bezier14" stroke="none" fill="rgb(122, 164, 54)" d="M 142.54,177.45 C 141.56,177.45 140.76,176.29 140.76,174.85 140.76,173.41 141.56,172.25 142.54,172.25 143.53,172.25 144.32,173.41 144.32,174.85 144.32,176.29 143.53,177.45 142.54,177.45 Z M 136.11,174.71 C 135.2,174.71 134.46,173.67 134.46,172.38 134.46,171.1 135.2,170.06 136.11,170.06 137.01,170.06 137.75,171.1 137.75,172.38 137.75,173.67 137.01,174.71 136.11,174.71 Z M 130.9,177.18 C 130.15,177.18 129.53,176.2 129.53,174.99 129.53,173.78 130.15,172.79 130.9,172.79 131.66,172.79 132.27,173.78 132.27,174.99 132.27,176.2 131.66,177.18 130.9,177.18 Z M 172.18,149.22 C 171.14,150.45 169.44,152.36 167.78,154.18 165.76,156.39 163.8,158.47 163.16,159.03 162.06,160 160.89,160.87 159.68,161.67 161.15,168.17 163.81,175.31 163.81,175.31 158.87,171.72 156.28,167.52 154.94,164.22 L 154.94,164.22 C 153.69,164.76 152.4,165.23 151.08,165.61 143.62,167.78 135.59,167.71 127.89,166.5 127.12,166.38 126.36,166.26 125.59,166.12 121.88,174.39 120.25,184.91 120.25,184.91 118.65,179.39 118.77,170.8 119.13,164.67 115.03,163.63 110.95,162.37 107.01,160.91 106.12,160.58 105.24,160.24 104.37,159.91 103.42,159.53 101.99,158.92 100.23,158.19 92.96,171.08 89.97,188.85 89.97,188.85 86.38,178.53 88.43,164.22 90.58,154.57 93.01,155.37 95.27,156.21 97.27,156.99 81.85,150.93 50.62,141.52 49.08,175.13 48.55,186.74 55.34,196.94 64.48,202.55 84.33,195.77 162.55,178.48 178.87,198.94 181.21,198.38 183.54,197.77 185.85,197.08 191.43,195.39 198.75,194.03 204.08,191.66 206.01,190.79 208.77,189.45 210.92,187.64 L 172.18,149.22 Z M 172.18,149.22"/>        <path id="iguana0-bezier15" stroke="none" fill="rgb(122, 164, 54)" d="M 69.05,204.9 C 67.48,204.25 65.95,203.46 64.48,202.56 65.95,203.46 67.48,204.25 69.05,204.9 Z M 69.05,204.9"/>        <path id="iguana0-bezier16" stroke="none" fill="rgb(156, 196, 91)" d="M 64.48,202.55 L 64.48,202.56 C 65.95,203.46 67.48,204.25 69.05,204.9 69.06,204.9 69.07,204.91 69.08,204.91 69.86,205.23 70.64,205.52 71.44,205.78 71.45,205.78 71.47,205.79 71.48,205.79 72.28,206.05 73.08,206.27 73.89,206.45 85,209 95.27,207.04 106.28,206.67 120.98,206.17 135.65,204.76 150.29,203.37 151.61,203.25 152.93,203.11 154.26,202.97 154.86,202.91 155.47,202.84 156.07,202.77 156.75,202.69 157.43,202.62 158.1,202.53 158.91,202.44 159.72,202.34 160.53,202.23 160.93,202.18 161.33,202.13 161.74,202.07 167.49,201.29 173.22,200.3 178.86,198.95 178.86,198.95 178.87,198.95 178.87,198.94 L 178.87,198.94 C 162.55,178.48 84.33,195.77 64.48,202.55 Z M 64.48,202.55"/>        <path id="iguana0-bezier17" stroke="none" fill="rgb(48, 63, 24)" d="M 154.94,164.22 C 156.29,167.52 158.87,171.72 163.81,175.31 163.81,175.31 161.15,168.17 159.68,161.67 158.18,162.66 156.59,163.51 154.94,164.22 154.94,164.22 154.94,164.22 154.94,164.22 Z M 154.94,164.22"/>        <path id="iguana0-bezier18" stroke="none" fill="rgb(48, 63, 24)" d="M 120.25,184.91 C 120.25,184.91 121.88,174.39 125.6,166.12 124.59,165.93 123.59,165.73 122.6,165.51 121.44,165.25 120.29,164.97 119.13,164.67 L 119.13,164.67 C 118.77,170.8 118.65,179.39 120.25,184.91 Z M 120.25,184.91"/>        <path id="iguana0-bezier19" stroke="none" fill="rgb(48, 63, 24)" d="M 89.97,188.85 C 89.97,188.85 92.96,171.08 100.24,158.19 L 100.24,158.19 C 99.93,158.07 99.6,157.93 99.27,157.8 99.25,157.79 99.22,157.78 99.2,157.77 98.61,157.53 97.98,157.27 97.32,157.02 97.3,157.01 97.29,157 97.27,156.99 95.27,156.21 93.01,155.37 90.58,154.57 88.43,164.22 86.38,178.53 89.97,188.85 Z M 89.97,188.85"/>        <ellipse id="iguana0-oval6" stroke="none" fill="rgb(75, 100, 35)" cx="136.1" cy="172.37" rx="1.65" ry="2.35"/>        <ellipse id="iguana0-oval7" stroke="none" fill="rgb(75, 100, 35)" cx="142.55" cy="174.87" rx="1.8" ry="2.6"/>        <ellipse id="iguana0-oval8" stroke="none" fill="rgb(75, 100, 35)" cx="130.9" cy="174.97" rx="1.35" ry="2.2"/>        <path id="iguana0-bezier20" stroke="none" fill="rgb(122, 164, 54)" d="M 58.21,72.65 C 58.19,72.66 58.17,72.67 58.14,72.69 58.17,72.67 58.19,72.66 58.21,72.65 Z M 58.21,72.65"/>        <path id="iguana0-bezier21" stroke="none" fill="rgb(122, 164, 54)" d="M 34.6,78.3 C 36.84,76.3 39.14,74.5 41.44,72.9 L 48.25,80.66 48.25,80.66 C 50.05,78.9 51.78,77.37 53.31,76.12 L 47.45,69.22 C 43.24,71.46 38.81,74.54 34.6,78.3 Z M 34.6,78.3"/>        <path id="iguana0-bezier22" stroke="none" fill="rgb(122, 164, 54)" d="M 47.45,69.21 C 48.76,68.52 50.04,67.9 51.29,67.37 50.04,67.9 48.76,68.52 47.45,69.21 Z M 47.45,69.21"/>        <path id="iguana0-bezier23" stroke="none" fill="rgb(122, 164, 54)" d="M 53.18,66.62 C 53.78,66.41 54.36,66.21 54.93,66.04 54.36,66.21 53.78,66.41 53.18,66.62 Z M 53.18,66.62"/>        <path id="iguana0-bezier24" stroke="none" fill="rgb(122, 164, 54)" d="M 56.32,73.82 C 56.37,73.79 56.42,73.75 56.47,73.72 56.42,73.75 56.37,73.79 56.32,73.82 Z M 56.32,73.82"/>        <path id="iguana0-bezier25" stroke="none" fill="rgb(122, 164, 54)" d="M 24.82,88.96 C 27.8,91.09 31.79,93.96 35.65,96.75 37.58,93.25 39.93,89.96 42.39,87 39.66,84.12 36.74,81.04 34.35,78.52 30.95,81.59 27.7,85.1 24.82,88.96 Z M 24.82,88.96"/>        <path id="iguana0-bezier26" stroke="none" fill="rgb(122, 164, 54)" d="M 51.32,67.36 C 51.93,67.1 52.53,66.86 53.12,66.65 52.53,66.86 51.93,67.1 51.32,67.36 Z M 51.32,67.36"/>        <path id="iguana0-bezier28" stroke="none" fill="rgb(122, 164, 54)" d="M 55.51,74.4 C 55.5,74.42 55.48,74.43 55.46,74.44 55.48,74.43 55.5,74.42 55.51,74.4 Z M 55.51,74.4"/>        <path id="iguana0-bezier32" stroke="none" fill="rgb(122, 164, 54)" d="M 41,139.87 C 40.42,140.35 39.13,139.75 38.11,138.53 37.09,137.31 36.74,135.93 37.33,135.44 37.91,134.96 39.2,135.56 40.22,136.78 41.23,138 41.58,139.39 41,139.87 Z M 42.44,148.46 C 41.75,149.04 40.08,148.19 38.73,146.56 37.38,144.93 36.84,143.14 37.54,142.56 38.24,141.98 39.91,142.83 41.26,144.46 42.61,146.09 43.14,147.88 42.44,148.46 Z M 31.11,137.4 C 30.29,136.41 30.1,135.22 30.68,134.73 31.26,134.25 32.4,134.66 33.22,135.65 34.04,136.64 34.24,137.83 33.66,138.31 33.07,138.8 31.94,138.39 31.11,137.4 Z M 22.75,91.91 C 15.49,102.89 11.45,116.35 15.34,130.6 20.78,150.51 62.12,178.35 62.12,178.35 76.22,169.39 68.93,152.26 68.93,152.26 57.59,151.06 37.18,134.32 32.36,121.51 30.67,117.03 30.52,112.48 31.38,108.03 L 17.78,101.07 C 19.16,97.86 20.84,94.8 22.75,91.91 Z M 22.75,91.91"/>        <path id="iguana0-bezier33" stroke="none" fill="rgb(122, 164, 54)" d="M 81.5,70.76 C 73.99,64.87 61.93,63.98 55.27,65.93 55.17,65.96 55.07,66 54.97,66.03 L 59.07,72.26 59.07,72.26 C 66.6,69.19 75.5,75.18 79.95,75.59 84.75,76.03 85.58,73.96 81.5,70.76 Z M 81.5,70.76"/>        <path id="iguana0-bezier35" stroke="none" fill="rgb(48, 63, 24)" d="M 54.97,66.02 L 54.97,66.02 C 54.95,66.03 54.94,66.03 54.93,66.04 54.36,66.21 53.78,66.41 53.18,66.62 53.16,66.63 53.14,66.64 53.12,66.64 52.53,66.86 51.93,67.1 51.32,67.36 51.31,67.36 51.3,67.37 51.29,67.37 50.04,67.9 48.76,68.52 47.45,69.21 47.45,69.21 47.45,69.21 47.45,69.22 L 53.31,76.12 C 54.08,75.49 54.8,74.93 55.46,74.44 55.48,74.43 55.5,74.42 55.51,74.4 55.8,74.19 56.07,74 56.32,73.82 56.37,73.79 56.42,73.75 56.47,73.72 56.75,73.52 57.02,73.34 57.27,73.19 57.56,73 57.85,72.84 58.14,72.69 58.17,72.67 58.19,72.66 58.21,72.65 58.5,72.51 58.78,72.38 59.07,72.26 L 59.07,72.26 54.97,66.02 Z M 54.97,66.02"/>        <path id="iguana0-bezier36" stroke="none" fill="rgb(48, 63, 24)" d="M 41.44,72.9 C 39.14,74.5 36.84,76.3 34.6,78.3 34.51,78.38 34.43,78.45 34.35,78.52 36.74,81.04 39.66,84.12 42.39,87 44.33,84.66 46.33,82.53 48.25,80.66 L 48.25,80.66 41.44,72.9 Z M 41.44,72.9"/>        <ellipse id="iguana0-oval9" stroke="none" fill="rgb(75, 100, 35)" cx="0" cy="-0" rx="1.35" ry="2.9" transform="translate(39.15, 137.67) rotate(-39.7)"/>        <ellipse id="iguana0-oval11" stroke="none" fill="rgb(75, 100, 35)" cx="0" cy="-0" rx="1.65" ry="3.85" transform="translate(40, 145.52) rotate(-39.7)"/>        <path id="iguana0-bezier37" stroke="none" fill="rgb(122, 164, 54)" d="M 62.34,201.31 L 75.68,213.38 60.43,228.32 C 60.43,228.32 97.07,237.98 100.25,236.07 103.42,234.16 78.54,229.91 78.54,229.91 78.54,229.91 105.56,234.36 107.46,232.13 109.37,229.91 80.13,228 80.13,228 80.13,228 103.82,228.96 105.09,227.37 106.36,225.78 89.67,223.55 80.45,225.14 80.45,225.14 89.98,218.47 93.16,213.7 93.16,213.7 90.94,196.86 81.72,189.23 L 62.34,201.31 Z M 62.34,201.31"/>        <path id="iguana0-bezier38" stroke="none" fill="rgb(122, 164, 54)" d="M 195.86,230.1 C 195.86,230.1 218.72,231.06 219.99,229.47 221.26,227.88 205.5,228.01 196.18,227.24 194.48,227.1 191.7,226.75 188.76,226.54 182.51,224.26 173.5,215.15 192.84,189.32 L 170.4,190.94 C 170.4,190.94 151.44,223.69 179.2,231.5 187.89,234.4 211.68,240.58 214.31,239 217.49,237.1 194.27,232.01 194.27,232.01 194.27,232.01 221.29,236.46 223.19,234.24 225.1,232.01 195.86,230.1 195.86,230.1 Z M 195.86,230.1"/>    </g></svg>

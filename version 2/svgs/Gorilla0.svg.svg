@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Gorilla0.svg" width="150" height="150" version="1.1" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs><path fill="rgb(99, 40, 71)" d=" M 90.720000 268.640000 C 90.720000 268.640000 99.830000 274.130000 92.860000 287.860000 L 107.600000 288.130000 L 103.040000 283.740000 C 103.040000 283.740000 110.550000 277.150000 107.060000 267.540000 L 90.720000 268.640000 Z"/><path fill="rgb(99, 40, 71)" d=" M 189.400000 266.440000 C 189.400000 266.440000 198.250000 274.130000 191.280000 287.860000 L 206.020000 288.130000 L 201.460000 283.740000 C 201.460000 283.740000 208.690000 274.950000 205.210000 265.340000 L 189.400000 266.440000 Z"/><path fill="rgb(125, 55, 100)" d=" M 285.580000 160.290000 L 290.000000 161.640000 C 289.120000 154.850000 281.610000 145.340000 281.610000 145.340000 L 286.460000 145.340000 C 284.260000 136.290000 270.560000 125.880000 270.560000 125.880000 L 270.490000 126.010000 C 262.070000 109.360000 249.430000 95.460000 230.730000 87.820000 L 229.050000 162.150000 L 242.440000 187.300000 C 242.440000 187.300000 247.990000 229.410000 244.690000 255.720000 C 244.640000 255.810000 244.560000 255.890000 244.510000 255.990000 C 239.730000 264.980000 242.100000 271.100000 242.100000 271.100000 C 245.720000 273.240000 256.390000 259.020000 255.070000 265.200000 C 253.750000 271.390000 251.700000 281.510000 257.260000 278.510000 C 262.810000 275.520000 265.870000 258.690000 264.640000 265.970000 C 263.410000 273.250000 264.160000 282.010000 267.570000 278.660000 C 270.980000 275.310000 273.120000 263.250000 273.120000 263.250000 C 272.750000 271.280000 271.660000 280.210000 274.520000 279.660000 C 277.380000 279.120000 282.450000 254.940000 282.450000 254.940000 C 282.450000 254.940000 282.400000 254.930000 282.320000 254.910000 C 283.680000 246.770000 289.440000 208.140000 283.560000 169.400000 L 289.560000 172.960000 C 289.120000 164.360000 285.580000 160.290000 285.580000 160.290000 Z"/><path fill="rgb(73, 27, 45)" d=" M 270.130000 184.050000 C 269.290000 183.580000 267.900000 184.770000 268.990000 185.390000 C 272.030000 187.110000 272.740000 191.220000 272.530000 194.410000 C 272.490000 195.030000 272.100000 198.280000 270.920000 197.920000 C 268.880000 197.300000 267.560000 193.750000 266.780000 192.070000 C 266.460000 191.380000 264.900000 191.750000 264.900000 192.500000 C 264.890000 195.000000 264.830000 197.390000 263.710000 199.580000 C 262.570000 198.290000 261.730000 196.810000 261.140000 195.220000 C 260.920000 194.030000 260.620000 192.970000 260.330000 192.250000 C 259.960000 191.360000 258.200000 191.700000 258.380000 192.700000 C 258.590000 193.880000 258.920000 195.020000 259.350000 196.100000 C 259.690000 198.120000 259.620000 200.250000 258.530000 201.730000 C 257.740000 202.790000 255.790000 201.370000 255.210000 200.910000 C 254.100000 200.050000 253.630000 198.420000 253.280000 197.150000 C 252.760000 195.240000 252.790000 193.180000 252.990000 191.230000 C 253.100000 190.170000 251.120000 190.340000 251.020000 191.280000 C 250.540000 195.900000 251.640000 204.090000 258.030000 203.540000 C 260.150000 203.350000 261.070000 201.710000 261.340000 199.680000 C 261.860000 200.370000 262.440000 201.010000 263.090000 201.610000 C 263.480000 201.980000 264.350000 201.820000 264.650000 201.400000 C 265.910000 199.650000 266.460000 197.820000 266.690000 195.860000 C 268.680000 198.790000 271.690000 201.580000 273.800000 197.300000 C 275.880000 193.100000 274.220000 186.360000 270.130000 184.050000 Z"/><path fill="rgb(73, 27, 45)" d=" M 272.900000 215.340000 C 272.340000 214.580000 270.480000 215.320000 271.110000 216.160000 C 272.690000 218.270000 273.500000 220.630000 273.290000 223.280000 C 272.890000 228.210000 269.810000 221.830000 269.310000 220.420000 C 268.960000 219.460000 267.310000 219.900000 267.360000 220.870000 C 267.400000 221.610000 267.470000 228.380000 265.200000 225.670000 C 264.140000 224.410000 263.760000 222.620000 263.650000 220.910000 C 263.630000 220.180000 263.610000 219.520000 263.600000 218.990000 C 263.590000 217.920000 261.650000 218.100000 261.630000 219.040000 C 261.630000 219.480000 261.630000 219.960000 261.650000 220.470000 C 261.670000 221.780000 261.690000 223.100000 261.630000 224.410000 C 261.550000 226.380000 260.370000 232.300000 257.460000 228.760000 C 255.070000 225.840000 255.000000 219.620000 255.840000 216.130000 C 256.090000 215.120000 254.100000 215.270000 253.880000 216.180000 C 252.910000 220.150000 252.950000 230.110000 258.190000 231.180000 C 261.550000 231.870000 262.880000 229.470000 263.380000 226.500000 C 263.940000 227.200000 264.670000 227.750000 265.620000 228.010000 C 267.780000 228.610000 268.710000 226.780000 269.090000 224.710000 C 270.230000 226.550000 271.810000 227.900000 273.840000 226.390000 C 277.110000 223.950000 274.730000 217.790000 272.900000 215.340000 Z"/><path fill="rgb(125, 55, 100)" d=" M 255.830000 117.550000 C 250.810000 91.250000 226.270000 67.240000 214.550000 64.950000 L 217.900000 61.520000 L 201.720000 59.810000 C 201.720000 59.810000 208.970000 54.660000 219.010000 55.810000 C 219.010000 55.810000 192.870000 50.900000 178.330000 50.550000 L 190.160000 42.120000 C 190.160000 42.120000 168.080000 46.190000 166.750000 46.650000 C 165.430000 47.100000 176.030000 39.400000 176.030000 39.400000 L 148.640000 49.360000 L 152.620000 43.930000 L 131.940000 54.320000 C 112.220000 57.360000 90.760000 62.890000 80.670000 72.960000 C 59.470000 94.110000 66.720000 226.750000 74.530000 266.200000 C 74.530000 266.200000 75.090000 270.200000 83.460000 271.340000 C 91.830000 272.490000 222.920000 268.490000 222.920000 268.490000 C 222.920000 268.490000 227.940000 269.630000 231.290000 260.480000 C 234.630000 251.330000 260.850000 143.850000 255.830000 117.550000 Z"/><path fill="rgb(99, 40, 71)" d=" M 94.670000 64.550000 C 77.890000 67.820000 89.160000 64.490000 80.670000 72.960000 C 59.470000 94.110000 66.720000 226.750000 74.530000 266.200000 C 74.530000 266.200000 75.090000 270.200000 83.460000 271.340000 C 84.700000 271.510000 88.630000 271.570000 94.420000 271.540000 C 58.050000 240.440000 86.810000 87.780000 94.670000 64.550000 Z"/><path fill="rgb(196, 102, 197)" d=" M 129.450000 270.980000 C 154.120000 270.440000 183.210000 269.640000 202.310000 269.090000 C 208.350000 255.080000 218.640000 222.060000 184.120000 216.780000 C 145.130000 210.810000 131.960000 259.710000 129.450000 270.980000 Z"/><path fill="rgb(125, 55, 100)" d=" M 98.330000 62.940000 C 98.330000 62.940000 55.600000 72.690000 31.610000 98.370000 C 25.250000 101.290000 16.840000 105.880000 13.460000 110.940000 L 18.760000 109.580000 C 18.760000 109.580000 9.930000 119.540000 9.490000 126.780000 L 14.350000 123.620000 C 14.350000 123.620000 8.600000 137.190000 8.600000 144.440000 L 13.800000 143.110000 C 8.740000 181.500000 9.150000 238.410000 14.610000 265.590000 C 14.570000 265.610000 14.530000 265.620000 14.530000 265.620000 C 14.530000 265.620000 14.620000 265.890000 14.760000 266.350000 C 14.790000 266.490000 14.820000 266.640000 14.840000 266.770000 C 14.840000 266.770000 14.870000 266.770000 14.900000 266.780000 C 16.390000 271.520000 22.160000 289.270000 24.710000 289.510000 C 27.660000 289.780000 25.790000 281.000000 24.710000 273.030000 C 24.710000 273.030000 27.930000 284.840000 31.680000 287.860000 C 35.430000 290.880000 35.430000 282.090000 33.560000 274.950000 C 31.680000 267.810000 36.230000 284.290000 42.130000 286.760000 C 48.030000 289.230000 45.080000 279.350000 43.200000 273.300000 C 41.330000 267.260000 53.380000 280.450000 56.870000 277.970000 C 56.870000 277.970000 58.440000 272.610000 54.300000 265.110000 C 54.350000 265.090000 54.400000 265.070000 54.450000 265.060000 C 54.450000 265.060000 41.670000 192.750000 86.300000 175.020000 C 98.200000 137.300000 122.930000 82.250000 98.330000 62.940000 Z"/><path fill="rgb(73, 27, 45)" d=" M 47.690000 185.970000 C 47.190000 190.080000 46.390000 194.760000 43.800000 198.100000 C 40.190000 202.780000 39.790000 192.570000 39.850000 191.490000 C 39.970000 189.080000 40.360000 186.680000 40.680000 184.290000 C 40.820000 183.240000 39.110000 183.480000 38.770000 184.140000 C 37.160000 187.270000 36.110000 190.650000 34.450000 193.760000 C 31.740000 198.850000 30.220000 192.450000 30.670000 189.520000 C 31.100000 186.770000 32.460000 184.090000 33.680000 181.620000 C 34.180000 180.600000 32.430000 180.550000 31.950000 181.100000 C 29.290000 184.110000 27.590000 187.980000 25.220000 191.220000 C 24.930000 191.610000 22.980000 194.430000 22.250000 192.170000 C 21.850000 190.940000 22.680000 188.800000 23.050000 187.720000 C 23.790000 185.600000 24.910000 183.610000 25.920000 181.620000 C 26.470000 180.560000 24.530000 180.550000 24.070000 181.280000 C 21.840000 184.840000 20.190000 188.960000 17.000000 191.820000 C 14.460000 194.090000 15.060000 189.330000 15.130000 188.950000 C 15.430000 187.290000 16.160000 185.660000 16.820000 184.110000 C 17.700000 182.050000 18.760000 179.940000 20.090000 178.130000 C 20.830000 177.120000 19.050000 176.650000 18.480000 177.430000 C 16.430000 180.200000 9.440000 191.480000 14.810000 193.780000 C 16.700000 194.590000 18.580000 193.250000 20.260000 191.180000 C 19.980000 193.360000 20.520000 195.010000 22.840000 194.950000 C 25.120000 194.890000 27.040000 192.620000 28.720000 189.930000 C 27.960000 193.670000 28.290000 197.210000 32.050000 197.640000 C 34.480000 197.910000 36.280000 195.180000 37.670000 192.070000 C 37.400000 196.380000 38.060000 200.630000 42.170000 200.520000 C 47.890000 200.370000 49.160000 189.990000 49.660000 185.920000 C 49.790000 184.870000 47.810000 185.030000 47.690000 185.970000 Z"/><path fill="rgb(73, 27, 45)" d=" M 37.900000 217.000000 C 37.700000 218.240000 37.750000 219.510000 37.740000 220.770000 C 37.730000 221.330000 36.990000 230.250000 34.490000 226.940000 C 32.740000 224.610000 32.720000 220.730000 32.100000 217.970000 C 31.910000 217.140000 30.470000 217.370000 30.200000 218.030000 C 28.580000 221.930000 29.200000 226.250000 27.620000 230.100000 C 25.540000 227.650000 24.800000 224.370000 24.720000 221.160000 C 24.740000 220.290000 24.750000 219.540000 24.760000 218.990000 C 24.780000 217.920000 22.850000 218.100000 22.790000 219.040000 C 22.760000 219.550000 22.750000 220.070000 22.740000 220.590000 C 22.600000 223.920000 22.170000 227.450000 20.920000 230.470000 C 19.810000 233.180000 18.320000 229.260000 18.210000 228.920000 C 17.870000 227.830000 17.780000 226.650000 17.670000 225.520000 C 17.460000 223.370000 17.550000 221.130000 17.820000 218.990000 C 17.950000 217.940000 15.970000 218.100000 15.850000 219.040000 C 15.450000 222.220000 14.450000 233.070000 19.800000 232.930000 C 22.130000 232.870000 23.350000 230.590000 24.000000 227.840000 C 24.680000 229.490000 25.680000 230.990000 27.100000 232.230000 C 27.610000 232.680000 28.470000 232.360000 28.780000 231.840000 C 30.400000 229.100000 30.530000 226.070000 30.920000 223.080000 C 31.520000 226.160000 32.620000 229.360000 35.280000 229.290000 C 41.010000 229.140000 39.320000 220.380000 39.860000 216.950000 C 40.030000 215.910000 38.040000 216.060000 37.900000 217.000000 Z"/><path fill="rgb(196, 102, 197)" d=" M 232.440000 121.900000 C 226.850000 113.700000 214.280000 107.450000 199.340000 104.880000 C 200.290000 108.020000 200.680000 111.500000 197.830000 113.240000 C 194.700000 115.140000 192.420000 111.930000 191.710000 108.970000 C 191.890000 110.670000 190.810000 114.810000 188.720000 114.920000 C 185.580000 115.100000 186.190000 109.170000 186.190000 107.270000 C 186.040000 109.440000 183.540000 115.260000 180.560000 114.270000 C 177.910000 113.380000 178.220000 107.620000 178.890000 103.780000 C 167.240000 104.490000 155.410000 107.520000 145.150000 113.560000 C 133.850000 120.210000 132.440000 159.620000 138.310000 170.310000 C 144.170000 180.990000 153.290000 173.640000 162.410000 165.300000 C 162.410000 165.300000 162.740000 192.000000 164.690000 198.010000 C 166.650000 204.020000 178.700000 205.020000 182.610000 204.690000 L 189.770000 200.010000 L 188.790000 203.690000 L 195.310000 199.350000 L 194.010000 202.680000 L 199.540000 199.010000 L 198.560000 203.350000 C 198.560000 203.350000 210.940000 202.350000 214.850000 195.670000 L 214.850000 158.620000 C 214.850000 158.620000 227.550000 168.630000 232.440000 165.300000 C 237.320000 161.960000 241.050000 134.540000 232.440000 121.900000 Z"/><path fill="rgb(52, 21, 32)" d=" M 164.850000 134.820000 C 166.380000 136.900000 166.380000 140.280000 164.850000 142.370000 C 163.320000 144.450000 160.850000 144.450000 159.320000 142.370000 C 157.800000 140.280000 157.800000 136.900000 159.320000 134.820000 C 160.850000 132.730000 163.320000 132.730000 164.850000 134.820000 Z"/><path fill="rgb(52, 21, 32)" d=" M 221.820000 133.770000 C 223.350000 135.860000 223.350000 139.240000 221.820000 141.320000 C 220.300000 143.410000 217.820000 143.410000 216.300000 141.320000 C 214.770000 139.240000 214.770000 135.860000 216.300000 133.770000 C 217.820000 131.680000 220.300000 131.680000 221.820000 133.770000 Z"/><path fill="rgb(73, 27, 45)" d=" M 210.940000 176.120000 C 210.940000 182.660000 202.850000 187.970000 192.870000 187.970000 C 182.880000 187.970000 174.790000 182.660000 174.790000 176.120000 C 174.790000 169.580000 184.350000 174.820000 194.330000 174.820000 C 204.310000 174.820000 210.940000 169.570000 210.940000 176.120000 Z"/><path fill="rgb(255, 255, 255)" d=" M 196.280000 174.750000 L 196.280000 180.290000 L 203.130000 180.290000 L 203.130000 173.690000 C 201.150000 174.120000 198.850000 174.590000 196.280000 174.750000 Z M 184.560000 180.290000 L 191.400000 180.290000 L 191.400000 174.680000 C 188.990000 174.460000 186.670000 174.050000 184.560000 173.660000 L 184.560000 180.290000 Z"/><path fill="rgb(73, 27, 45)" d=" M 184.890000 117.900000 L 184.890000 155.280000 L 180.330000 154.950000 L 180.650000 159.960000 L 202.470000 158.960000 L 202.470000 153.950000 L 197.260000 154.620000 L 195.310000 118.230000 L 184.890000 117.900000 Z"/><path fill="rgb(172, 90, 172)" d=" M 240.010000 103.390000 C 240.010000 103.390000 249.840000 77.350000 260.880000 87.730000 C 271.930000 98.110000 263.730000 127.690000 241.770000 115.970000 L 243.990000 111.400000 L 241.390000 111.650000 L 242.550000 106.180000 L 239.750000 107.770000 L 240.010000 103.390000 Z"/><path fill="rgb(99, 40, 71)" d=" M 247.910000 110.820000 C 248.750000 111.760000 250.100000 110.370000 249.270000 109.430000 C 248.110000 108.150000 248.710000 106.360000 249.970000 104.840000 C 250.000000 104.820000 250.040000 104.820000 250.080000 104.800000 C 252.840000 102.760000 255.040000 105.360000 256.030000 107.990000 C 256.480000 109.160000 258.340000 108.650000 257.890000 107.460000 C 257.020000 105.180000 255.380000 102.990000 253.350000 102.290000 C 255.220000 101.490000 257.020000 101.670000 257.380000 103.870000 C 257.580000 105.120000 259.430000 104.580000 259.230000 103.340000 C 257.790000 94.580000 242.300000 104.580000 247.910000 110.820000 Z"/><path fill="rgb(172, 90, 172)" d=" M 117.040000 115.230000 C 117.040000 115.230000 104.990000 90.190000 94.900000 101.540000 C 84.800000 112.890000 95.550000 141.600000 116.390000 127.910000 L 113.790000 123.570000 L 116.390000 123.570000 L 114.760000 118.230000 L 117.700000 119.570000 L 117.040000 115.230000 Z"/><path fill="rgb(99, 40, 71)" d=" M 109.870000 117.670000 C 106.520000 114.690000 102.440000 111.990000 97.880000 113.640000 C 96.720000 114.060000 97.220000 115.970000 98.390000 115.540000 C 100.680000 114.710000 102.790000 115.220000 104.730000 116.280000 C 101.750000 117.170000 99.770000 120.680000 102.810000 123.870000 C 103.680000 124.780000 105.040000 123.390000 104.170000 122.480000 C 101.160000 119.330000 105.840000 116.390000 108.510000 119.070000 C 109.440000 119.890000 110.760000 118.570000 109.870000 117.670000 Z"/></svg>

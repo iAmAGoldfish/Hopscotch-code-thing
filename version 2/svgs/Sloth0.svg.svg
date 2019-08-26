@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Sloth0.svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs>    <!-- Generated by PaintCode (www.paintcodeapp.com) -->    <path id="sloth0-bezier" stroke="none" fill="rgb(26, 166, 147)" d="M 140.92,282.46 C 141.65,272.76 139.86,256.49 134.56,249.19 L 117.4,249.93 C 119.57,251.81 120.93,254.18 121.8,256.8 121.03,259.47 120.01,262.07 118.72,264.54 119.63,264.24 120.53,263.93 121.43,263.63 121.04,264.92 120.64,266.21 120.25,267.5 120.79,267.32 121.33,267.14 121.87,266.96 121.54,268.2 121.21,269.45 120.88,270.7 121.71,270.35 122.55,270 123.38,269.65 123.42,274.93 122.88,280.18 120.99,286.54 127.22,286.36 147.41,286.83 147.41,286.83 147.41,286.83 140.83,283.64 140.92,282.46 Z M 140.92,282.46"/>    <path id="sloth0-bezier2" stroke="none" fill="rgb(26, 166, 147)" d="M 195.01,286.2 C 201.24,286.12 221.42,286.93 221.42,286.93 221.42,286.93 215.43,283.43 215.54,282.25 216.42,272.56 214.38,256.48 209.2,249.09 L 192.04,249.53 C 194.98,252.18 196.38,255.74 197.05,259.58 196.29,261.67 195.35,263.7 194.22,265.62 194.97,265.31 195.71,265.01 196.45,264.71 196.21,266.02 195.73,267.3 195.05,268.45 195.52,268.38 195.99,268.32 196.46,268.25 195.93,269.67 195.4,271.1 194.87,272.52 195.79,272.17 196.71,271.83 197.62,271.49 197.44,276.07 196.73,280.73 195.01,286.2 Z M 195.01,286.2"/>    <path id="sloth0-bezier3" stroke="none" fill="rgb(106, 37, 83)" d="M 44.19,247.33 C 44.49,250.73 45.72,253.97 46.94,257.16 47.81,259.43 48.7,261.75 50.22,263.64 51.74,265.54 54.02,266.99 56.45,266.9 53.33,261.5 51.86,255.16 52.28,248.93"/>    <path id="sloth0-bezier4" stroke="none" fill="rgb(106, 37, 83)" d="M 56.08,247.32 C 56.38,250.72 57.61,253.96 58.82,257.15 59.69,259.43 60.58,261.74 62.1,263.64 63.62,265.54 65.9,266.99 68.33,266.9 65.21,261.49 63.74,255.15 64.16,248.93"/>    <path id="sloth0-bezier5" stroke="none" fill="rgb(97, 186, 141)" d="M 98.48,54.21 C 92.39,64.6 92.39,64.6 85.29,77.29 L 85.4,76.97 C 83.05,81.31 79.5,84.98 75.25,87.48 76.06,88.03 76.98,88.44 77.94,88.66 75.83,91.09 73.73,93.53 71.62,95.97 72.53,96.07 73.44,96.17 74.35,96.27 71.63,99.75 69.21,103.47 67.15,107.38 68.5,106.92 69.86,106.47 71.22,106.01 64.51,121.57 58.82,137.65 53.58,153.72 44,183.08 35.6,213.41 36.36,244.29 36.4,245.9 36.49,247.59 37.33,248.96 38.73,251.23 41.69,251.89 44.33,252.23 51.11,253.12 57.97,253.35 64.79,252.9 67,252.76 69.39,252.47 71,250.95 72.47,249.57 72.98,247.48 73.36,245.5 78.48,218.78 73.05,191.87 73.51,165.04 73.97,138.45 79.63,114.03 91.41,90.01 L 107.17,56.7 98.48,54.21 Z M 98.48,54.21"/>    <path id="sloth0-bezier6" stroke="none" fill="rgb(28, 169, 148)" d="M 59.21,137.06 C 57.61,141.6 56.07,146.16 54.57,150.72 L 73.82,156.91 C 74.11,151.94 74.59,147.05 75.27,142.22 L 59.21,137.06 Z M 59.21,137.06"/>    <path id="sloth0-bezier7" stroke="none" fill="rgb(106, 37, 83)" d="M 258.54,249.84 C 257.86,253.19 256.28,256.27 254.72,259.31 253.61,261.47 252.47,263.67 250.74,265.39 249.02,267.11 246.59,268.3 244.19,267.94 247.89,262.91 250.05,256.78 250.33,250.54"/>    <path id="sloth0-bezier8" stroke="none" fill="rgb(106, 37, 83)" d="M 246.73,248.52 C 246.06,251.86 244.48,254.95 242.91,257.99 241.8,260.15 240.66,262.35 238.94,264.07 237.21,265.78 234.79,266.97 232.38,266.61 236.08,261.59 238.25,255.45 238.52,249.22"/>    <path id="sloth0-bezier9" stroke="none" fill="rgb(97, 186, 141)" d="M 254.94,170.48 C 252.17,157.94 249.11,145.36 245.43,133.01 246.62,133.59 247.92,133.96 249.25,134.08 248.08,131.04 246.66,128.09 245.01,125.27 245.61,125.28 246.21,125.29 246.81,125.29 245.35,122.51 243.64,119.87 241.7,117.4 242.37,117.48 243.07,117.06 243.31,116.42 241.18,114.04 239.16,111.55 237.26,108.97 233.08,98.22 228.22,87.79 222.44,77.86 L 217.83,80.39 226.72,110.22 C 235.14,132.73 238.06,155.04 236.13,178.85 234.19,202.87 227.19,222.43 229.42,246.75 229.59,248.56 229.86,250.47 231.05,251.83 232.36,253.33 234.47,253.8 236.43,254.12 242.49,255.12 248.65,255.52 254.78,255.32 257.17,255.24 259.87,254.92 261.32,253.01 262.2,251.86 262.42,250.36 262.6,248.92 265.99,221.39 260.92,197.56 254.94,170.48 Z M 254.94,170.48"/>    <path id="sloth0-bezier10" stroke="none" fill="rgb(28, 169, 148)" d="M 251.03,153.74 L 236.47,156.43 C 236.72,161.1 236.76,165.81 236.6,170.58 L 254.23,167.31 C 253.21,162.78 252.15,158.26 251.03,153.74 Z M 251.03,153.74"/>    <path id="sloth0-bezier11" stroke="none" fill="rgb(97, 186, 141)" d="M 234.48,117.83 C 237.02,102.6 238.45,87.23 234.15,72.1 230.23,58.29 222.84,45.02 211.55,36.27 212.35,36.03 213.07,35.56 213.59,34.91 210.11,32.5 206.21,30.71 202.12,29.64 202.95,28.84 203.78,28.04 204.61,27.24 200.92,25.94 197.03,25.24 193.12,25.16 194.64,24.27 196.16,23.38 197.68,22.49 191.9,20.36 185.64,19.57 179.52,20.2 182.08,17.82 184.63,15.44 187.19,13.07 172.47,15.41 167.77,17.72 153.73,22.73 L 153.75,22.74 C 120.79,25.78 94.68,48.49 86.19,80.45 82.91,92.79 82.37,105.28 83.04,117.98 84.12,138.37 86.72,158.64 90.2,178.75 93.39,197.14 97.32,215.42 102.76,233.28 104.05,237.53 105.16,242.13 106.99,246.19 108.46,249.46 107.96,249.06 111.32,249.65 133.5,253.56 156.39,251.23 178.76,252.47 185.65,252.85 192.56,253.02 199.46,252.88 205.35,252.76 210.61,252.41 216.39,251.71 217.02,251.63 217.71,251.53 218.14,251.06 218.57,250.6 218.64,249.92 218.68,249.28 219.5,236.07 217.93,222.29 218.38,208.93 218.86,194.56 220.1,180.18 222.75,166.04 225.26,152.65 230.42,140.11 232.88,126.78 233.44,123.81 233.98,120.82 234.48,117.83 Z M 234.48,117.83"/>    <path id="sloth0-bezier12" stroke="none" fill="rgb(21, 137, 121)" d="M 194,77.68 C 192.6,78.17 191.23,78.68 189.88,79.21 183.57,81.68 176.83,84.34 170.2,82.93 165.74,81.98 161.9,79.28 157.91,77.08 150.21,72.81 142.86,68.95 133.76,68.63 124.61,68.31 115.41,72.42 109.55,79.46 102.67,87.7 101.32,98.85 103.68,109.07 105.33,116.2 110.84,122.65 117.01,126.38 125.53,131.54 135.32,128.27 144.19,125.98 144.75,131.4 144.48,138.7 150.73,139.79 157.7,141.01 165.46,139.9 172.52,139.9 177.63,139.9 182.75,139.94 187.86,140.04 191.33,140.1 197.25,141.58 199.34,137.79 200.37,135.93 200.19,130.34 200.46,128.28 209.12,129.42 218.41,132.73 224.62,124.77 229.55,118.44 230.33,109.21 230.17,101.49 229.96,91.49 226.49,82.59 217.64,77.43 210.58,73.32 201.93,74.95 194,77.68 Z M 194,77.68"/>    <path id="sloth0-bezier13" stroke="rgb(33, 8, 26)" stroke-width="1.86" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M 127.82,100.3 C 128.08,101.31 128.33,102.33 128.59,103.35 128.99,104.97 129.54,106.78 131.02,107.56 132.92,108.56 135.38,107.17 136.29,105.22 137.2,103.27 136.99,101 136.77,98.86"/>    <path id="sloth0-bezier14" stroke="rgb(33, 8, 26)" stroke-width="1.86" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M 206.15,105.39 C 206.2,106.34 206.26,107.29 206.32,108.23 206.43,110.14 206.86,112.45 208.99,113.23 210.48,113.77 212.3,113.24 213.33,112.23 214.35,111.21 214.71,109.83 214.73,108.5 214.75,107.16 214.48,105.83 214.38,104.49"/>    <path id="sloth0-bezier15" stroke="none" fill="rgb(106, 37, 83)" d="M 172.43,115.73 C 171.72,107.47 171.36,99.18 171.36,90.89 175.09,90.7 178.81,90.35 182.51,89.85 181.5,98.74 180.92,107.67 180.76,116.61 182.46,116.71 184.17,116.61 185.84,116.29 185.82,118.1 185.79,119.9 185.76,121.7 178.49,123.13 171,123.43 163.64,122.59 163.51,120.12 163.64,117.63 164.01,115.18 166.79,115.6 169.61,115.78 172.43,115.73 Z M 172.43,115.73"/>    <path id="sloth0-bezier16" stroke="none" fill="rgb(33, 8, 26)" d="M 192.02,127.1 C 180.5,128.25 168.91,128.71 157.33,128.5 159.34,132.64 163.77,134.66 168.33,135.29 173.84,136.05 179.56,135.31 184.7,133.18 187.54,132 190.7,129.87 192.02,127.1 Z M 192.02,127.1"/>    <path id="sloth0-bezier17" stroke="rgb(24, 138, 121)" stroke-width="1.86" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M 166.98,52.27 C 167.84,56.27 169.42,60.11 171.62,63.56 172.24,64.55 172.94,65.52 173.91,66.17 174.87,66.82 176.17,67.09 177.22,66.59 177.38,63.86 177.12,61.1 176.45,58.45 178.04,61 179.83,63.42 181.81,65.68 182.5,66.48 183.73,67.29 184.48,66.55 184.79,66.25 184.86,65.79 184.91,65.36 185.16,63.08 185.08,60.76 184.66,58.5 185.66,60.1 186.74,61.78 188.41,62.65 190.08,63.52 192.53,63.22 193.36,61.53 194.4,59.45 192.48,57.08 192.51,54.76"/>    <path id="sloth0-bezier18" stroke="rgb(24, 138, 121)" stroke-width="1.86" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M 154.02,179.41 C 154.06,182.84 154.49,186.27 155.32,189.6 155.79,191.52 156.69,193.71 158.62,194.14 160.38,190.59 161.36,186.66 161.46,182.7 161.29,185.39 161.82,188.11 162.96,190.55 163.66,192.05 164.99,193.62 166.62,193.33 167.89,193.1 168.67,191.82 169.18,190.63 170.34,187.93 171.04,185.03 171.22,182.09 171.06,186.24 172.6,190.44 175.41,193.5 178.59,190.91 179.18,186.35 179.52,182.26 179.62,185.7 180.43,189.11 181.89,192.23 182.06,192.61 182.28,193.01 182.67,193.16 183.39,193.43 184.05,192.68 184.42,192.01 186.1,188.98 187.11,185.58 187.34,182.12"/>    <path id="sloth0-bezier19" stroke="rgb(24, 138, 121)" stroke-width="1.86" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none" d="M 137.46,159.83 C 137.67,163.26 138.09,166.68 138.71,170.05 138.96,171.42 139.86,173.18 141.18,172.75 141.76,172.57 142.12,172 142.4,171.46 143.74,168.87 144.47,165.96 144.52,163.05 144.5,166.74 145.88,170.42 148.3,173.21 150.71,170.67 151.97,167.08 151.67,163.59 152.03,166.66 152.98,169.67 154.45,172.39 154.69,172.84 154.99,173.32 155.48,173.47 156.11,173.67 156.76,173.24 157.25,172.79 159.36,170.8 160.57,167.88 160.46,164.98 161.11,167.66 162.24,170.22 163.76,172.52 164.26,173.28 165.02,174.1 165.91,173.91 166.53,173.77 166.94,173.17 167.24,172.61 168.52,170.24 169.21,167.57 169.25,164.88 169.39,167.89 170.44,170.85 172.23,173.28 172.47,173.61 172.75,173.95 173.15,174.02 173.8,174.15 174.33,173.51 174.67,172.94 176.03,170.65 176.95,168.09 177.35,165.46 177.64,168.12 178.59,170.71 180.11,172.92 180.48,173.47 180.94,174.03 181.58,174.2 182.72,174.51 183.76,173.47 184.4,172.48 185.89,170.14 186.76,167.41 186.9,164.65 187.29,167.01 187.91,169.33 188.75,171.57 188.96,172.14 189.22,172.74 189.71,173.09 190.94,173.97 192.6,172.84 193.54,171.66 195.63,169 196.92,165.71 197.18,162.33 196.46,165.37 197.03,168.68 198.7,171.31 199.36,172.35 200.55,173.38 201.67,172.89 202.35,172.6 202.7,171.86 202.96,171.17 204.04,168.28 204.53,165.17 204.4,162.09"/>    <path id="sloth0-bezier20" stroke="none" fill="rgb(26, 166, 147)" d="M 128.33,251.58 C 119.68,243.44 115.25,232.37 111.6,221.11 105.41,202 99.21,182.84 95.04,163.17 91.08,144.53 88.02,105.3 88.33,105.14 86.34,106.28 83.89,108.3 82.8,110.75 82.83,113.15 82.91,115.56 83.04,117.98 84.12,138.37 86.72,158.64 90.2,178.76 93.39,197.14 97.32,215.42 102.76,233.28 104.05,237.53 105.16,242.13 106.99,246.19 108.46,249.46 107.96,249.06 111.32,249.65 116.95,250.65 122.63,251.23 128.33,251.58 Z M 128.33,251.58"/></svg>

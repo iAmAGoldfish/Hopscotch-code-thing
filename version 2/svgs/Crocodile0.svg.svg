@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Crocodile0.svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs>    <!-- Generated by PaintCode (www.paintcodeapp.com) -->    <g id="crocodile1-frame1">        <g id="crocodile1-group2">            <path id="crocodile1-bezier" stroke="none" fill="rgb(33, 53, 32)" d="M 164.04,174.98 C 164.04,174.98 141,220.75 184.96,221.52 L 180.82,218.42 187.81,218.68 183.93,215.57 191.69,214.54 176.17,208.33 C 176.17,208.33 178,187.91 184.21,173.95 L 164.04,174.98 Z M 164.04,174.98"/>            <path id="crocodile1-bezier2" stroke="none" fill="rgb(33, 53, 32)" d="M 64.53,173.2 C 64.53,173.2 40.74,220.75 84.71,221.52 L 80.57,218.42 87.56,218.68 83.68,215.57 91.44,214.54 75.92,208.33 C 75.92,208.33 78.49,186.13 84.7,172.16 L 64.53,173.2 Z M 64.53,173.2"/>            <g id="crocodile1-group3">                <path id="crocodile1-bezier3" stroke="none" fill="rgb(33, 53, 32)" d="M 43.82,127.6 L 38.62,127.8 C 38.73,132.56 38.85,137.51 38.97,142.62 L 43.82,127.6 Z M 43.82,127.6"/>                <path id="crocodile1-bezier4" stroke="none" fill="rgb(33, 53, 32)" d="M 43.3,99.53 L 38.02,99.74 C 38.12,104.42 38.23,109.49 38.34,114.89 L 43.3,99.53 Z M 43.3,99.53"/>                <path id="crocodile1-bezier5" stroke="none" fill="rgb(33, 53, 32)" d="M 75.26,146.7 L 49.48,140.8 50.45,150.11 52.89,149.51 C 52.9,149.51 61.52,148.22 75.26,146.7 Z M 75.26,146.7"/>                <path id="crocodile1-bezier6" stroke="none" fill="rgb(33, 53, 32)" d="M 81.5,135.7 L 82.74,145.9 C 92.76,144.87 104.69,143.82 117.59,143.02 L 81.5,135.7 Z M 81.5,135.7"/>                <path id="crocodile1-bezier7" stroke="none" fill="rgb(33, 53, 32)" d="M 120.99,130.87 L 123.37,142.68 C 132.81,142.17 142.68,141.81 152.61,141.71 L 120.99,130.87 Z M 120.99,130.87"/>                <path id="crocodile1-bezier8" stroke="none" fill="rgb(47, 73, 41)" d="M 152.6,141.71 C 142.68,141.81 132.81,142.17 123.37,142.68 121.42,142.79 119.49,142.9 117.59,143.02 104.69,143.82 92.76,144.87 82.74,145.9 80.11,146.17 77.61,146.44 75.25,146.7 61.51,148.22 52.89,149.51 52.89,149.51 L 50.44,150.11 39.21,152.89 C 39.13,149.4 39.04,145.98 38.96,142.62 38.84,137.5 38.73,132.56 38.62,127.8 38.52,123.32 38.43,119 38.34,114.89 38.22,109.49 38.12,104.41 38.02,99.74 37.59,78.31 37.37,65 37.37,65 L 5.93,78.98 5.93,83.9 27.54,78.52 C 27.54,78.52 27.31,92.29 27.22,109.66 27.21,109.94 27.21,110.22 27.21,110.49 L 27.21,110.49 C 27.19,114.05 27.18,117.75 27.18,121.51 27.18,121.73 27.18,121.95 27.18,122.18 27.16,134.93 27.25,148.27 27.55,158.89 27.57,159.3 27.58,159.71 27.59,160.11 27.83,167.85 28.19,173.99 28.71,177.19 L 28.71,177.19 C 28.87,178.15 29.04,178.85 29.23,179.24 L 29.23,179.24 C 29.34,179.47 29.46,179.6 29.58,179.62 31.01,179.86 54.6,177.16 82.85,176.04 82.87,176.04 82.88,176.04 82.9,176.04 L 82.9,176.04 C 94.91,175.56 107.77,175.38 120.12,175.83 120.38,175.84 120.63,175.84 120.89,175.85 L 120.89,175.85 C 142.9,176.7 163.23,179.59 174.24,186.51 174,187.78 173.77,189.04 173.53,190.3 176.48,174.31 179.51,158.32 182.71,142.33 172.86,141.78 162.7,141.61 152.6,141.71 Z M 64,158.7 C 60.92,158.87 58.35,157.79 58.27,156.29 58.19,154.78 60.62,153.43 63.71,153.26 66.79,153.09 69.36,154.17 69.44,155.67 69.53,157.17 67.09,158.53 64,158.7 Z M 74.54,165.76 C 71.87,165.9 69.64,164.72 69.55,163.12 69.46,161.52 71.55,160.1 74.22,159.95 76.89,159.81 79.12,160.99 79.21,162.59 79.3,164.19 77.21,165.61 74.54,165.76 Z M 80,154.91 C 77.67,155.04 75.73,154.25 75.66,153.15 75.6,152.04 77.45,151.05 79.78,150.92 82.12,150.79 84.06,151.58 84.12,152.68 84.18,153.78 82.34,154.78 80,154.91 Z M 120.27,149.05 C 120.2,147.85 122.25,146.76 124.83,146.62 127.42,146.48 129.57,147.34 129.63,148.54 129.7,149.74 127.66,150.83 125.07,150.97 122.48,151.11 120.34,150.26 120.27,149.05 Z M 132.38,160.03 C 130.05,160.16 128.1,159.21 128.03,157.9 127.96,156.6 129.79,155.44 132.13,155.31 134.46,155.18 136.41,156.14 136.48,157.44 136.55,158.74 134.72,159.9 132.38,160.03 Z M 138.92,149.48 C 137,149.59 135.42,149.11 135.38,148.4 135.34,147.7 136.86,147.05 138.78,146.94 140.7,146.84 142.29,147.32 142.33,148.02 142.36,148.72 140.84,149.38 138.92,149.48 Z M 138.92,149.48"/>                <path id="crocodile1-bezier9" stroke="none" fill="rgb(76, 113, 59)" d="M 27.21,109.66 C 27.31,92.29 27.53,78.52 27.53,78.52 L 25.65,109.62 C 26.17,109.28 26.69,108.94 27.22,108.61 27.22,108.96 27.22,109.31 27.21,109.66 Z M 27.21,109.66"/>                <path id="crocodile1-bezier10" stroke="none" fill="rgb(76, 113, 59)" d="M 120.89,175.85 C 120.31,180.66 119.73,185.47 119.45,190.3 L 134.76,190.3 C 134.36,185.74 133.93,181.17 133.75,176.62 134.42,176.67 135.1,176.73 135.77,176.79 135.95,181.29 136.39,185.8 136.78,190.3 L 152.54,190.3 C 152.6,186.59 152.79,182.87 153.01,179.16 153.68,179.29 154.34,179.42 154.98,179.56 154.77,183.14 154.59,186.72 154.54,190.3 L 173.53,190.3 C 173.76,189.04 174,187.77 174.23,186.51 163.23,179.59 142.9,176.7 120.89,175.85 Z M 120.89,175.85"/>                <path id="crocodile1-bezier11" stroke="none" fill="rgb(76, 113, 59)" d="M 27.18,121.2 C 27.18,121.31 27.18,121.41 27.17,121.51 27.18,117.75 27.19,114.05 27.21,110.49 26.65,110.86 26.09,111.23 25.53,111.61 L 24.76,124.38 24.85,122.89 C 25.61,122.31 26.39,121.75 27.18,121.2 Z M 27.18,121.2"/>                <path id="crocodile1-bezier12" stroke="none" fill="rgb(76, 113, 59)" d="M 82.85,176.04 C 54.59,177.16 31.01,179.86 29.57,179.62 29.45,179.6 29.34,179.47 29.23,179.24 26.37,182.72 23.8,186.43 21.44,190.3 L 38.06,190.3 C 40.48,186.13 43.2,182.13 46.18,178.34 46.95,178.28 47.74,178.21 48.54,178.15 45.46,181.99 42.65,186.05 40.17,190.3 L 58.35,190.3 C 60.44,185.68 63.11,181.29 65.77,176.92 66.49,176.87 67.21,176.83 67.94,176.78 65.24,181.2 62.52,185.63 60.38,190.3 L 75.85,190.3 C 77.41,185.54 79.08,180.82 80.84,176.12 81.51,176.09 82.17,176.07 82.85,176.04 Z M 82.85,176.04"/>                <path id="crocodile1-bezier13" stroke="none" fill="rgb(76, 113, 59)" d="M 27.59,160.11 C 27.59,160.18 27.59,160.25 27.59,160.32 25.75,162.38 23.95,164.47 22.21,166.61 L 22.39,163.68 C 24.05,161.7 25.77,159.76 27.52,157.84 27.53,158.2 27.54,158.54 27.55,158.89 27.25,148.27 27.16,134.93 27.17,122.17 27.17,122.5 27.17,122.83 27.17,123.16 26.34,123.76 25.52,124.39 24.72,125.04 L 23.74,141.33 C 24.87,140.31 26.03,139.32 27.22,138.38 27.22,139.07 27.23,139.76 27.24,140.44 25.99,141.49 24.78,142.58 23.59,143.7 L 20.93,187.72 C 23.3,184.03 25.88,180.51 28.71,177.19 28.18,173.99 27.82,167.85 27.59,160.11 Z M 27.59,160.11"/>                <path id="crocodile1-bezier14" stroke="none" fill="rgb(76, 113, 59)" d="M 120.12,175.83 C 107.76,175.38 94.91,175.56 82.89,176.04 81.12,180.76 79.43,185.51 77.86,190.3 L 95.38,190.3 C 96.09,185.37 96.95,180.48 98.02,175.62 98.69,175.61 99.35,175.61 100.02,175.6 98.95,180.46 98.09,185.36 97.38,190.3 L 117.44,190.3 C 117.72,185.45 118.31,180.62 118.88,175.78 119.3,175.8 119.71,175.81 120.12,175.83 Z M 120.12,175.83"/>                <path id="crocodile1-bezier15" stroke="none" fill="rgb(33, 53, 32)" d="M 82.89,176.04 C 82.88,176.04 82.86,176.04 82.85,176.04 82.18,176.07 81.51,176.09 80.84,176.12 79.08,180.82 77.41,185.54 75.85,190.3 L 77.86,190.3 C 79.43,185.51 81.12,180.76 82.89,176.04 L 82.89,176.04 Z M 82.89,176.04"/>                <path id="crocodile1-bezier16" stroke="none" fill="rgb(33, 53, 32)" d="M 27.21,110.5 C 27.21,110.22 27.21,109.94 27.21,109.66 27.22,109.31 27.22,108.96 27.22,108.61 26.69,108.94 26.17,109.28 25.65,109.62 L 25.65,109.62 25.53,111.61 25.53,111.61 C 26.09,111.23 26.65,110.86 27.21,110.5 L 27.21,110.5 Z M 27.21,110.5"/>                <path id="crocodile1-bezier17" stroke="none" fill="rgb(33, 53, 32)" d="M 120.89,175.85 C 120.63,175.84 120.38,175.83 120.12,175.83 119.71,175.81 119.3,175.8 118.89,175.78 118.31,180.61 117.72,185.44 117.44,190.3 L 119.45,190.3 C 119.73,185.47 120.31,180.66 120.89,175.85 L 120.89,175.85 Z M 120.89,175.85"/>                <path id="crocodile1-bezier18" stroke="none" fill="rgb(33, 53, 32)" d="M 29.23,179.24 C 29.04,178.84 28.87,178.15 28.71,177.19 L 28.71,177.19 C 25.88,180.51 23.3,184.03 20.93,187.72 20.93,187.72 20.93,187.72 20.93,187.72 L 20.77,190.3 21.44,190.3 C 23.8,186.43 26.37,182.72 29.23,179.24 29.23,179.24 29.23,179.24 29.23,179.24 Z M 29.23,179.24"/>                <path id="crocodile1-bezier19" stroke="none" fill="rgb(33, 53, 32)" d="M 46.19,178.34 C 43.2,182.13 40.48,186.13 38.06,190.3 L 40.17,190.3 C 42.65,186.05 45.46,181.99 48.54,178.15 47.73,178.21 46.95,178.27 46.19,178.34 Z M 46.19,178.34"/>                <path id="crocodile1-bezier20" stroke="none" fill="rgb(33, 53, 32)" d="M 98.02,175.62 C 96.95,180.48 96.09,185.37 95.38,190.3 L 97.38,190.3 C 98.09,185.36 98.95,180.46 100.02,175.6 99.35,175.6 98.69,175.61 98.02,175.62 Z M 98.02,175.62"/>                <path id="crocodile1-bezier21" stroke="none" fill="rgb(33, 53, 32)" d="M 65.77,176.91 C 63.11,181.29 60.44,185.68 58.35,190.3 L 60.38,190.3 C 62.52,185.63 65.24,181.2 67.94,176.78 67.21,176.83 66.49,176.87 65.77,176.91 Z M 65.77,176.91"/>                <path id="crocodile1-bezier22" stroke="none" fill="rgb(33, 53, 32)" d="M 133.75,176.62 C 133.93,181.17 134.36,185.74 134.76,190.3 L 136.78,190.3 C 136.39,185.8 135.96,181.29 135.77,176.79 135.1,176.73 134.42,176.67 133.75,176.62 Z M 133.75,176.62"/>                <path id="crocodile1-bezier23" stroke="none" fill="rgb(33, 53, 32)" d="M 153.01,179.16 C 152.79,182.87 152.6,186.59 152.54,190.3 L 154.54,190.3 C 154.59,186.72 154.77,183.14 154.98,179.56 154.34,179.42 153.68,179.29 153.01,179.16 Z M 153.01,179.16"/>                <path id="crocodile1-bezier24" stroke="none" fill="rgb(33, 53, 32)" d="M 27.22,138.38 C 26.03,139.32 24.87,140.31 23.74,141.34 L 23.74,141.34 23.59,143.7 C 23.59,143.7 23.59,143.7 23.59,143.7 24.78,142.58 25.99,141.49 27.24,140.44 27.23,139.76 27.23,139.07 27.22,138.38 Z M 27.22,138.38"/>                <path id="crocodile1-bezier25" stroke="none" fill="rgb(33, 53, 32)" d="M 27.17,122.18 C 27.17,121.95 27.17,121.73 27.17,121.51 27.18,121.41 27.18,121.31 27.18,121.2 26.39,121.75 25.61,122.31 24.85,122.89 L 24.76,124.38 24.72,125.04 24.72,125.04 C 25.52,124.39 26.34,123.77 27.17,123.16 27.17,122.83 27.17,122.5 27.17,122.18 Z M 27.17,122.18"/>                <path id="crocodile1-bezier26" stroke="none" fill="rgb(33, 53, 32)" d="M 22.39,163.68 L 22.21,166.61 C 23.95,164.47 25.75,162.38 27.59,160.32 27.59,160.25 27.59,160.18 27.59,160.11 27.58,159.71 27.56,159.3 27.55,158.89 27.54,158.54 27.53,158.2 27.52,157.85 25.77,159.76 24.05,161.7 22.39,163.68 Z M 22.39,163.68"/>                <ellipse id="crocodile1-oval" stroke="none" fill="rgb(33, 53, 32)" cx="0" cy="-0" rx="4.25" ry="2.35" transform="translate(132.25, 157.69) rotate(-3.15)"/>                <ellipse id="crocodile1-oval2" stroke="none" fill="rgb(33, 53, 32)" cx="0" cy="-0" rx="4.7" ry="2.2" transform="translate(124.95, 148.79) rotate(-3.15)"/>                <ellipse id="crocodile1-oval3" stroke="none" fill="rgb(33, 53, 32)" cx="0" cy="-0" rx="3.5" ry="1.25" transform="translate(138.85, 148.24) rotate(-3.15)"/>                <ellipse id="crocodile1-oval4" stroke="none" fill="rgb(33, 53, 32)" cx="0" cy="-0" rx="5.6" ry="2.7" transform="translate(63.85, 155.99) rotate(-3.15)"/>                <ellipse id="crocodile1-oval5" stroke="none" fill="rgb(33, 53, 32)" cx="0" cy="-0" rx="4.85" ry="2.9" transform="translate(74.4, 162.84) rotate(-3.15)"/>                <ellipse id="crocodile1-oval6" stroke="none" fill="rgb(33, 53, 32)" cx="0" cy="-0" rx="4.25" ry="2" transform="translate(79.9, 152.89) rotate(-3.15)"/>            </g>            <g id="crocodile1-group4">                <path id="crocodile1-bezier27" stroke="none" fill="rgb(39, 50, 20)" d="M 291.46,190.17 L 191.43,190.17 191.43,169.34 290.98,170.02 291.46,190.17 Z M 291.46,190.17"/>                <g id="crocodile1-group5">                    <path id="crocodile1-bezier28" stroke="none" fill="rgb(255, 255, 255)" d="M 194.17,174.47 C 194.51,176.03 195.33,177.4 197.18,177.33 198.99,177.26 199.96,175.88 200.49,174.34 200.81,175.96 201.62,177.4 203.52,177.33 205.33,177.26 206.3,175.88 206.83,174.34 207.15,175.96 207.96,177.4 209.86,177.33 211.67,177.26 212.64,175.88 213.16,174.34 213.49,175.96 214.3,177.4 216.19,177.33 218.01,177.26 218.98,175.88 219.5,174.34 219.83,175.96 220.64,177.4 222.53,177.33 224.35,177.26 225.32,175.88 225.84,174.34 226.17,175.96 226.98,177.4 228.87,177.33 230.68,177.26 231.66,175.88 232.18,174.34 232.5,175.96 233.32,177.4 235.21,177.33 237.03,177.26 238,175.88 238.52,174.34 238.84,175.96 239.66,177.4 241.55,177.33 243.36,177.26 244.33,175.88 244.86,174.34 245.18,175.96 246,177.4 247.89,177.33 249.7,177.26 250.67,175.88 251.2,174.34 251.52,175.96 252.33,177.4 254.23,177.33 256.04,177.26 257.01,175.88 257.54,174.34 257.86,175.96 258.67,177.4 260.57,177.33 262.38,177.26 263.35,175.88 263.88,174.34 264.2,175.96 265.01,177.4 266.91,177.33 268.72,177.26 269.69,175.88 270.21,174.34 270.54,175.96 271.35,177.4 273.24,177.33 275.06,177.26 276.03,175.88 276.55,174.34 276.88,175.96 277.69,177.4 279.58,177.33 281.4,177.26 282.37,175.88 282.89,174.34 283.22,175.96 284.03,177.4 285.92,177.33 287.99,177.25 288.96,175.48 289.42,173.7 L 194.57,171.59 194.17,174.47 Z M 194.17,174.47"/>                    <path id="crocodile1-bezier29" stroke="none" fill="rgb(255, 255, 255)" d="M 290.89,187.91 C 290.88,185.74 290.38,182.67 287.54,182.72 285.66,182.75 284.66,184.11 284.12,185.64 283.78,184.01 282.94,182.55 280.97,182.59 279.1,182.62 278.09,183.97 277.55,185.5 277.21,183.88 276.37,182.42 274.4,182.45 272.52,182.49 271.52,183.84 270.97,185.37 270.64,183.75 269.79,182.28 267.83,182.32 265.95,182.35 264.94,183.7 264.4,185.23 264.07,183.61 263.22,182.15 261.26,182.19 259.38,182.22 258.37,183.57 257.83,185.1 257.49,183.48 256.65,182.02 254.69,182.05 252.81,182.09 251.8,183.44 251.26,184.97 250.92,183.35 250.08,181.88 248.12,181.92 246.24,181.95 245.23,183.3 244.69,184.83 244.35,183.21 243.51,181.75 241.54,181.78 239.67,181.82 238.66,183.17 238.12,184.7 237.78,183.08 236.94,181.62 234.97,181.65 233.09,181.69 232.09,183.04 231.54,184.57 231.21,182.94 230.36,181.48 228.4,181.52 226.52,181.55 225.51,182.9 224.97,184.43 224.64,182.81 223.79,181.35 221.83,181.38 219.95,181.42 218.94,182.77 218.4,184.3 218.06,182.68 217.22,181.22 215.26,181.25 213.38,181.29 212.37,182.64 211.83,184.17 211.49,182.54 210.65,181.08 208.68,181.12 206.81,181.15 205.8,182.5 205.26,184.03 204.92,182.41 204.08,180.95 202.11,180.98 200.23,181.02 199.23,182.37 198.68,183.9 198.35,182.28 197.51,180.82 195.54,180.85 194.48,180.87 193.7,181.31 193.12,181.97 L 192.63,185.47 290.89,187.91 Z M 290.89,187.91"/>                    <path id="crocodile1-bezier30" stroke="none" fill="rgb(76, 113, 59)" d="M 291.6,187.92 L 290.89,187.91 192.64,185.47 193.13,181.97 194.17,174.47 194.57,171.59 289.42,173.7 291.41,173.74 291.32,169.06 226.44,159.09 224.59,140.16 C 221.54,138.63 218.12,137.55 214.53,136.81 211.82,133.47 207.52,130.64 200.74,130.64 195.15,130.64 191.44,132.98 188.99,135.96 177.91,136.98 169.33,139.15 169.33,139.15 160.29,176.64 162.02,193.12 171.93,193.61 L 291.72,193.61 291.6,187.92 Z M 291.6,187.92"/>                </g>                <ellipse id="crocodile1-oval7" stroke="none" fill="rgb(33, 53, 32)" cx="196.42" cy="144.8" rx="2.3" ry="4.44"/>                <ellipse id="crocodile1-oval8" stroke="none" fill="rgb(33, 53, 32)" cx="209.19" cy="144.39" rx="2.3" ry="4.44"/>                <path id="crocodile1-bezier31" stroke="none" fill="rgb(33, 53, 32)" d="M 181.09,134.38 C 181.09,134.38 205.82,138.88 222.4,134.38 222.4,134.38 205.54,145.34 181.09,134.38 Z M 181.09,134.38"/>                <path id="crocodile1-bezier32" stroke="none" fill="rgb(33, 53, 32)" d="M 239.38,167.04 C 239.38,167.04 242.13,164.11 246.34,162.15 L 240.92,161.32 C 240.12,162.42 239.47,164.19 239.38,167.04 Z M 257.38,163.85 C 256.39,164.88 255.5,166.74 255.4,170.1 255.4,170.1 258.6,166.68 263.39,164.77 L 257.38,163.85 Z M 226.43,165.62 C 226.43,165.62 229.6,162.23 234.36,160.31 L 228.39,159.39 C 227.4,160.43 226.52,162.29 226.43,165.62 Z M 226.43,165.62"/>                <path id="crocodile1-bezier33" stroke="none" fill="rgb(76, 113, 59)" d="M 277.14,169.94 C 277.14,169.94 288.9,149.75 291.25,171.83 L 277.14,169.94 Z M 277.14,169.94"/>                <ellipse id="crocodile1-oval9" stroke="none" fill="rgb(33, 53, 32)" cx="284.29" cy="168.16" rx="1.17" ry="2.78"/>                <ellipse id="crocodile1-oval10" stroke="none" fill="rgb(33, 53, 32)" cx="288.39" cy="168.16" rx="1.17" ry="2.78"/>            </g>            <path id="crocodile1-bezier34" stroke="none" fill="rgb(47, 73, 41)" d="M 34.44,175.28 C 34.44,175.28 10.9,222.56 54.87,223.33 L 50.73,220.23 57.72,220.49 53.84,217.38 61.6,216.35 46.08,210.14 C 46.08,210.14 48.4,188.21 54.61,174.25 L 34.44,175.28 Z M 34.44,175.28"/>            <path id="crocodile1-bezier35" stroke="none" fill="rgb(47, 73, 41)" d="M 136.54,171.56 C 136.54,171.56 110.74,224.88 154.7,225.66 L 150.56,222.56 157.55,222.81 153.67,219.71 161.43,218.68 145.91,212.47 C 145.91,212.47 150.6,186.13 156.8,172.16 L 136.54,171.56 Z M 136.54,171.56"/>        </g>    </g>    <g id="crocodile1-frame2">    </g>    <g id="crocodile1-frame3">    </g>    <g id="crocodile1-frame4">    </g></svg>

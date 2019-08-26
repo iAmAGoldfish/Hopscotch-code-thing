@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="450" width="450" id="SnowGlobe0.svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs><g id="Layer_1">	<g>		<polygon fill="#4A3F6F" points="223.3,288.5 76.7,288.5 86.9,210.5 213.1,210.5 &#9;&#9;"/>		<circle fill="#22D4C2" cx="149.7" cy="260.6" r="19.7"/>		<path fill="#786AA8" d="M173.4,222c4.7,10.9,6.3,22.8,4.6,34.6l1.3,0.2c1.7-12,0.1-24.2-4.7-35.3L173.4,222z M200.8,210.5&#9;&#9;&#9;c4.4,14.7,6.1,30.5,4.9,45.8l1.3,0.1c1.2-15.3-0.5-31.1-4.8-45.9H200.8z M195.3,219.3c2.9,9,3.7,18.6,2.2,27.9l1.3,0.2&#9;&#9;&#9;c1.5-9.5,0.7-19.4-2.3-28.6L195.3,219.3z M117.8,232.8l-1.3-0.2l-1.5,8.6l1.3,0.2L117.8,232.8z M122.9,229.6l-1.3-0.2&#9;&#9;&#9;c-2,12.2-2.4,24.7-0.9,37l1.3-0.2C120.6,254,120.9,241.7,122.9,229.6z M210.2,212.2l-1.3,0.3c1.5,7.5,2.4,15.2,2.7,22.8l1.3-0.1&#9;&#9;&#9;C212.6,227.5,211.7,219.7,210.2,212.2z M177.9,264.2c0.6,5.7-1.3,11.4-3.1,16.9c-0.8,2.4-1.6,4.9-2.2,7.4h1.4&#9;&#9;&#9;c0.6-2.3,1.4-4.7,2.1-7c1.9-5.6,3.8-11.5,3.2-17.5L177.9,264.2z M84.8,270.9c-0.8,5.8-0.9,11.7-0.5,17.6h1.3&#9;&#9;&#9;c-0.4-5.8-0.3-11.6,0.5-17.4L84.8,270.9z M92.2,210.5h-1.4c2.7,9.3,1.2,19.4-0.5,27.3c-0.5,2.2-1,4.5-1.5,6.7&#9;&#9;&#9;c-1.7,7.3-3.5,14.9-3.6,22.5l1.3,0c0.1-7.5,1.8-15,3.5-22.2c0.5-2.3,1.1-4.5,1.5-6.8C93.3,230.1,94.8,219.9,92.2,210.5z&#9;&#9;&#9; M205.9,262c-0.8,8.8-1,17.6-0.6,26.5h1.3c-0.4-8.8-0.2-17.6,0.6-26.4L205.9,262z M187.6,222.7c2.7,21.9,2.3,44-1.3,65.8h1.4&#9;&#9;&#9;c3.6-21.8,4-44,1.3-65.9L187.6,222.7z M195.4,288.5h1.3l0.8-33.6l-1.3,0L195.4,288.5z M219.7,272.7l-1.3,0&#9;&#9;&#9;c-0.2,5.3,0.1,10.5,0.9,15.8h1.4C219.8,283.3,219.5,278,219.7,272.7z M212,244.7c2.5,9.4,1.6,19.4,0.8,29.1&#9;&#9;&#9;c-0.1,1.2-0.2,2.5-0.3,3.7c-0.3,3.6-0.5,7.3-0.5,10.9h1.3c0-3.6,0.2-7.2,0.5-10.8c0.1-1.2,0.2-2.5,0.3-3.7&#9;&#9;&#9;c0.8-9.8,1.7-19.9-0.8-29.5L212,244.7z M98.5,224.5c0.4,9.3-1.5,18.7-3.3,27.8c-0.6,3-1.2,6.2-1.8,9.3c-1.3,7.4-2.5,17.3-0.6,26.9&#9;&#9;&#9;h1.4c-1.9-9.5-0.7-19.4,0.6-26.7c0.5-3.1,1.2-6.2,1.8-9.2c1.8-9.2,3.7-18.6,3.3-28.1L98.5,224.5z M103.8,258.3&#9;&#9;&#9;c-1.8,10-2,20.2-0.5,30.1h1.4c-1.4-9.9-1.3-20,0.5-29.9L103.8,258.3z M105.8,214.6c1.3,9.9,0.8,19.7-1.5,29.4l1.3,0.3&#9;&#9;&#9;c2.3-9.8,2.8-19.9,1.5-29.9L105.8,214.6z M122.4,274.6c0.6,4.7,1.6,9.3,3,13.8h1.4c-1.4-4.6-2.5-9.2-3.1-14L122.4,274.6z&#9;&#9;&#9; M115.9,251.4l-1.3-0.1c-1.1,12.5,0,25.1,3.1,37.2h1.4C115.9,276.4,114.8,263.8,115.9,251.4z"/>		<path fill="#FFFFFF" d="M129.5,170.6c-26.9,4-51.1-13.4-78-12.1c-1.2,0-2.3,0-3.5,0.1c15.1,41.7,55,71.5,101.9,71.5&#9;&#9;&#9;c46.9,0,86.8-29.8,101.8-71.4c-12.8-1.3-25.7-3.4-39-6.9C184.7,143.7,159.1,167.9,129.5,170.6z"/>		<path fill="#FFFFFF" d="M150,4.8C85.4,4.8,33.1,57.2,33.1,121.8S85.4,238.7,150,238.7s116.9-52.4,116.9-116.9S214.6,4.8,150,4.8z&#9;&#9;&#9; M212.9,151.8c-28.2-8.1-53.8,16.1-83.3,18.8c-26.9,4-51.1-13.4-78-12.1c-1.2,0-2.3,0-3.5,0.1c-4.1-11.5-6.4-23.9-6.4-36.8&#9;&#9;&#9;C41.7,62,90.2,13.5,150,13.5S258.3,62,258.3,121.8c0,13-2.3,25.4-6.5,36.9C239.1,157.4,226.1,155.2,212.9,151.8z"/>		<path fill="#FF4F56" d="M225.3,295.2H74.7c-3.3,0-6-2.7-6-6v0c0-3.3,2.7-6,6-6h150.6c3.3,0,6,2.7,6,6v0&#9;&#9;&#9;C231.3,292.5,228.6,295.2,225.3,295.2z"/>		<path fill="#FFFFFF" d="M162.3,261.4l-6.3,1.9l-4.5-2.7l4.9-2.7l5.8,1.6c0.1,0,0.1,0,0.2,0c0.4,0,0.7-0.2,0.8-0.6&#9;&#9;&#9;c0.1-0.4-0.1-0.9-0.6-1l-4.2-1.2l4.5-2.5c0.4-0.2,0.5-0.7,0.3-1.1c-0.2-0.4-0.7-0.5-1.1-0.3l-4.8,2.7l1.1-5c0.1-0.4-0.2-0.9-0.6-1&#9;&#9;&#9;c-0.4-0.1-0.9,0.2-1,0.6l-1.5,6.4l-4.4,2.5v-5.5l4.2-4.3c0.3-0.3,0.3-0.8,0-1.1c-0.3-0.3-0.8-0.3-1.1,0l-3.1,3.1V246&#9;&#9;&#9;c0-0.4-0.4-0.8-0.8-0.8s-0.8,0.4-0.8,0.8v5.4l-3.8-3.4c-0.3-0.3-0.8-0.3-1.1,0.1c-0.3,0.3-0.3,0.8,0.1,1.1l4.8,4.4v5.6l-5.2-3.2&#9;&#9;&#9;l-1.2-6.1c-0.1-0.4-0.5-0.7-0.9-0.6c-0.4,0.1-0.7,0.5-0.6,0.9l0.9,4.6l-4.1-2.5c-0.4-0.2-0.9-0.1-1.1,0.3&#9;&#9;&#9;c-0.2,0.4-0.1,0.9,0.3,1.1l4.2,2.5l-4.6,1.2c-0.4,0.1-0.7,0.5-0.6,1c0.1,0.4,0.4,0.6,0.8,0.6c0.1,0,0.1,0,0.2,0l6.1-1.6l4.8,2.9&#9;&#9;&#9;l-4.9,2.7l-5.9-2c-0.4-0.1-0.9,0.1-1,0.5c-0.1,0.4,0.1,0.9,0.5,1l4.5,1.5l-4.2,2.3c-0.4,0.2-0.5,0.7-0.3,1.1&#9;&#9;&#9;c0.1,0.3,0.4,0.4,0.7,0.4c0.1,0,0.3,0,0.4-0.1l4.3-2.4l-1.2,4.5c-0.1,0.4,0.1,0.9,0.6,1c0.1,0,0.1,0,0.2,0c0.4,0,0.7-0.2,0.8-0.6&#9;&#9;&#9;l1.6-6.1l5-2.8v5.8l-4.6,4.1c-0.3,0.3-0.4,0.8-0.1,1.1c0.2,0.2,0.4,0.3,0.6,0.3c0.2,0,0.4-0.1,0.5-0.2l3.5-3.2v4.8&#9;&#9;&#9;c0,0.4,0.4,0.8,0.8,0.8s0.8-0.4,0.8-0.8v-4.9l3.4,3.3c0.3,0.3,0.8,0.3,1.1,0c0.3-0.3,0.3-0.8,0-1.1l-4.5-4.4v-5.1l4.3,2.6l1.5,5.8&#9;&#9;&#9;c0.1,0.4,0.4,0.6,0.8,0.6c0.1,0,0.1,0,0.2,0c0.4-0.1,0.7-0.5,0.6-1l-1.1-4.3l4.4,2.7c0.1,0.1,0.3,0.1,0.4,0.1&#9;&#9;&#9;c0.3,0,0.5-0.1,0.7-0.4c0.2-0.4,0.1-0.9-0.3-1.1l-4.7-2.8l4.9-1.4c0.4-0.1,0.7-0.6,0.5-1C163.2,261.5,162.8,261.3,162.3,261.4z"/>		<g>			<circle fill="#22D4C2" cx="86.7" cy="289" r="3"/>			<circle fill="#22D4C2" cx="112" cy="289" r="3"/>			<circle fill="#22D4C2" cx="137.3" cy="289" r="3"/>			<circle fill="#22D4C2" cx="162.7" cy="289" r="3"/>			<circle fill="#22D4C2" cx="188" cy="289" r="3"/>			<circle fill="#22D4C2" cx="213.3" cy="289" r="3"/>		</g>		<path fill="#FFFFFF" d="M202,37.2c0,0,26.5,8.1,37.7,47.9"/>		<path fill="#FFFFFF" d="M246.8,108.5c0,0,6.6,5.6,2.5,30.6"/>		<g>			<path fill="#22D4C2" d="M104.2,169c5.9-0.1,11.9,0.6,17.7,2.1c2.9,0.7,5.7,1.7,8.5,2.6c2.8,1,5.5,2,8.3,3.1&#9;&#9;&#9;&#9;c2.7,1.1,5.5,2.1,8.2,3c2.7,1,5.5,1.8,8.3,2.5c5.6,1.4,11.4,2.1,17.3,1.6c-5.7,1.8-11.9,1.8-17.8,0.8c-3-0.4-5.9-1.2-8.7-2&#9;&#9;&#9;&#9;c-2.9-0.9-5.7-1.9-8.4-2.9l-8.2-3.2c-2.7-1.1-5.5-2.1-8.2-3C115.7,171.6,110,170.2,104.2,169z"/>		</g>		<g>			<path fill="#22D4C2" d="M181.3,180.8c0.8-0.8,1.7-1.3,2.6-1.7c0.9-0.4,1.7-0.7,2.6-0.9c0.9-0.2,1.8-0.4,2.8-0.4c1,0,2,0,3.1,0.3&#9;&#9;&#9;&#9;c-0.7,0.9-1.5,1.6-2.4,2.1c-0.9,0.5-1.8,0.9-2.7,1.1c-0.9,0.2-1.9,0.3-2.9,0.3C183.3,181.5,182.3,181.3,181.3,180.8z"/>		</g>		<g>			<path fill="#22D4C2" d="M201.2,164.9c1.6-1.7,3.5-2.9,5.6-4c2.1-1,4.3-1.8,6.5-2.2c2.3-0.5,4.6-0.7,6.9-0.5&#9;&#9;&#9;&#9;c2.3,0.1,4.6,0.5,6.7,1.4c-2.3,0.4-4.4,0.7-6.6,1.1c-2.1,0.3-4.2,0.7-6.3,1.2c-2.1,0.4-4.2,0.9-6.3,1.5&#9;&#9;&#9;&#9;C205.5,163.8,203.4,164.4,201.2,164.9z"/>		</g>		<g>			<path fill="#22D4C2" d="M65,175.5c3.1,0.3,6.1,1.2,8.9,2.4c2.9,1.2,5.6,2.8,8.2,4.5c2.6,1.7,5.1,3.5,7.5,5.3&#9;&#9;&#9;&#9;c2.4,1.8,4.8,3.7,7.3,5.3c2.5,1.7,5,3.3,7.6,4.8c2.6,1.5,5.3,2.9,8,4.2c5.4,2.6,11.1,4.8,16.9,6.8c-6.1-0.7-12.1-2.2-17.9-4.5&#9;&#9;&#9;&#9;c-2.9-1.1-5.7-2.4-8.4-3.9c-2.7-1.5-5.4-3.1-8-4.8c-2.5-1.8-5-3.7-7.4-5.6c-2.4-1.9-4.7-3.8-7.1-5.7&#9;&#9;&#9;&#9;C75.9,180.8,70.9,177.5,65,175.5z"/>		</g>		<g>			<path fill="#22D4C2" d="M161.7,209.9c0.8-0.7,1.5-1.1,2.3-1.4c0.8-0.3,1.6-0.5,2.4-0.5c0.8-0.1,1.6,0,2.5,0.1&#9;&#9;&#9;&#9;c0.8,0.2,1.7,0.5,2.5,1c-0.8,0.7-1.5,1.1-2.3,1.4c-0.8,0.3-1.6,0.5-2.4,0.5c-0.8,0.1-1.6,0-2.5-0.1&#9;&#9;&#9;&#9;C163.4,210.8,162.6,210.5,161.7,209.9z"/>		</g>		<g>			<path fill="#22D4C2" d="M186.7,197.7c2.4-2.5,5.3-4.6,8.3-6.3c3-1.8,6.3-3.2,9.6-4.2c3.3-1.1,6.8-1.8,10.3-2.1&#9;&#9;&#9;&#9;c3.5-0.3,7-0.3,10.4,0.4c-3.4,0.7-6.7,1.3-10,2c-3.3,0.8-6.5,1.6-9.7,2.6c-3.2,1-6.3,2.2-9.5,3.4&#9;&#9;&#9;&#9;C193,194.9,189.9,196.3,186.7,197.7z"/>		</g>	</g></g><g id="snow">	<g>		<g>			<circle fill="#FFFFFF" cx="189.5" cy="129.4" r="2.3"/>			<circle fill="#FFFFFF" cx="62.6" cy="100" r="4.9"/>			<circle fill="#FFFFFF" cx="64.9" cy="131.1" r="3.3"/>			<circle fill="#FFFFFF" cx="66.2" cy="72.2" r="3.3"/>			<circle fill="#FFFFFF" cx="81.5" cy="85.6" r="3.6"/>			<circle fill="#FFFFFF" cx="117.9" cy="92.5" r="2.6"/>			<circle fill="#FFFFFF" cx="90.4" cy="46.7" r="3.9"/>			<circle fill="#FFFFFF" cx="112.3" cy="62.7" r="2.3"/>			<circle fill="#FFFFFF" cx="112.3" cy="28" r="3.6"/>			<circle fill="#FFFFFF" cx="150.3" cy="11.7" r="2.9"/>			<circle fill="#FFFFFF" cx="184" cy="29" r="2.6"/>			<circle fill="#FFFFFF" cx="199.4" cy="52.2" r="3.6"/>			<circle fill="#FFFFFF" cx="219.7" cy="78.4" r="4.9"/>			<circle fill="#FFFFFF" cx="217.7" cy="104" r="3.6"/>			<circle fill="#FFFFFF" cx="236.7" cy="111.8" r="2.3"/>			<circle fill="#FFFFFF" cx="228.5" cy="129.8" r="3.3"/>			<circle fill="#FFFFFF" cx="203.3" cy="130.1" r="2.9"/>			<circle fill="#FFFFFF" cx="142.8" cy="141.6" r="3.9"/>			<circle fill="#FFFFFF" cx="140.5" cy="112.5" r="2.9"/>			<circle fill="#FFFFFF" cx="170.3" cy="101" r="3.3"/>			<circle fill="#FFFFFF" cx="141.5" cy="41.6" r="3.3"/>			<circle fill="#FFFFFF" cx="152.2" cy="94.1" r="3.6"/>			<circle fill="#FFFFFF" cx="165.7" cy="128.1" r="3.6"/>			<circle fill="#FFFFFF" cx="111.3" cy="140.9" r="2.6"/>			<circle fill="#FFFFFF" cx="89.4" cy="118.4" r="3.6"/>			<circle fill="#FFFFFF" cx="93" cy="139" r="2.6"/>			<circle fill="#FFFFFF" cx="103.1" cy="95.4" r="2.9"/>			<circle fill="#FFFFFF" cx="154.2" cy="66.6" r="2.9"/>			<circle fill="#FFFFFF" cx="188.9" cy="68" r="2.9"/>			<circle fill="#FFFFFF" cx="185.3" cy="85.3" r="3.9"/>			<circle fill="#FFFFFF" cx="200.4" cy="106.3" r="2.6"/>		</g>	</g></g></svg>

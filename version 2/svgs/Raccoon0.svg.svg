@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Raccoon0.svg" width="172.5" height="172.5" version="1.1" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs><path fill="rgb(75, 191, 176)" d=" M 122.600000 53.900000 C 120.900000 53.900000 118.400000 52.400000 116.100000 51.800000 C 113.500000 51.100000 110.700000 51.800000 108.000000 51.300000 C 98.700000 49.600000 98.000000 38.900000 107.600000 37.100000 C 110.500000 36.600000 113.700000 37.200000 116.200000 38.700000 C 119.500000 40.700000 123.300000 45.200000 124.000000 49.100000 C 124.800000 52.800000 124.100000 53.900000 122.600000 53.900000 Z"/><path d=" M 110.000000 47.300000 C 109.800000 45.900000 110.700000 44.600000 112.000000 44.000000 C 113.200000 43.400000 114.700000 43.600000 116.000000 44.200000 C 117.200000 44.800000 118.200000 45.800000 119.100000 46.900000 C 120.100000 48.200000 120.900000 49.600000 121.600000 51.100000 C 121.900000 51.700000 122.300000 52.300000 122.600000 52.900000"/><path fill="rgb(138, 31, 24)" d=" M 174.500000 268.200000 C 174.500000 268.200000 170.600000 252.200000 168.900000 245.000000 C 165.900000 244.400000 162.800000 244.500000 159.900000 245.500000 C 162.100000 254.900000 166.600000 273.800000 166.600000 273.800000 L 179.400000 271.000000 L 174.500000 268.200000 Z"/><path fill="rgb(75, 191, 176)" d=" M 188.200000 57.300000 C 189.200000 56.700000 190.100000 56.100000 190.800000 56.100000 C 192.600000 56.000000 194.400000 56.400000 196.200000 56.100000 C 197.900000 55.800000 199.400000 54.800000 200.600000 53.600000 C 202.100000 52.200000 203.300000 50.400000 203.600000 48.400000 C 204.000000 46.400000 203.400000 44.100000 201.900000 42.800000 C 195.500000 37.300000 182.300000 48.400000 182.300000 55.200000 C 182.200000 61.400000 185.500000 59.000000 188.200000 57.300000 Z"/><path d=" M 185.700000 54.000000 C 187.400000 51.300000 190.200000 49.200000 193.400000 48.400000 C 194.100000 48.200000 194.900000 48.100000 195.500000 48.400000 C 196.300000 48.700000 196.700000 49.700000 196.500000 50.500000"/><path fill="rgb(138, 31, 24)" d=" M 112.900000 270.900000 C 112.900000 270.900000 113.500000 254.500000 113.900000 247.000000 C 111.200000 245.600000 108.100000 244.900000 105.100000 245.000000 C 104.700000 254.700000 103.800000 274.000000 103.800000 274.000000 L 117.600000 274.600000 L 112.900000 270.900000 Z"/><path fill="rgb(138, 31, 24)" d=" M 186.100000 158.900000 C 190.800000 167.600000 198.300000 178.700000 209.000000 180.000000 C 213.700000 180.600000 218.500000 179.300000 222.300000 176.500000 C 231.700000 169.400000 233.600000 156.800000 232.000000 145.700000 C 232.000000 145.400000 232.300000 145.300000 232.500000 145.400000 C 233.400000 146.300000 233.800000 147.600000 234.800000 148.500000 C 234.900000 148.600000 235.200000 148.600000 235.200000 148.400000 C 236.200000 146.500000 236.900000 144.400000 237.500000 142.300000 C 237.600000 142.000000 238.100000 142.000000 238.100000 142.400000 C 238.200000 143.700000 238.200000 144.900000 238.300000 146.200000 C 238.300000 146.500000 238.700000 146.600000 238.800000 146.300000 C 239.400000 145.300000 240.100000 144.300000 240.800000 143.400000 C 241.000000 143.100000 241.400000 143.300000 241.300000 143.700000 C 240.800000 145.300000 240.400000 147.000000 240.100000 148.700000 C 240.000000 149.000000 240.400000 149.200000 240.600000 149.000000 C 241.200000 148.400000 241.800000 147.700000 242.200000 147.000000 C 242.400000 146.700000 242.800000 146.900000 242.700000 147.200000 C 241.500000 152.200000 240.400000 157.300000 238.600000 162.100000 C 236.900000 166.800000 234.800000 171.400000 231.900000 175.500000 C 226.200000 183.700000 217.500000 188.600000 207.300000 186.700000 C 200.200000 185.400000 194.100000 180.400000 189.400000 175.200000 C 186.600000 172.100000 184.200000 168.600000 181.900000 165.100000 C 180.200000 162.500000 177.200000 159.300000 176.800000 156.300000 L 176.800000 156.200000 C 177.500000 154.200000 177.700000 152.400000 178.100000 150.300000 C 178.200000 150.000000 178.800000 145.800000 179.500000 147.100000 C 182.300000 150.700000 183.900000 155.000000 186.100000 158.900000 Z"/><path fill="rgb(72, 21, 18)" d=" M 197.300000 174.200000 C 196.300000 176.100000 195.300000 177.900000 194.200000 179.800000 C 197.700000 182.800000 201.800000 185.300000 206.200000 186.400000 C 206.800000 184.200000 207.400000 182.100000 208.100000 179.900000 C 204.100000 179.200000 200.400000 177.000000 197.300000 174.200000 Z"/><path fill="rgb(211, 47, 59)" d=" M 90.900000 225.600000 C 62.200000 222.400000 40.100000 200.400000 33.100000 173.100000 C 31.100000 165.500000 30.600000 157.500000 31.700000 149.700000 C 32.600000 143.300000 34.800000 136.700000 39.900000 132.800000 C 43.300000 130.200000 47.600000 129.100000 51.900000 128.600000 C 57.500000 128.000000 63.500000 128.700000 68.200000 131.900000 C 72.300000 134.700000 74.900000 139.200000 76.400000 143.900000 C 77.800000 148.600000 78.100000 153.600000 78.300000 158.500000 C 78.700000 170.200000 78.400000 182.100000 81.400000 193.400000 C 83.200000 200.500000 86.600000 207.400000 91.500000 212.800000"/><path fill="rgb(75, 191, 176)" d=" M 69.000000 173.300000 C 71.200000 171.900000 75.200000 169.700000 78.500000 167.100000 C 78.400000 164.300000 78.400000 161.400000 78.300000 158.600000 C 78.200000 154.800000 78.000000 151.000000 77.200000 147.400000 C 70.600000 152.100000 63.600000 156.300000 56.000000 159.200000 C 48.200000 162.200000 39.900000 163.800000 31.600000 163.400000 L 31.500000 163.400000 C 31.800000 166.700000 32.400000 169.900000 33.200000 173.100000 C 34.200000 177.000000 35.500000 180.800000 37.100000 184.500000 C 42.200000 183.600000 47.700000 182.400000 48.600000 182.200000 C 55.800000 180.200000 62.600000 177.200000 69.000000 173.300000 Z"/><path fill="rgb(75, 191, 176)" d=" M 69.100000 203.300000 C 73.500000 200.500000 77.600000 197.300000 81.400000 193.800000 C 81.400000 193.700000 81.300000 193.600000 81.300000 193.500000 C 80.300000 189.800000 79.700000 186.100000 79.300000 182.400000 C 70.500000 191.200000 58.300000 196.400000 45.900000 199.600000 C 48.900000 203.500000 52.200000 207.000000 55.800000 210.200000 C 59.600000 208.700000 63.200000 206.900000 66.700000 204.800000 C 67.600000 204.300000 68.400000 203.800000 69.100000 203.300000 Z"/><path fill="rgb(55, 158, 144)" d=" M 84.600000 206.500000 C 83.400000 214.900000 83.000000 223.400000 83.600000 231.800000 C 84.200000 240.800000 87.500000 257.200000 92.600000 261.700000 C 95.200000 264.000000 99.400000 263.300000 102.800000 263.500000 C 117.200000 264.500000 131.700000 265.100000 146.200000 264.900000 C 152.700000 264.800000 177.900000 264.700000 183.600000 262.500000 C 184.000000 262.400000 184.400000 262.200000 184.600000 261.800000 C 184.800000 261.500000 184.900000 261.200000 184.800000 260.800000 C 182.400000 248.900000 176.800000 232.600000 175.100000 221.900000 C 170.400000 193.200000 173.100000 167.300000 182.200000 141.800000 C 182.600000 140.600000 187.500000 124.000000 187.200000 124.000000 C 170.600000 123.600000 154.200000 122.800000 137.600000 122.500000 C 133.300000 122.400000 126.200000 120.800000 122.400000 123.300000 C 120.200000 124.800000 118.700000 127.000000 117.200000 129.100000 C 104.400000 148.100000 93.500000 168.700000 87.700000 190.800000 C 86.400000 196.100000 85.300000 201.300000 84.600000 206.500000 Z"/><path fill="rgb(75, 191, 176)" d=" M 218.900000 131.200000 C 219.400000 128.000000 214.700000 126.400000 213.800000 123.300000 C 218.000000 123.800000 222.200000 123.900000 226.400000 123.400000 C 217.400000 113.100000 212.100000 100.900000 206.700000 88.500000 C 203.400000 81.100000 199.300000 73.400000 195.500000 66.100000 C 191.000000 57.500000 185.600000 47.300000 177.200000 41.900000 C 175.400000 40.700000 173.600000 39.700000 171.800000 38.900000 C 171.500000 37.200000 171.700000 35.400000 172.600000 33.900000 C 171.000000 34.400000 169.200000 34.500000 167.500000 34.300000 C 168.300000 33.200000 169.000000 32.100000 169.800000 30.900000 C 167.000000 30.800000 164.200000 31.200000 161.500000 32.200000 C 163.800000 29.900000 166.100000 27.600000 168.500000 25.300000 C 163.600000 27.000000 158.800000 28.700000 153.900000 30.400000 C 151.300000 31.300000 148.800000 32.200000 146.300000 33.400000 C 140.900000 36.000000 129.400000 42.300000 122.700000 49.300000 C 111.600000 60.700000 104.700000 72.400000 96.500000 85.500000 C 88.700000 98.000000 80.000000 110.700000 67.300000 118.700000 C 72.700000 120.000000 78.500000 119.500000 83.500000 117.200000 C 80.200000 120.600000 76.900000 124.100000 73.600000 127.500000 C 77.500000 126.500000 81.200000 124.800000 84.400000 122.400000 C 81.100000 124.900000 80.500000 130.500000 77.900000 133.500000 C 86.800000 130.800000 96.400000 133.600000 105.500000 135.700000 C 121.300000 139.500000 137.600000 140.500000 153.800000 140.300000 C 170.000000 140.100000 185.900000 137.800000 202.100000 137.700000 C 205.400000 137.700000 208.600000 137.700000 211.900000 137.700000 C 213.500000 137.700000 220.100000 136.900000 221.100000 137.900000 C 218.300000 135.200000 215.100000 132.800000 211.800000 130.800000 C 213.900000 131.000000 216.400000 131.100000 218.900000 131.200000 Z"/><path fill="rgb(75, 191, 176)" d=" M 162.600000 224.100000 C 162.600000 224.000000 162.600000 224.000000 162.600000 223.900000 C 161.800000 209.700000 162.100000 195.500000 160.900000 181.300000 C 160.400000 174.900000 158.900000 168.700000 152.700000 165.600000 C 146.300000 162.400000 138.300000 165.200000 132.900000 169.900000 C 123.200000 178.500000 119.600000 192.000000 117.200000 204.800000 C 115.500000 214.200000 113.700000 223.700000 113.500000 233.200000 C 113.300000 243.600000 115.500000 254.000000 116.700000 264.300000 C 126.500000 264.800000 136.300000 265.000000 146.000000 264.900000 C 149.900000 264.800000 160.400000 264.800000 169.500000 264.300000 C 167.000000 250.800000 163.400000 238.100000 162.600000 224.100000 Z"/><path fill="rgb(211, 47, 59)" d=" M 175.700000 89.700000 C 166.400000 93.700000 166.100000 105.900000 169.300000 114.100000 C 171.800000 120.300000 176.300000 125.600000 181.600000 129.800000 C 185.600000 133.000000 190.100000 135.600000 194.600000 138.000000 C 197.100000 137.900000 199.600000 137.800000 202.100000 137.800000 C 204.600000 137.800000 207.000000 137.800000 209.500000 137.800000 C 208.500000 127.900000 205.600000 118.200000 201.100000 109.300000 C 196.900000 101.100000 187.400000 84.700000 175.700000 89.700000 Z"/><path fill="rgb(211, 47, 59)" d=" M 149.100000 106.600000 C 152.200000 101.300000 154.800000 93.600000 149.700000 88.600000 C 144.100000 83.100000 132.100000 87.200000 126.700000 90.900000 C 118.400000 96.700000 111.200000 104.100000 106.000000 112.800000 C 102.200000 119.300000 99.500000 126.600000 98.400000 134.000000 C 100.800000 134.500000 103.200000 135.100000 105.600000 135.700000 C 109.900000 136.700000 114.200000 137.500000 118.500000 138.200000 C 130.900000 130.300000 141.600000 119.400000 149.100000 106.600000 Z"/><path fill="rgb(138, 31, 24)" d=" M 138.800000 219.000000 C 138.200000 219.200000 137.500000 219.300000 136.900000 219.400000 C 139.000000 220.000000 141.200000 220.600000 143.300000 221.100000 C 143.600000 221.200000 143.600000 221.600000 143.300000 221.700000 C 142.300000 222.000000 141.100000 222.200000 140.400000 222.300000 C 138.700000 222.600000 137.100000 222.900000 135.400000 223.000000 C 132.700000 223.200000 130.000000 223.400000 127.400000 222.900000 C 122.800000 222.100000 118.300000 220.700000 114.000000 218.700000 C 105.600000 214.700000 98.100000 208.000000 95.900000 198.700000 C 94.200000 191.800000 95.000000 184.600000 96.900000 177.800000 C 99.000000 170.500000 102.100000 163.600000 105.300000 156.800000 C 106.300000 154.700000 107.300000 152.600000 108.600000 150.700000 C 109.700000 149.200000 111.900000 146.600000 113.600000 145.900000 C 115.800000 145.000000 117.700000 147.100000 117.600000 149.400000 C 117.500000 151.500000 116.200000 153.300000 115.000000 155.000000 C 109.200000 163.000000 105.700000 170.700000 103.300000 180.100000 C 101.700000 186.300000 101.400000 193.100000 104.100000 199.100000 C 106.500000 204.400000 111.000000 208.800000 116.200000 211.400000 C 119.700000 213.100000 123.400000 214.600000 127.400000 214.500000 C 131.000000 214.400000 134.100000 211.900000 137.500000 210.600000 C 137.700000 210.500000 138.000000 210.800000 137.900000 211.000000 C 137.600000 211.800000 137.100000 212.600000 136.600000 213.300000 C 136.400000 213.500000 136.600000 213.800000 136.900000 213.800000 C 138.500000 213.600000 140.100000 213.300000 141.700000 213.000000 C 142.000000 212.900000 142.200000 213.300000 141.900000 213.500000 C 140.500000 214.500000 139.100000 215.400000 137.600000 216.200000 C 137.300000 216.300000 137.400000 216.700000 137.700000 216.700000 C 139.500000 216.800000 141.300000 216.700000 143.000000 216.300000 C 143.300000 216.200000 143.500000 216.600000 143.200000 216.800000 C 142.000000 217.900000 140.400000 218.600000 138.800000 219.000000 Z"/><path fill="rgb(72, 21, 18)" d=" M 102.900000 182.000000 C 100.500000 182.400000 98.100000 182.700000 95.600000 183.000000 C 94.700000 188.200000 94.600000 193.600000 95.800000 198.700000 C 95.900000 199.200000 96.100000 199.700000 96.200000 200.100000 C 98.600000 199.200000 101.000000 198.200000 103.400000 197.300000 C 101.700000 192.400000 101.800000 187.100000 102.900000 182.000000 Z"/><path fill="rgb(255, 255, 255)" d=" M 146.200000 128.400000 C 148.200000 130.800000 150.200000 133.200000 152.900000 134.700000 C 155.600000 136.300000 159.300000 136.800000 162.000000 135.200000 C 162.700000 134.800000 163.300000 134.300000 163.900000 133.700000 C 165.800000 131.900000 167.300000 129.700000 168.300000 127.300000 C 162.400000 129.600000 162.100000 129.800000 157.600000 129.900000 C 153.300000 130.100000 146.200000 128.400000 146.200000 128.400000 Z"/><path fill="rgb(72, 21, 18)" d=" M 118.130000 110.470000 C 119.350000 112.140000 119.300000 114.790000 118.020000 116.410000 C 116.740000 118.030000 114.710000 117.990000 113.490000 116.320000 C 112.280000 114.660000 112.330000 112.000000 113.610000 110.390000 C 114.890000 108.770000 116.910000 108.810000 118.130000 110.470000 Z"/><path fill="rgb(72, 21, 18)" d=" M 195.260000 111.430000 C 196.510000 113.070000 196.510000 115.730000 195.260000 117.370000 C 194.010000 119.010000 191.990000 119.010000 190.740000 117.370000 C 189.490000 115.730000 189.490000 113.070000 190.740000 111.430000 C 191.990000 109.790000 194.010000 109.790000 195.260000 111.430000 Z"/><path fill="rgb(211, 47, 59)" d=" M 195.500000 66.100000 C 191.000000 57.500000 185.600000 47.300000 177.200000 41.900000 C 175.400000 40.700000 173.600000 39.700000 171.800000 38.900000 C 171.500000 37.200000 171.700000 35.400000 172.600000 33.900000 C 171.000000 34.400000 169.200000 34.500000 167.500000 34.300000 C 168.300000 33.200000 169.000000 32.100000 169.800000 30.900000 C 167.000000 30.800000 164.200000 31.200000 161.500000 32.200000 C 163.800000 29.900000 166.100000 27.600000 168.500000 25.300000 C 163.600000 27.000000 158.800000 28.700000 153.900000 30.400000 C 151.300000 31.300000 148.800000 32.200000 146.300000 33.400000 C 140.900000 36.000000 129.400000 42.300000 122.700000 49.300000 C 112.000000 60.300000 105.200000 71.500000 97.400000 84.000000 C 102.100000 79.700000 106.700000 75.300000 111.400000 71.000000 C 119.200000 63.800000 132.300000 54.500000 143.500000 55.600000 C 147.900000 56.000000 152.300000 58.500000 154.200000 62.500000 C 155.200000 64.600000 155.500000 67.000000 155.700000 69.300000 C 157.200000 85.800000 155.700000 102.800000 155.700000 119.300000 C 153.200000 118.700000 150.600000 118.700000 148.100000 119.100000 C 148.400000 120.900000 148.700000 122.700000 149.000000 124.500000 C 154.400000 124.000000 159.800000 123.500000 165.200000 123.000000 C 165.400000 121.200000 165.300000 119.300000 164.900000 117.500000 C 163.400000 117.300000 161.800000 117.600000 160.500000 118.400000 C 160.100000 106.900000 160.300000 95.500000 161.200000 84.000000 C 161.600000 79.300000 162.000000 74.600000 163.700000 70.200000 C 165.400000 65.800000 168.300000 61.800000 172.600000 59.800000 C 178.500000 57.000000 185.700000 58.700000 191.100000 62.400000 C 192.700000 63.500000 194.200000 64.800000 195.600000 66.200000 C 195.500000 66.100000 195.500000 66.100000 195.500000 66.100000 Z"/><path fill="rgb(138, 31, 24)" d=" M 156.200000 99.200000 C 156.000000 105.900000 155.800000 112.700000 155.700000 119.300000 C 153.200000 118.700000 150.600000 118.700000 148.100000 119.100000 C 148.400000 120.900000 148.700000 122.700000 149.000000 124.500000 C 154.400000 124.000000 159.800000 123.500000 165.200000 123.000000 C 165.400000 121.200000 165.300000 119.300000 164.900000 117.500000 C 163.400000 117.300000 161.800000 117.600000 160.500000 118.400000 C 160.300000 112.000000 160.300000 105.700000 160.400000 99.300000 L 156.200000 99.300000 L 156.200000 99.200000 Z"/><path fill="rgb(55, 158, 144)" d=" M 109.300000 142.800000 C 106.600000 146.400000 103.000000 149.300000 98.800000 151.000000 C 99.800000 151.300000 100.900000 151.700000 101.900000 152.000000 C 100.900000 153.100000 99.800000 154.200000 98.800000 155.300000 C 99.600000 155.300000 100.400000 155.300000 101.200000 155.300000 C 99.100000 157.700000 97.100000 160.300000 95.400000 163.000000 C 96.400000 163.000000 97.500000 163.000000 98.500000 163.100000 C 98.600000 162.800000 98.700000 162.400000 98.800000 162.100000"/><path d=" M 40.600000 174.000000 L 42.400000 179.800000"/><path d=" M 46.900000 185.600000 L 48.600000 189.300000"/><path d=" M 42.300000 168.300000 L 44.100000 172.300000"/><path d=" M 47.500000 178.100000 L 49.900000 185.500000"/><path fill="rgb(72, 21, 18)" d=" M 123.700000 83.600000 C 127.400000 82.700000 131.200000 82.300000 134.900000 82.300000 C 134.900000 81.400000 134.900000 80.400000 134.900000 79.500000 C 131.000000 79.100000 127.100000 79.500000 123.300000 80.700000 C 123.300000 81.600000 123.400000 82.600000 123.700000 83.600000 Z"/><path fill="rgb(72, 21, 18)" d=" M 190.900000 82.400000 C 187.500000 82.100000 184.100000 82.100000 180.800000 82.500000 C 180.800000 83.300000 180.700000 84.100000 180.700000 84.900000 C 184.000000 84.800000 187.400000 85.000000 190.700000 85.300000 C 190.700000 84.300000 190.800000 83.300000 190.900000 82.400000 Z"/></svg>

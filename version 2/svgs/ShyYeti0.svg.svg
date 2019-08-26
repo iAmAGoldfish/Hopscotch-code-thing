@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="300" width="300" version="1.1" id="ShyYeti0.svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs><g>	<path fill="#097E8F" d="M83,62.3L56.5,73.9c0,0,16.1-29.3,12.7-28.8c-3.5,0.6-25.7,29.8-23.6,35.7c2.3,6.3,33.4,5.2,36.8,5.8&#9;&#9;S83,62.3,83,62.3z"/>	<path fill="#097E8F" d="M189.4,62.3l26.5,11.5c0,0-16.1-29.3-12.7-28.8c3.5,0.6,25.7,29.8,23.6,35.7c-2.3,6.3-33.4,5.2-36.8,5.8&#9;&#9;C186.5,87.1,189.4,62.3,189.4,62.3z"/>	<path fill="#22D4C2" d="M122.4,239.2c0,0,4.2,28.2-5.9,52.3c0,0,5.9,2.5,4.7,3.4s-15-1.2-15-1.2s1.3-42.9-6.5-54.5H122.4z"/>	<path fill="#22D4C2" d="M177.4,236.7c0,0,4.2,30.7-5.9,54.8c0,0,5.9,2.5,4.7,3.4c-1.2,1-15-1.2-15-1.2s1.3-42.9-6.5-54.5&#9;&#9;L177.4,236.7z"/>	<path fill="#22D4C2" d="M138.1,74.6c-33.1,0-66.9,15.4-68.6,34.3C67.8,127.7,81,227.2,87.3,231.8s11.9,13.7,50.9,13.7&#9;&#9;c26.9,0,48-5.7,52-14.9c7-16.1,28.6-116,17.7-130.9C197,84.9,174.8,74.6,138.1,74.6z"/>	<path fill="#72F2E3" d="M145.2,160.7c-23.3,0-42.2,25.4-42.2,56.8c0,9,1.5,17.4,4.3,25c7,1.7,16.7,3,30.8,3&#9;&#9;c20.9,0,38.2-3.5,46.9-9.3c1.5-5.8,2.3-12.1,2.3-18.6C187.3,186.2,168.4,160.7,145.2,160.7z"/>	<g>		<path fill="#097E8F" d="M146.5,217.4c1-1.2,2.9-0.9,4.3-0.3c1.4,0.6,2.8,1.6,4.4,1.5c-2.2-2.1-4.3-4.2-6.3-6.4&#9;&#9;&#9;c-1-1.2-2.1-2.7-1.6-4.1c0.4-1.2,1.9-1.8,3.2-1.6c1.3,0.1,2.4,0.9,3.5,1.6c1.1,0.7,2.2,1.5,3.4,1.7c-2.4-2.8-4.8-5.6-6.5-8.9&#9;&#9;&#9;c-0.5-1-0.9-2.2-0.5-3.2c0.4-1,1.6-1.5,2.8-1.5c1.1,0,2.1,0.5,3.2,0.9c3.6,1.5,7.2,2.7,11,3.6c0.8,0.2,1.8,0.4,2.5-0.1&#9;&#9;&#9;c1.2-0.7,1-2.5,0.4-3.8c-0.6-1.3-1.3-2.8-0.7-4c0.6-1.1,2-1.5,3.2-1.2c1.2,0.3,2.2,1.1,3.1,2c1.7,1.6,3.3,3.4,5.3,4.8&#9;&#9;&#9;c1.2,0.8,2.5,1.4,3.8,1.7c3.8-1,7.4-2.5,10.3-4.5c11.6-8.1-9.2-109.2-9.2-109.2s31.8,2.9,35.8,11.6l-5.2,1.7&#9;&#9;&#9;c0,0,10.4,15.6,11.6,19.6l-6.9-0.6c0,0,28.5,61.4,14.5,107.2c-4.7,15.5-36.1,26.9-70.4,11.2c-7.4-2.9-13.9-8.2-18.2-14.9&#9;&#9;&#9;C146.2,220.7,145.4,218.7,146.5,217.4z"/>		<g>			<path fill="#22D4C2" d="M191.2,195.9c4.8-0.7,9.9,0.4,14.2,2.8c4.3,2.4,8,6.1,9.9,10.5c-2.7-4-6.3-7.2-10.5-9.5&#9;&#9;&#9;&#9;C200.7,197.4,196.1,196.1,191.2,195.9z"/>		</g>		<g>			<path fill="#22D4C2" d="M215.6,193.2c-4.7,0.4-9.4,0.5-14.1,0.5l-3.5-0.1c-1.2,0-2.4-0.1-3.5-0.1c-1.1,0-2.3,0.2-3.1,0.8&#9;&#9;&#9;&#9;c-0.9,0.6-1.5,1.8-1.1,2.9c-0.3-0.5-0.4-1.2-0.2-1.8c0.2-0.6,0.5-1.1,1-1.6c0.9-0.9,2.2-1.2,3.4-1.3c2.4-0.1,4.7-0.1,7.1-0.1&#9;&#9;&#9;&#9;C206.2,192.6,210.9,192.7,215.6,193.2z"/>		</g>		<g>			<path fill="#22D4C2" d="M210,185.5c-2.3,0.4-4.4,0.7-6.6,1.1c-2.2,0.4-4.3,1-6.5,1.6c1.8-1.4,4-2.2,6.3-2.7&#9;&#9;&#9;&#9;C205.4,185,207.7,185,210,185.5z"/>		</g>		<g>			<path fill="#22D4C2" d="M219.3,135.7c1.7,3.3,2.7,7,3.4,10.7c0.6,3.7,0.8,7.5,0.4,11.2c-0.4-3.7-0.8-7.4-1.5-11&#9;&#9;&#9;&#9;C221,143,220.2,139.4,219.3,135.7z"/>		</g>		<g>			<path fill="#22D4C2" d="M204.3,114.5c1.5,2.2,2.8,4.6,3.9,6.9c1.1,2.4,2.2,4.8,2.9,7.4c-1.6-2.2-2.8-4.5-3.9-6.9&#9;&#9;&#9;&#9;C206.1,119.5,205.1,117.1,204.3,114.5z"/>		</g>		<g>			<path fill="#22D4C2" d="M209.2,142.6c0.9,2.4,1.4,4.9,1.8,7.4c0.4,2.5,0.7,5,0.7,7.6c-0.9-2.4-1.4-4.9-1.8-7.4&#9;&#9;&#9;&#9;C209.5,147.7,209.1,145.2,209.2,142.6z"/>		</g>		<g>			<path fill="#22D4C2" d="M228,171.3c1.8,4.1,2.9,8.5,3.5,12.9c0.5,4.4,0.6,8.9-0.2,13.3c-0.1-4.5-0.4-8.8-0.9-13.2&#9;&#9;&#9;&#9;C229.8,180,229,175.7,228,171.3z"/>		</g>		<g>			<path fill="#22D4C2" d="M217.6,173.1c1.6,2.8,2.6,5.9,3.2,9.1c0.6,3.2,0.7,6.5,0.2,9.7c-0.4-3.2-0.8-6.4-1.4-9.5&#9;&#9;&#9;&#9;C219.2,179.3,218.4,176.3,217.6,173.1z"/>		</g>		<g>			<path fill="#22D4C2" d="M228.1,210.7c0.4,3.1,0,6.2-0.8,9.2c-0.9,3-2.2,5.9-4.2,8.3c1.2-2.9,2.3-5.7,3.1-8.6&#9;&#9;&#9;&#9;C227,216.7,227.6,213.7,228.1,210.7z"/>		</g>		<g>			<path fill="#22D4C2" d="M215.6,218.2c-0.2,2.1-1.2,4.1-2.7,5.7c-1.5,1.5-3.4,2.7-5.5,3.1c1.7-1.2,3.3-2.4,4.6-3.8&#9;&#9;&#9;&#9;C213.4,221.6,214.5,220,215.6,218.2z"/>		</g>		<g>			<path fill="#22D4C2" d="M199.3,235c-1.6,1.1-3.5,1.4-5.4,1.4c-1.9-0.1-3.8-0.7-5.2-1.9c1.8,0.4,3.5,0.7,5.3,0.8&#9;&#9;&#9;&#9;C195.7,235.3,197.5,235.2,199.3,235z"/>		</g>		<g>			<path fill="#22D4C2" d="M197.5,219.4c-2.1,0.2-4.2,0.1-6.3-0.1c-2.1-0.2-4.2-0.5-6.2-1.2c2.1-0.2,4.2-0.1,6.3,0.1&#9;&#9;&#9;&#9;C193.3,218.4,195.4,218.8,197.5,219.4z"/>		</g>		<g>			<path fill="#22D4C2" d="M183.6,227.9c-2.2-0.1-4.3-0.6-6.4-1.1c-2.1-0.6-4.1-1.2-6.1-2.2c2.2,0.1,4.3,0.6,6.4,1.1&#9;&#9;&#9;&#9;C179.6,226.2,181.7,226.9,183.6,227.9z"/>		</g>	</g>	<g>		<path fill="#097E8F" d="M137.3,217.4c-1-1.2-2.9-0.9-4.3-0.3c-1.4,0.6-2.8,1.6-4.4,1.5c2.2-2.1,4.3-4.2,6.3-6.4&#9;&#9;&#9;c1-1.2,2.1-2.7,1.6-4.1c-0.4-1.2-1.9-1.8-3.2-1.6c-1.3,0.1-2.4,0.9-3.5,1.6c-1.1,0.7-2.2,1.5-3.4,1.7c2.4-2.8,4.8-5.6,6.5-8.9&#9;&#9;&#9;c0.5-1,0.9-2.2,0.5-3.2c-0.4-1-1.6-1.5-2.8-1.5c-1.1,0-2.1,0.5-3.2,0.9c-3.6,1.5-7.2,2.7-11,3.6c-0.8,0.2-1.8,0.4-2.5-0.1&#9;&#9;&#9;c-1.2-0.7-1-2.5-0.4-3.8c0.6-1.3,1.3-2.8,0.7-4c-0.6-1.1-2-1.5-3.2-1.2c-1.2,0.3-2.2,1.1-3.1,2c-1.7,1.6-3.3,3.4-5.3,4.8&#9;&#9;&#9;c-1.2,0.8-2.5,1.4-3.8,1.7c-3.8-1-7.4-2.5-10.3-4.5C77,187.4,97.7,86.4,97.7,86.4S66,89.2,61.9,97.9l5.2,1.7&#9;&#9;&#9;c0,0-10.4,15.6-11.6,19.6l6.9-0.6c0,0-28.5,61.4-14.5,107.2c4.7,15.5,36.1,26.9,70.4,11.2c7.4-2.9,13.9-8.2,18.2-14.9&#9;&#9;&#9;C137.6,220.7,138.4,218.7,137.3,217.4z"/>		<g>			<path fill="#22D4C2" d="M92.6,195.9c-4.8,0.2-9.5,1.5-13.6,3.8c-4.1,2.3-7.7,5.5-10.5,9.5c2-4.5,5.6-8.1,9.9-10.5&#9;&#9;&#9;&#9;C82.7,196.3,87.8,195.2,92.6,195.9z"/>		</g>		<g>			<path fill="#22D4C2" d="M68.2,193.2c4.7-0.5,9.4-0.6,14-0.7c2.4,0,4.7,0,7.1,0.1c1.2,0.1,2.5,0.4,3.4,1.3c0.5,0.4,0.8,1,1,1.6&#9;&#9;&#9;&#9;c0.2,0.6,0.1,1.3-0.2,1.8c0.4-1.2-0.3-2.3-1.1-2.9c-0.9-0.6-2-0.8-3.1-0.8c-1.1,0-2.3,0.1-3.5,0.1l-3.5,0.1&#9;&#9;&#9;&#9;C77.6,193.7,72.9,193.6,68.2,193.2z"/>		</g>		<g>			<path fill="#22D4C2" d="M73.8,185.5c2.2-0.5,4.6-0.4,6.8,0c2.2,0.5,4.4,1.3,6.3,2.7c-2.2-0.6-4.3-1.2-6.5-1.6&#9;&#9;&#9;&#9;C78.3,186.1,76.1,185.9,73.8,185.5z"/>		</g>		<g>			<path fill="#22D4C2" d="M64.5,135.7c-0.8,3.6-1.7,7.2-2.3,10.9c-0.6,3.6-1,7.3-1.5,11c-0.5-3.7-0.3-7.5,0.4-11.2&#9;&#9;&#9;&#9;C61.7,142.7,62.8,139.1,64.5,135.7z"/>		</g>		<g>			<path fill="#22D4C2" d="M74.6,142.6c0,2.6-0.3,5.1-0.7,7.6c-0.4,2.5-1,5-1.8,7.4c0-2.6,0.3-5.1,0.7-7.6&#9;&#9;&#9;&#9;C73.2,147.5,73.8,145.1,74.6,142.6z"/>		</g>		<g>			<path fill="#22D4C2" d="M55.8,171.3c-1,4.3-1.8,8.7-2.4,13c-0.6,4.4-0.8,8.8-0.9,13.2c-0.8-4.4-0.7-8.9-0.2-13.3&#9;&#9;&#9;&#9;C52.9,179.8,54,175.4,55.8,171.3z"/>		</g>		<g>			<path fill="#22D4C2" d="M66.2,173.1c-0.8,3.1-1.5,6.2-2.1,9.3c-0.6,3.1-1,6.3-1.4,9.5c-0.5-3.2-0.3-6.5,0.2-9.7&#9;&#9;&#9;&#9;C63.5,179.1,64.5,175.9,66.2,173.1z"/>		</g>		<g>			<path fill="#22D4C2" d="M55.7,210.7c0.5,3.1,1.1,6,1.9,8.9c0.8,2.9,1.9,5.7,3.1,8.6c-2-2.4-3.3-5.3-4.2-8.3&#9;&#9;&#9;&#9;C55.7,216.9,55.3,213.8,55.7,210.7z"/>		</g>		<g>			<path fill="#22D4C2" d="M68.2,218.2c1,1.8,2.1,3.4,3.5,4.9c1.3,1.5,2.9,2.7,4.6,3.8c-2.1-0.3-4-1.5-5.5-3.1&#9;&#9;&#9;&#9;C69.5,222.3,68.4,220.3,68.2,218.2z"/>		</g>		<g>			<path fill="#22D4C2" d="M84.5,235c1.9,0.2,3.6,0.3,5.3,0.2c1.8-0.1,3.5-0.4,5.3-0.8c-1.5,1.2-3.4,1.8-5.2,1.9&#9;&#9;&#9;&#9;C88,236.5,86.1,236.1,84.5,235z"/>		</g>		<g>			<path fill="#22D4C2" d="M86.3,219.4c2-0.7,4.1-1,6.2-1.2c2.1-0.2,4.2-0.3,6.3-0.1c-2,0.7-4.1,1-6.2,1.2&#9;&#9;&#9;&#9;C90.6,219.5,88.5,219.6,86.3,219.4z"/>		</g>		<g>			<path fill="#22D4C2" d="M100.2,227.9c2-1,4-1.6,6.1-2.2c2.1-0.5,4.2-1,6.4-1.1c-2,1-4,1.6-6.1,2.2&#9;&#9;&#9;&#9;C104.5,227.3,102.4,227.7,100.2,227.9z"/>		</g>	</g>	<path fill="#097E8F" d="M145.4,31.6c3.5-2.5,6-6.4,6.9-10.6c0.2-1.1,0-2.7-1.1-2.7c-0.5,0-1,0.4-1.3,0.8c-2.3,2.5-4.2,5.2-5.8,8.1&#9;&#9;c1.2-3.4,1-7.3-0.5-10.5c-0.4-0.8-0.8-1.5-1.5-2c-0.7-0.5-1.7-0.6-2.4-0.1c-0.8,0.6-0.9,1.8-0.9,2.8c0,2.9,0.3,5.8,0.9,8.6&#9;&#9;c-2-2.8-5-4.9-8.4-5.7c-1-0.2-2.1-0.3-2.8,0.3c-0.7,0.6-0.8,1.8-0.4,2.7c0.4,0.9,1.1,1.6,1.9,2.2c3.6,3,7.5,5.5,11.7,7.4&#9;&#9;L145.4,31.6z"/>	<path fill="#22D4C2" d="M201.6,74.8c-1.8-3.8-4.2-7.3-7.1-10.4c2.4,0.5,4.8,1,7.2,1.5c-4-9-10.9-16.5-19.4-21.4&#9;&#9;c-6.8-10.6-27.1-17.8-52.2-16.2c-18.3,1.2-29.3,8.1-35.7,16.2C86,49.3,79,56.9,75.1,65.9c2.4-0.5,4.8-1,7.2-1.5&#9;&#9;c-2.9,3.1-5.2,6.6-7.1,10.4c-0.6,1.2-1,2.6-0.4,3.7c1,1.6,3.5,1.1,5.2,0.3c1-0.5,1.9-1,2.9-1.5c-5.2,28-8.3,66.8-4.8,67.7&#9;&#9;C82.7,146,90.7,130,90.7,130s5.7,18.3,10.9,16c5.1-2.3,12.6-17.1,12.6-17.1s7.4,16.6,12.6,14.9c5.1-1.7,12-14.9,12-14.9&#9;&#9;s6,15.1,10.9,14.8c6.5-0.4,9.2-13.1,9.2-13.1s9.2,12.7,12.7,12.7c4.4,0,9.6-13.5,9.6-13.5s7.9,13.5,13.1,13.5&#9;&#9;c6.6,0,1.9-39.2-3.6-68.1c2,1.4,4,2.6,6.2,3.7c1.7,0.8,4.2,1.4,5.2-0.3C202.6,77.4,202.1,76,201.6,74.8z"/>	<g>		<path fill="#097E8F" d="M92.8,50.3c-0.7,2.4-1.8,4.7-2.9,6.9c-1.2,2.2-2.4,4.4-3.9,6.4c0.7-2.4,1.8-4.7,2.9-6.9&#9;&#9;&#9;C90.1,54.4,91.3,52.3,92.8,50.3z"/>	</g>	<g>		<path fill="#097E8F" d="M99.3,58c-0.5,2.2-1.2,4.3-2.1,6.3c-0.9,2-1.8,4-3.1,5.9c0.4-2.2,1.2-4.3,2.1-6.3&#9;&#9;&#9;C97.1,61.8,98,59.8,99.3,58z"/>	</g>	<g>		<path fill="#097E8F" d="M88.3,86.8c-0.4,2.5-0.9,4.9-1.2,7.3c-0.3,2.4-0.5,4.9-0.7,7.4c-0.7-2.4-0.7-5-0.4-7.5&#9;&#9;&#9;C86.4,91.4,87.1,89,88.3,86.8z"/>	</g>	<g>		<path fill="#097E8F" d="M95.3,94.4c0,2.3-0.3,4.6-0.7,6.8c-0.4,2.2-1,4.5-1.8,6.6c0-2.3,0.3-4.6,0.7-6.8&#9;&#9;&#9;C93.9,98.8,94.5,96.6,95.3,94.4z"/>	</g>	<g>		<path fill="#097E8F" d="M84.4,118.2c0.7,1.7,1.1,3.5,1.5,5.4c0.3,1.8,0.5,3.7,0.4,5.5c-0.7-1.7-1.2-3.5-1.5-5.4&#9;&#9;&#9;C84.5,121.9,84.3,120.1,84.4,118.2z"/>	</g>	<g>		<path fill="#097E8F" d="M97.4,120.7c0,1.7,0.1,3.3,0.4,4.9c0.3,1.6,0.8,3.1,1.4,4.7c-1.3-1.1-2.1-2.8-2.5-4.5&#9;&#9;&#9;C96.4,124.1,96.6,122.3,97.4,120.7z"/>	</g>	<path fill="#097E8F" d="M142.7,44.9c0,0-8.3,43.4-7.4,44.3s18.9,0.6,19.2-0.3c0.3-0.9-8.6-44.3-8.6-44.3L142.7,44.9z"/>	<g>		<path fill="#110C28" d="M112.9,61.7c1,2.4,1.8,4.7,2.8,7c0.5,1.1,1,2.3,1.6,3.3c0.3,0.5,0.6,1,0.9,1.4c0.3,0.4,0.7,0.6,0.8,0.6&#9;&#9;&#9;c0.1,0,0.1,0,0.3-0.1c0.2-0.1,0.3-0.2,0.5-0.4c0.3-0.3,0.6-0.8,0.9-1.2c0.5-1,0.9-2.1,1.3-3.3c0.7-2.4,1.1-4.8,1.6-7.3&#9;&#9;&#9;c0.4,2.5,0.5,5.1,0.1,7.7c-0.2,1.3-0.5,2.6-1.1,3.9c-0.3,0.6-0.7,1.3-1.3,1.9c-0.3,0.3-0.6,0.6-1,0.8c-0.2,0.1-0.5,0.2-0.7,0.3&#9;&#9;&#9;c-0.3,0-0.6,0.1-0.8,0c-1.1-0.2-1.8-0.9-2.2-1.4c-0.5-0.6-0.8-1.2-1.1-1.8c-0.6-1.2-1-2.4-1.3-3.7C113.4,66.8,113,64.3,112.9,61.7&#9;&#9;&#9;z"/>	</g>	<g>		<path fill="#110C28" d="M175.5,61.7c-0.1,2.6-0.5,5.1-1.1,7.6c-0.3,1.3-0.8,2.5-1.3,3.7c-0.3,0.6-0.7,1.2-1.1,1.8&#9;&#9;&#9;c-0.5,0.6-1.1,1.2-2.2,1.4c-0.3,0.1-0.6,0-0.8,0c-0.2-0.1-0.6-0.2-0.7-0.3c-0.4-0.2-0.7-0.5-1-0.8c-0.6-0.6-1-1.2-1.3-1.9&#9;&#9;&#9;c-0.6-1.3-0.9-2.6-1.1-3.9c-0.4-2.6-0.3-5.2,0.1-7.7c0.5,2.5,1,5,1.6,7.3c0.4,1.2,0.7,2.3,1.3,3.3c0.3,0.5,0.6,0.9,0.9,1.2&#9;&#9;&#9;c0.2,0.2,0.3,0.3,0.5,0.4c0.2,0.1,0.2,0.1,0.3,0.1c0.1,0,0.5-0.2,0.8-0.6c0.3-0.4,0.6-0.9,0.9-1.4c0.6-1,1.1-2.1,1.6-3.3&#9;&#9;&#9;C173.6,66.4,174.5,64.1,175.5,61.7z"/>	</g>	<g>		<path fill="#110C28" d="M134.5,99.5c1.5,2.8,2.9,5.6,4.6,8.2c0.9,1.3,1.8,2.5,2.8,3.5c1,1,2.2,1.8,3.3,1.7c1.1,0,2.2-0.8,3.2-1.8&#9;&#9;&#9;c1-1.1,1.8-2.3,2.6-3.7c1.5-2.7,2.8-5.6,4.1-8.4c-0.5,3.2-1.3,6.3-2.6,9.2c-0.6,1.5-1.5,2.9-2.5,4.3c-0.5,0.7-1.2,1.3-2,1.8&#9;&#9;&#9;c-0.4,0.2-0.8,0.5-1.3,0.6c-0.2,0.1-0.5,0.2-0.7,0.2l-0.8,0.1c-0.3,0-0.5,0-0.8-0.1c-0.2,0-0.5-0.1-0.7-0.2&#9;&#9;&#9;c-0.5-0.2-0.9-0.3-1.3-0.6c-0.8-0.5-1.5-1-2.1-1.7c-1.2-1.3-2.1-2.6-2.8-4.1C136.1,105.7,135.1,102.6,134.5,99.5z"/>	</g>	<circle fill="#FF5171" cx="115.5" cy="94.3" r="10.5"/>	<circle fill="#FF5171" cx="178" cy="94.3" r="10.5"/>	<g>		<path fill="#097E8F" d="M78.1,144.6c1.7-1.2,3.3-2.5,4.8-3.9c1.6-1.4,3-2.8,4.4-4.4c1.3-1.6,2.6-3.3,3.1-5.2&#9;&#9;&#9;c0.1-0.5,0.2-1,0.3-1.5l0.1-0.8l0-0.4l0-0.1c0,0,0,0,0,0l0,0.1c0.1,0.1,0,0.1,0.2,0.1c0.3-0.1,0.2-0.2,0.2-0.1c0,0,0,0,0,0l0,0.2&#9;&#9;&#9;c-0.2,1-0.4,2-0.6,3.1l0-0.1c1.2,3.2,2.6,6.3,4.1,9.3c0.8,1.5,1.6,3,2.7,4.3c0.5,0.6,1.1,1.3,1.8,1.4c0.6,0.2,1.3-0.4,1.9-0.9&#9;&#9;&#9;c1.2-1.1,2.2-2.5,3.2-3.9c1-1.4,2-2.8,2.9-4.2c1.9-2.8,3.6-5.8,5.3-8.7l0.5-0.8l0.4,0.8c1.6,3.1,3.3,6.2,5.2,9.1&#9;&#9;&#9;c1,1.5,2,2.9,3.1,4.2c0.6,0.6,1.2,1.3,1.8,1.8c0.6,0.5,1.4,0.9,2,0.9c0.6-0.1,1.4-0.5,2-1.1c0.6-0.5,1.2-1.2,1.8-1.8&#9;&#9;&#9;c1.1-1.3,2.2-2.7,3.1-4.2c2-2.9,3.8-5.9,5.4-9l0.6-1.1l0.4,1.2c1,2.8,2.2,5.6,3.6,8.3c0.7,1.3,1.4,2.6,2.3,3.8&#9;&#9;&#9;c0.4,0.6,0.9,1.2,1.4,1.7c0.5,0.5,1.1,0.9,1.7,1.1c0.3,0.1,0.6,0.1,0.9,0.1c0.3,0,0.6-0.2,0.9-0.4c0.6-0.3,1.1-0.8,1.6-1.3&#9;&#9;&#9;c1-1.1,1.8-2.3,2.6-3.6c1.5-2.6,2.8-5.3,3.8-8.1l0.3-0.9l0.5,0.8c1.7,2.5,3.5,4.9,5.4,7.1c1,1.1,2,2.2,3.1,3.2&#9;&#9;&#9;c1.1,1,2.3,1.9,3.6,2.3c0.3,0.1,0.6,0.1,0.9,0c0.3,0,0.6-0.3,0.9-0.4c0.3-0.2,0.6-0.4,0.8-0.7c0.3-0.3,0.5-0.5,0.8-0.8&#9;&#9;&#9;c1-1.1,1.9-2.3,2.7-3.5c1.6-2.5,3.1-5.1,4.4-7.8l0.3-0.5l0.3,0.5c1.6,2.5,3.4,5,5.2,7.3c0.9,1.2,1.9,2.3,2.9,3.4&#9;&#9;&#9;c1,1,2.1,2.1,3.5,2.7c0.3,0.1,0.7,0.2,1,0.1c0.3-0.1,0.6-0.3,0.8-0.6c0.5-0.5,0.8-1.2,1-1.9c0.5-1.4,0.7-2.9,1-4.4&#9;&#9;&#9;c0.4-3,0.5-6,0.5-9c0.1,3,0,6-0.3,9c-0.2,1.5-0.4,3-0.9,4.4c-0.2,0.7-0.5,1.4-1,2.1c-0.2,0.3-0.6,0.6-1,0.7&#9;&#9;&#9;c-0.4,0.1-0.8,0-1.2-0.1c-1.5-0.6-2.6-1.7-3.7-2.7c-1.1-1.1-2.1-2.2-3-3.4c-1.9-2.3-3.7-4.8-5.4-7.3l0.6,0&#9;&#9;&#9;c-1.3,2.7-2.7,5.4-4.3,7.9c-0.8,1.3-1.7,2.5-2.7,3.6c-0.3,0.3-0.5,0.5-0.8,0.8c-0.3,0.3-0.6,0.5-0.9,0.7l-0.5,0.3&#9;&#9;&#9;c-0.2,0.1-0.4,0.2-0.6,0.2c-0.5,0.1-0.9,0.1-1.3,0c-1.6-0.4-2.8-1.5-4-2.5c-1.1-1-2.2-2.1-3.2-3.3c-2-2.3-3.8-4.7-5.5-7.2l0.9-0.1&#9;&#9;&#9;c-1.1,2.9-2.3,5.7-3.9,8.3c-0.8,1.3-1.7,2.6-2.7,3.8c-0.5,0.6-1.2,1.1-1.9,1.5c-0.4,0.2-0.7,0.4-1.2,0.5c-0.5,0.1-1,0-1.4-0.1&#9;&#9;&#9;c-0.9-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.2-1.5-1.8c-0.9-1.3-1.7-2.6-2.4-4c-1.4-2.7-2.6-5.5-3.7-8.4l1,0.1&#9;&#9;&#9;c-1.7,3.1-3.5,6.1-5.5,9.1c-1,1.5-2.1,2.9-3.2,4.2c-0.6,0.7-1.2,1.3-1.9,1.9c-0.7,0.6-1.5,1.2-2.6,1.3c-1.1,0-2-0.6-2.7-1.2&#9;&#9;&#9;c-0.7-0.6-1.4-1.2-1.9-1.9c-1.2-1.4-2.2-2.8-3.2-4.3c-1.9-3-3.6-6.1-5.2-9.2l0.9,0c-1.7,3-3.5,5.8-5.4,8.7c-1,1.4-1.9,2.8-3,4.2&#9;&#9;&#9;c-1,1.4-2.1,2.7-3.4,3.9c-0.3,0.3-0.7,0.6-1.1,0.8c-0.4,0.3-1,0.4-1.5,0.3c-1-0.3-1.6-1-2.1-1.7c-1.1-1.4-1.9-2.9-2.7-4.4&#9;&#9;&#9;c-1.6-3.1-2.9-6.2-4-9.4l0-0.1l0-0.1c0.2-1,0.4-2,0.6-3.1l0.1-0.2c0,0,0,0,0-0.1c0,0-0.1-0.1,0.2-0.1c0.2,0,0.1,0.1,0.2,0.1&#9;&#9;&#9;c0,0.1,0,0.1,0,0.1l0,0l0,0.1l0,0.1l-0.1,0.4l-0.1,0.8c-0.1,0.5-0.2,1-0.3,1.5c-0.6,2.1-2,3.7-3.3,5.3c-1.4,1.5-2.9,3-4.5,4.3&#9;&#9;&#9;C81.4,142.1,79.8,143.4,78.1,144.6z"/>	</g></g></svg>

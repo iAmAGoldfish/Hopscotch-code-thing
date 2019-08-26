@@ -1,0 +1,174 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg id="Robo0.svg" width="172.5" height="172.5" version="1.1" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+* { border: 0px; margin: 0px; padding: 0px; }
+html { background-color: rgb(255, 255, 255); font-family: Verdana, Arial; }
+.webgl-content * { position: absolute; width: 100%; height: 100%; user-select: none; }
+.webgl-content .logo, .progress { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.webgl-content .logo { background: url("progressLogo.Light.png") center center / contain no-repeat; width: 154px; height: 130px; }
+.webgl-content .progress { height: 18px; width: 141px; margin-top: 90px; }
+.webgl-content .progress .empty { background: url("progressEmpty.Light.png") right center / cover no-repeat; float: right; width: 100%; height: 100%; display: inline-block; }
+.webgl-content .progress .full { background: url("progressFull.Light.png") left center / cover no-repeat; float: left; width: 0%; height: 100%; display: inline-block; }
+.webgl-content .logo.Dark { background-image: url("progressLogo.Dark.png"); }
+.webgl-content .progress.Dark .empty { background-image: url("progressEmpty.Dark.png"); }
+.webgl-content .progress.Dark .full { background-image: url("progressFull.Dark.png"); }
+#loading-content { z-index: 10000; position: fixed; width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden; background: url("background.png"); }
+.hud-intro .hud-intro-social .btn-discord, .hud-respawn .hud-respawn-social .btn-discord { background-image: url("//lordz.io/images/discord-icon.png"); }
+.hud-intro .hud-intro-social .btn-twitter, .hud-respawn .hud-respawn-social .btn-twitter { background-image: url("//lordz.io/images/twitter-icon.png"); }
+.hud-intro .hud-intro-social .btn-facebook, .hud-respawn .hud-respawn-social .btn-facebook { background-image: url("//lordz.io/images/facebook-icon.png"); }
+.hud-intro .hud-intro-social .btn-youtube, .hud-respawn .hud-respawn-social .btn-youtube { background-image: url("//lordz.io/images/youtube-icon.png"); }
+* { box-sizing: border-box; user-select: none; }
+.btn { position: relative; display: inline-block; top: 0px; height: 36px; line-height: 36px; padding: 0px 20px; background: rgb(68, 68, 68); color: rgb(238, 238, 238); border: 0px; font-size: 14px; vertical-align: top; text-align: center; text-decoration: none; text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(51, 51, 51) 0px 4px 0px; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.btn:hover, .btn:active { background-color: rgb(85, 85, 85); color: rgb(255, 255, 255); }
+.btn:active { top: 4px; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px !important; }
+.btn-green { background-color: rgb(71, 149, 13); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(53, 131, 0) 0px 4px 0px; }
+.btn-green:hover, .btn-green:active { background-color: rgb(100, 184, 32); }
+.btn-red { background-color: rgb(179, 53, 60); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(161, 35, 42) 0px 4px 0px; }
+.btn-red:hover, .btn-red:active { background-color: rgb(203, 87, 91); }
+.btn-blue { background-color: rgb(29, 141, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(11, 123, 220) 0px 4px 0px; }
+.btn-blue:hover, .btn-blue:active { background-color: rgb(79, 167, 238); }
+.btn-purple { background-color: rgb(114, 55, 228); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 37, 210) 0px 4px 0px; }
+.btn-purple:hover, .btn-purple:active { background-color: rgb(130, 89, 228); }
+.btn-twitter { background-color: rgb(27, 149, 224); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(9, 131, 206) 0px 4px 0px; }
+.btn-twitter:hover, .btn-twitter:active { background-color: rgb(12, 122, 191); }
+.btn-facebook { background-color: rgb(66, 103, 178); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(48, 85, 160) 0px 4px 0px; }
+.btn-facebook:hover, .btn-facebook:active { background-color: rgb(54, 88, 153); }
+.btn-google { background-color: rgb(221, 75, 57); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(203, 57, 39) 0px 4px 0px; }
+.btn-google:hover, .btn-google:active { background-color: rgb(186, 63, 49); }
+.btn-discord { background-color: rgb(114, 137, 218); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(96, 119, 200) 0px 4px 0px; }
+.btn-discord:hover, .btn-discord:active { background-color: rgb(90, 109, 176); }
+.btn-youtube { background-color: rgb(229, 45, 39); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px, rgb(211, 27, 21) 0px 4px 0px; }
+.btn-youtube:hover, .btn-youtube:active { background-color: rgb(186, 37, 33); }
+.hud { position: fixed; top: 0px; left: 0px; bottom: 0px; right: 0px; }
+.hud .hud-bottom-left { display: flex; position: absolute; bottom: 20px; left: 20px; flex-direction: column-reverse; }
+.hud-intro .hud-intro-corner-bottom-left, .hud-respawn .hud-respawn-corner-bottom-left { position: fixed; bottom: 20px; left: 20px; text-align: left; }
+.hud-intro .hud-intro-social, .hud-respawn .hud-respawn-social { width: 240px; line-height: 24px; font-size: 14px; color: rgb(119, 119, 119); }
+.hud-intro .hud-intro-social .btn, .hud-respawn .hud-respawn-social .btn { display: block; float: left; margin: 0px 10px 0px 0px; width: 40px; height: 40px; line-height: 40px; background-size: 24px; background-position: center center; background-repeat: no-repeat; }
+.hud-intro .hud-intro-more-games { position: relative; bottom: 5px; line-height: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.4); text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+.hud-intro .hud-intro-more-games a { display: inline-block; padding: 0px 20px; line-height: 40px; background: rgb(132, 115, 212); color: rgb(238, 238, 238); text-decoration: none; border-radius: 4px; transition: all 0.15s ease-in-out 0s; }
+.hud-intro .hud-intro-more-games a:hover, .hud-intro .hud-intro-more-games a:active { background: rgb(103, 90, 166); }
+#preroll video { left: 0px; top: 0px; }
+.fb_hidden { position: absolute; top: -10000px; z-index: 10001; }
+.fb_reposition { overflow: hidden; position: relative; }
+.fb_invisible { display: none; }
+.fb_reset { background: none; border: 0px; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_animate { animation: 0.3s ease 0s 1 normal forwards running fb_transform; }
+.fb_dialog { background: rgba(82, 82, 82, 0.7); position: absolute; top: -10000px; z-index: 10001; }
+.fb_dialog_advanced { border-radius: 8px; padding: 10px; }
+.fb_dialog_content { background: rgb(255, 255, 255); color: rgb(55, 55, 55); }
+.fb_dialog_close_icon { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px 0px no-repeat scroll transparent; cursor: pointer; display: block; height: 15px; position: absolute; right: 18px; top: 17px; width: 15px; }
+.fb_dialog_mobile .fb_dialog_close_icon { left: 5px; right: auto; top: 5px; }
+.fb_dialog_padding { background-color: transparent; position: absolute; width: 1px; z-index: -1; }
+.fb_dialog_close_icon:hover { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -15px no-repeat scroll transparent; }
+.fb_dialog_close_icon:active { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png") 0px -30px no-repeat scroll transparent; }
+.fb_dialog_iframe { line-height: 0; }
+.fb_dialog_content .dialog_title { background: rgb(109, 132, 180); border: 1px solid rgb(54, 88, 153); color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; margin: 0px; }
+body.fb_hidden { height: 100%; left: 0px; margin: 0px; overflow: visible; position: absolute; top: -10000px; transform: none; width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif") 50% 50% no-repeat white; min-height: 100%; min-width: 100%; overflow: hidden; position: absolute; top: 0px; z-index: 10001; }
+.fb_dialog.fb_dialog_mobile.loading.centered { background: none; height: auto; min-height: initial; min-width: initial; width: auto; }
+.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner { width: 100%; }
+.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content { background: none; }
+.loading.centered #fb_dialog_loader_close { clear: both; color: rgb(255, 255, 255); display: block; font-size: 18px; padding-top: 20px; }
+#fb-root #fb_dialog_ipad_overlay { background: rgba(0, 0, 0, 0.4); bottom: 0px; left: 0px; min-height: 100%; position: absolute; right: 0px; top: 0px; width: 100%; z-index: 10000; }
+#fb-root #fb_dialog_ipad_overlay.hidden { display: none; }
+.fb_dialog.fb_dialog_mobile.loading iframe { visibility: hidden; }
+.fb_dialog_mobile .fb_dialog_iframe { position: sticky; top: 0px; }
+.fb_dialog_content .dialog_header { border-bottom: 1px solid rgb(4, 59, 135); border-top-color: rgb(4, 59, 135); border-right-color: rgb(4, 59, 135); border-left-color: rgb(4, 59, 135); box-shadow: white 0px 1px 1px -1px inset; color: rgb(255, 255, 255); font: bold 14px Helvetica, sans-serif; text-overflow: ellipsis; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; vertical-align: middle; white-space: nowrap; }
+.fb_dialog_content .dialog_header table { height: 43px; width: 100%; }
+.fb_dialog_content .dialog_header td.header_left { font-size: 12px; padding-left: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .dialog_header td.header_right { font-size: 12px; padding-right: 5px; vertical-align: middle; width: 60px; }
+.fb_dialog_content .touchable_button { background-clip: padding-box; border: 1px solid rgb(41, 72, 125); border-radius: 3px; display: inline-block; line-height: 18px; margin-top: 3px; max-width: 85px; padding: 4px 12px; position: relative; }
+.fb_dialog_content .dialog_header .touchable_button input { background: none; border: none; color: rgb(255, 255, 255); font: bold 12px Helvetica, sans-serif; margin: 2px -12px; padding: 2px 6px 3px; text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog_content .dialog_header .header_center { color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; line-height: 18px; text-align: center; vertical-align: middle; }
+.fb_dialog_content .dialog_content { background: url("https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif") 50% 50% no-repeat; border-width: 0px 1px; border-right-style: solid; border-left-style: solid; border-right-color: rgb(74, 74, 74); border-left-color: rgb(74, 74, 74); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; border-top-style: initial; border-top-color: initial; height: 150px; }
+.fb_dialog_content .dialog_footer { background: rgb(245, 246, 247); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(74, 74, 74) rgb(74, 74, 74); border-image: initial; height: 40px; }
+#fb_dialog_loader_close { float: left; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button { text-shadow: rgba(0, 30, 84, 0.298) 0px -1px 0px; }
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon { visibility: hidden; }
+#fb_dialog_loader_spinner { animation: 1.2s linear 0s infinite normal none running rotateSpinner; background-color: transparent; background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png"); background-position: 50% 50%; background-repeat: no-repeat; height: 24px; width: 24px; }
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe { max-width: 100%; }
+.fb_iframe_widget_fluid_desktop iframe { min-width: 220px; position: relative; }
+.fb_iframe_widget_lift { z-index: 1; }
+.fb_iframe_widget_fluid { display: inline; }
+.fb_iframe_widget_fluid span { width: 100%; }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }
+.st0 { fill: rgb(119, 183, 73); }
+.st1 { fill: rgb(247, 175, 47); }
+.st2 { fill: rgb(233, 81, 15); }
+.st3 { fill: url("#SVGID_1_"); }
+.st4 { fill: url("#SVGID_2_"); }
+.st5 { fill: rgb(252, 242, 119); }
+.st6 { fill: url("#SVGID_3_"); }
+.st7 { fill: url("#SVGID_4_"); }
+.st8 { fill: url("#SVGID_5_"); }
+.st9 { fill: url("#SVGID_6_"); }
+.st10 { fill: url("#SVGID_7_"); }
+.st11 { fill: url("#SVGID_8_"); }
+.st12 { fill: url("#SVGID_9_"); }
+.st13 { fill: url("#SVGID_10_"); }
+.st14 { fill: url("#SVGID_11_"); }
+.st15 { fill: url("#SVGID_12_"); }
+.st16 { fill: url("#SVGID_13_"); }
+.st17 { fill: url("#SVGID_14_"); }
+.st18 { fill: url("#SVGID_15_"); }
+.st19 { fill: url("#SVGID_16_"); }]]></style></defs><path fill="rgb(251, 59, 102)" d=" M 239.490000 139.650000 L 243.450000 139.050000 L 243.450000 155.840000 L 239.490000 156.650000 L 239.490000 139.650000 Z"/><path fill="rgb(90, 73, 121)" d=" M 181.810000 113.060000 L 188.490000 113.060000 L 188.490000 163.750000 L 181.810000 163.750000 L 181.810000 113.060000 Z"/><path fill="rgb(90, 73, 121)" d=" M 187.580000 153.310000 L 216.120000 153.310000 L 217.030000 159.690000 L 187.880000 166.670000 L 187.580000 153.310000 Z"/><path fill="rgb(85, 208, 170)" d=" M 178.470000 100.490000 L 190.620000 100.490000 L 190.620000 120.830000 L 178.470000 120.830000 L 178.470000 100.490000 Z"/><path fill="rgb(220, 0, 58)" d=" M 202.760000 148.150000 L 206.400000 169.400000 L 221.280000 159.380000 L 219.460000 147.850000 L 202.760000 148.150000 Z"/><path fill="rgb(220, 0, 58)" d=" M 217.630000 149.670000 L 215.810000 119.920000 L 233.720000 119.920000 L 233.720000 129.330000 L 225.220000 129.030000 L 224.920000 148.150000 L 232.810000 147.240000 L 233.420000 141.780000 L 239.490000 139.650000 L 239.490000 156.650000 L 218.240000 156.040000 L 217.630000 149.670000 Z"/><path fill="rgb(251, 59, 102)" d=" M 233.720000 119.920000 L 237.350000 119.920000 L 237.040000 128.980000 L 233.720000 128.980000 L 233.720000 119.920000 Z"/><path fill="rgb(251, 59, 102)" d=" M 228.800000 129.280000 L 228.800000 147.900000 L 224.920000 148.150000 L 224.920000 129.030000 L 228.800000 129.280000 Z"/><path fill="rgb(90, 73, 121)" d=" M 169.250000 186.980000 C 169.250000 186.980000 141.500000 251.680000 148.850000 283.230000 C 148.850000 283.230000 163.410000 288.540000 183.550000 284.360000 L 172.840000 193.360000 L 169.250000 186.980000 Z"/><path fill="rgb(85, 208, 171)" d=" M 175.940000 286.210000 C 175.940000 286.210000 171.660000 273.830000 181.560000 269.100000 L 194.620000 283.730000 L 194.400000 285.540000 C 194.400000 285.540000 180.210000 287.110000 175.940000 286.210000 Z"/><path fill="rgb(85, 208, 171)" d=" M 179.410000 249.210000 L 172.840000 193.360000 L 170.350000 188.930000 C 168.900000 197.720000 159.640000 256.400000 169.630000 258.070000 C 174.150000 258.820000 177.280000 254.500000 179.410000 249.210000 Z"/><path fill="rgb(90, 73, 121)" d=" M 125.810000 186.930000 C 125.810000 186.930000 90.690000 247.940000 94.290000 280.130000 C 94.290000 280.130000 108.130000 287.110000 128.620000 285.310000 L 128.620000 193.680000 L 125.810000 186.930000 Z"/><path fill="rgb(85, 208, 171)" d=" M 121.080000 285.760000 C 121.080000 285.760000 116.800000 273.380000 126.710000 268.650000 L 139.770000 283.290000 L 139.540000 285.090000 C 139.540000 285.080000 125.360000 286.660000 121.080000 285.760000 Z"/><path fill="rgb(85, 208, 171)" d=" M 118.830000 257.620000 C 123.190000 257.980000 126.340000 253.830000 128.620000 248.020000 L 128.600000 193.710000 L 125.810000 186.930000 C 125.810000 186.930000 105.090000 256.490000 118.830000 257.620000 Z"/><path fill="rgb(85, 208, 171)" d=" M 135.900000 159.970000 L 162.260000 159.970000 L 162.260000 186.980000 L 135.900000 186.980000 L 135.900000 159.970000 Z"/><path fill="rgb(90, 73, 121)" d=" M 134.880000 95.030000 L 154.000000 95.030000 L 154.000000 100.490000 L 134.880000 100.490000 L 134.880000 95.030000 Z"/><path fill="rgb(97, 117, 176)" d=" M 105.960000 100.170000 L 96.670000 100.170000 L 95.390000 123.320000 C 99.890000 156.110000 133.330000 162.550000 133.330000 162.550000 L 141.180000 162.550000 C 106.190000 143.350000 105.480000 109.270000 105.960000 100.170000 Z"/><path fill="rgb(111, 134, 204)" d=" M 105.960000 100.170000 C 105.480000 109.270000 106.190000 143.350000 141.180000 162.550000 L 161.620000 162.550000 C 173.840000 155.470000 185.410000 117.530000 185.410000 117.530000 L 185.410000 100.170000 L 105.960000 100.170000 Z"/><path fill="rgb(220, 0, 58)" d=" M 130.180000 185.180000 C 130.180000 185.180000 134.960000 200.440000 147.790000 200.440000 C 160.630000 200.440000 166.200000 185.630000 166.200000 185.630000 L 130.180000 185.180000 Z"/><path fill="rgb(90, 73, 121)" d=" M 128.660000 181.970000 L 167.600000 181.750000 L 167.600000 188.280000 L 129.110000 187.150000 L 128.660000 181.970000 Z"/><path fill="rgb(220, 0, 58)" d=" M 131.510000 181.510000 C 133.710000 184.500000 133.710000 189.350000 131.510000 192.340000 C 129.310000 195.330000 125.750000 195.330000 123.550000 192.340000 C 121.350000 189.350000 121.350000 184.500000 123.550000 181.510000 C 125.750000 178.520000 129.310000 178.520000 131.510000 181.510000 Z"/><path fill="rgb(220, 0, 58)" d=" M 174.540000 180.040000 C 176.700000 183.160000 176.700000 188.220000 174.540000 191.340000 C 172.390000 194.460000 168.900000 194.460000 166.740000 191.340000 C 164.590000 188.220000 164.590000 183.160000 166.740000 180.040000 C 168.900000 176.920000 172.390000 176.920000 174.540000 180.040000 Z"/><path fill="rgb(90, 73, 121)" d=" M 165.550000 113.090000 L 176.290000 100.170000 L 113.960000 100.170000 L 126.880000 113.090000 L 165.550000 113.090000 Z"/><path fill="rgb(90, 73, 121)" d=" M 147.040000 108.800000 L 152.990000 108.800000 L 152.990000 162.550000 L 147.040000 162.550000 L 147.040000 108.800000 Z"/><path fill="rgb(251, 59, 102)" d=" M 142.220000 139.650000 L 146.180000 139.050000 L 146.180000 155.840000 L 142.220000 156.650000 L 142.220000 139.650000 Z"/><path fill="rgb(90, 73, 121)" d=" M 84.540000 113.060000 L 91.220000 113.060000 L 91.220000 163.750000 L 84.540000 163.750000 L 84.540000 113.060000 Z"/><path fill="rgb(90, 73, 121)" d=" M 90.310000 153.310000 L 118.840000 153.310000 L 119.750000 159.690000 L 90.610000 166.670000 L 90.310000 153.310000 Z"/><path fill="rgb(85, 208, 170)" d=" M 81.200000 100.490000 L 97.080000 100.490000 L 97.080000 120.830000 L 81.200000 120.830000 L 81.200000 100.490000 Z"/><path fill="rgb(220, 0, 58)" d=" M 105.490000 148.150000 L 109.130000 169.400000 L 124.000000 159.380000 L 122.180000 147.850000 L 105.490000 148.150000 Z"/><path fill="rgb(220, 0, 58)" d=" M 120.360000 149.670000 L 118.540000 119.920000 L 136.450000 119.920000 L 136.450000 129.330000 L 127.950000 129.030000 L 127.650000 148.150000 L 135.540000 147.240000 L 136.150000 141.780000 L 142.220000 139.650000 L 142.220000 156.650000 L 120.970000 156.040000 L 120.360000 149.670000 Z"/><path fill="rgb(251, 59, 102)" d=" M 136.450000 119.920000 L 140.070000 119.920000 L 139.770000 128.980000 L 136.450000 128.980000 L 136.450000 119.920000 Z"/><path fill="rgb(251, 59, 102)" d=" M 131.530000 129.280000 L 131.530000 147.900000 L 127.650000 148.150000 L 127.650000 129.030000 L 131.530000 129.280000 Z"/><path fill="rgb(85, 208, 170)" d=" M 178.900000 23.280000 C 199.290000 39.820000 199.290000 66.630000 178.900000 83.170000 C 158.510000 99.710000 125.460000 99.710000 105.070000 83.170000 C 84.680000 66.630000 84.680000 39.820000 105.070000 23.280000 C 125.460000 6.740000 158.510000 6.740000 178.900000 23.280000 Z"/><path fill="rgb(106, 255, 212)" d=" M 137.690000 16.250000 C 166.530000 16.250000 189.900000 35.200000 189.900000 58.590000 C 189.900000 65.920000 187.610000 72.820000 183.560000 78.830000 C 190.230000 71.720000 194.200000 62.850000 194.200000 53.230000 C 194.200000 29.840000 170.820000 10.880000 141.990000 10.880000 C 122.190000 10.880000 104.970000 19.820000 96.110000 32.990000 C 105.650000 22.810000 120.720000 16.250000 137.690000 16.250000 Z"/><path fill="rgb(220, 0, 58)" d=" M 171.420000 44.140000 C 186.000000 56.120000 186.000000 75.530000 171.420000 87.500000 C 156.840000 99.480000 133.200000 99.480000 118.620000 87.500000 C 104.040000 75.530000 104.040000 56.120000 118.620000 44.140000 C 133.200000 32.170000 156.840000 32.170000 171.420000 44.140000 Z"/><path fill="rgb(106, 255, 212)" d=" M 182.290000 64.000000 L 126.120000 64.000000 L 130.490000 80.430000 L 133.960000 80.580000 L 135.410000 83.730000 L 175.320000 83.730000 C 179.740000 78.690000 182.360000 72.510000 182.360000 65.820000 C 182.360000 65.210000 182.330000 64.600000 182.290000 64.000000 Z"/><path fill="rgb(220, 0, 58)" d=" M 174.620000 70.360000 C 175.630000 71.960000 175.630000 74.560000 174.620000 76.160000 C 173.610000 77.760000 171.980000 77.760000 170.970000 76.160000 C 169.970000 74.560000 169.970000 71.960000 170.970000 70.360000 C 171.980000 68.760000 173.610000 68.760000 174.620000 70.360000 Z"/><path fill="rgb(220, 0, 58)" d=" M 141.680000 70.360000 C 142.690000 71.960000 142.690000 74.560000 141.680000 76.160000 C 140.670000 77.760000 139.040000 77.760000 138.030000 76.160000 C 137.030000 74.560000 137.030000 71.960000 138.030000 70.360000 C 139.040000 68.760000 140.670000 68.760000 141.680000 70.360000 Z"/><path fill="rgb(117, 7, 33)" d=" M 137.530000 35.780000 C 141.750000 39.340000 151.590000 50.400000 152.410000 64.000000 L 160.000000 64.000000 C 160.000000 64.000000 159.100000 45.770000 147.660000 35.250000 C 146.790000 35.200000 145.910000 35.160000 145.020000 35.160000 C 142.460000 35.160000 139.950000 35.380000 137.530000 35.780000 Z"/><path fill="rgb(117, 7, 33)" d=" M 146.830000 63.000000 L 149.330000 67.670000 L 164.000000 67.670000 L 165.830000 63.000000 L 146.830000 63.000000 Z"/><path fill="rgb(220, 0, 58)" d=" M 146.330000 85.000000 L 150.500000 80.000000 L 164.170000 80.000000 L 167.670000 85.330000 L 146.330000 85.000000 Z"/></svg>
