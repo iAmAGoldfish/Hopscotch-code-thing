@@ -1,6 +1,10 @@
 * {
 padding: 1px;
 font-family: avenir;
+
+}
+
+#output {
 white-space: nowrap;
 }
 .error {
@@ -30,7 +34,7 @@ background-color: #fff;
 color: #222;
 }
 
-html, body {
+.wide {
   width: 5000px;
   height: 700px;
  }
@@ -43,6 +47,25 @@ background-color: #6DDAEB;
 background-color: #BE3164;
 }
 
+a {
+text-decoration: none;
+color: #555;
+}
+
+hr {
+height: 1px;
+border: 0;
+border-top: 1px solid #eee;
+}
+a {
+transition: background-color .5s, color .5s;
+}
+
+a:hover {
+color: #eee;
+background-color: #222;
+}
+
 .small {
 transform: scale(0.1);
 }
@@ -50,17 +73,20 @@ transform: scale(0.1);
 transform: scale(10);
 }
 
-#input {
-width: 500px;
+textarea {
+width: 90%;
 height: 25%;
 background-color: #eee;
 color: #222;
 font-size: 1em;
 white-space: normal;
+display: block;
 }
+
+
 /*.center {
 text-align: center;
 }*/
-.detailsInside {
+details {
 background-color: #ddd;
 }

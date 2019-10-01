@@ -1,0 +1,70 @@
+<html>
+<head><title>Translate Hopscotch json</title>
+<link rel="stylesheet" href="thing.css"></link>
+</head>
+<body>
+<div id="file">
+<strong>Use a .hopscotch file</strong>
+<input type="file" id="hopscotchInput" accept=".hopscotch"></input><br>
+</div>
+<hr />
+<div id="projectLink">
+<strong>Paste in a project link</strong><input id="linkInput"></input><br />
+<p style="display:none" id="badLink">That's not a Hopscotch link!</p>
+<div id="error" style="display:none">There was an error either getting the json or translating it. You can copy the json <a target="_blank" id="jsonLink">here</a> and paste it into the translate json text field.
+</div>
+<hr />
+<div id="jsonString">
+<strong>Hopscotch json string</strong>
+<textarea id="jsonInput" placeholder="Json project string goes here"></textarea>
+</div>
+</div><hr />
+<strong>Output:</strong>
+<textarea id="output"></textarea>
+<script src="parse hopscotch.js"></script>
+<script>
+const fileInput = document.querySelector('#hopscotchInput');
+const input = document.querySelector('#output');
+const linkInput = document.querySelector('#linkInput');
+const jsonInput = document.querySelector('#jsonInput');
+fileInput.addEventListener('change', () => {
+	const fr = new FileReader();
+	fr.onload = () => {
+		const result = fr.result;
+		const parsedProject = parseHopscotchProject(JSON.parse(result));
+		input.value = parsedProject;
+		parseAndDisplay(input);
+	}
+	fr.readAsText(fileInput.files[0]);
+});
+linkInput.addEventListener('input', e => {
+	const errorMessage = document.querySelector('div#error');
+	errorMessage.style.display = 'none';
+	if (!/(https:\/\/)?c(ommunity)?\.gethopscotch\.com\/p(rojects)?\/[\w\d]+#?/.test(e.target.value)) {
+		document.querySelector('#badLink').style.display = 'initial';
+		return;
+	}
+	document.querySelector('#badLink').style.display = 'none';
+	const baseUrl = 'https://bypasscors.herokuapp.com/api/?url=';
+	const uuid = e.target.value.replace(/https:\/\//gi,'').replace(/ommunity/gi,'').replace(/rojects/gi,'').replace(/\./gi,'').replace(/\//g,'').replace(/cgethopscotchcomp/gi,'').replace(/#/gi,'');
+	const jsonLink = 'https://hopscotchprojects.s3.amazonaws.com/production/' + uuid + '.hopscotch'
+	const url = baseUrl + encodeURIComponent(jsonLink);
+	errorMessage.querySelector('#jsonLink').href = jsonLink;
+	fetch(url).then(response => {
+		return response.json();
+	}).then(project => {
+		console.log(project);
+		const parsed = parseHopscotchProject(project);
+		input.value = parsed;
+	}).catch(e => {
+		errorMessage.style.display = 'initial';
+		console.log(e);
+	});
+});
+
+jsonInput.addEventListener('input', e => {
+	input.value = parseHopscotchProject(JSON.parse(e.target.value));
+});
+</script>
+</body>
+</html>

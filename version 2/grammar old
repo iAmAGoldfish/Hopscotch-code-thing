@@ -1,7 +1,4 @@
-{
-//Set window.BlockShortcuts, window.BlockTypes, window.replacem, window.ParameterTypes to updated versions in different file
-if (!window.BlockType) {
-window.BlockTypes = {
+{const BlockTypes = {
 main: -1,
 scene: 0,
 object: 1,
@@ -14,9 +11,8 @@ control: 7,
 custom: 8,
 "-1": 9
 }
-}
-if (!window.replacem) {
-window.replacem = {
+
+const replacem = {
 ex: '!',
 ob: '{',
 cb: '}',
@@ -25,9 +21,9 @@ empty: ' ',
 op: '(',
 cp: ')'
 }
-}
-if (!window.BlockShortcuts) {
 
+if (!window.BlockShortcuts) {
+//Set window.BlockShortcuts to updated shortcuts in different file
 window.BlockShortcuts = [
 /*Scene*/['scene'],
 /*Object*/['object','text'],
@@ -40,43 +36,19 @@ window.BlockShortcuts = [
 
 ].reverse()
 }
-if (!window.ParameterTypes) {
-window.ParameterTypes = {
+
+const ParameterTypes = {
 object : 50,
 rule: 52,
 default: 42,
 variable: -1,
 hide: -2
 }
-}
+
 const ObjectTypes = {
 monkey:0,text:1,octopus:2,gorilla:3,cupcake:4,bear:5,dino:6,frog:7,greenman:8,mustache:9,spacepod:10,zombieBear:11,ghoulopus:12,bats:13,frankenrilla:14,jodyWitch:15,cauldron:16,pumpkin:17,broom:18,lantern:19,parrotFlying:20,mandrill:21,mosquito:22,missChief:23,venus:24,jeepers:25,banyan:26,stargirl:27,astro:28,chillanna:29,robo:30,raccoon:31,bird:32,HS_END_OF_CHARACTERS:33,square:34,circle:35,hexagon:36,triangle:37,rightTriangle:38,rectangle:39,heart:40,star:41,arch:42,parallelogram:43,squiggle:44,donut:45,tetrisZ:46,tetrisT:47,tetrisL:48,corner:49,flower:50,threeProngedBoomerang:51,squishedBox:52,bead:53,chevron:54,xShape:55,tetrisLine:56,HS_END_OF_SHAPES:57,toucan:58,anteater:59,crocodile:60,sloth:61,iguana:62,hut:63,penguin:64,winterQueen:65,shyYeti:66,deer:67,elf:68,snowGlobe:69,polarbear:70,sleigh:71,mistletoe:72,snowMan:73,snowflake:74,roundedSquareFullSize:100,squareFullSize:101,circleFullSize:102,hexagonFullSize:103,triangleFullSize:104,rightTriangleFullSize:105,rectangleFullSize:106,heartFullSize:107,starFullSize:108,archFullSize:109,parallelogramTallFullSize:110,squiggleFullSize:111,donutFullSize:112,tetrisZFullSize:113,tetrisTFullSize:114,tetrisLFullSize:115,cornerFullSize:116,flowerFullSize:117,fanbladeFullSize:118,squishedBoxFullSize:119,roundedRightTriangleFullSize:120,arrowRoundedFullSize:121,beadFullSize:122,parallelogramWideFullSize:123,chevronFullSize:124,xFullSize:125,tetrisLineFullSize:126,HS_END_OF_FULL_SIZE_SHAPES:127,HS_NUMBER_OF_OBJECTS:128,image:2e3,nil:1e4,edgeOfScreen:3e4
 }
 
-function param(key,value) {
-if (key) {key = key.join('');}
-if (!value) {return [new Parameter(ParameterTypes.default,key)];}
-const re = [];
-
-const val = new Parameter(42,key,'',[])
-if (value.type == 'value') {
-val.value = value.value
-} else if (value.type == "parameter") {value.value.forEach((parameter)=> {
-parameter.forEach((param)=>{
-val.parameters.push(param);
-});});} else {
-const nval = new Parameter();
-nval.type = ParameterTypes.variable;
-nval.key = value.value[0].key;
-nval.value = value.value[0].value;
-val.parameters = [nval];
-}
-re.push(val);
-/*if (next.join('').length > 0 && nextParam === undefined){
-re.push(new Parameter(ParameterTypes.hide,next.join('')))
-}*/
-return re;
-}
 
 function Block(type, inside, parameters, description) {
 	this.type = type;
@@ -138,7 +110,8 @@ if (removeValidBlocks(description) != description) {
 BlockShortcuts.forEach((shortcut)=>{
 shortcut.forEach((block)=>{
 const regex = new RegExp('^'+block,'i')
-if (description.match(regex)){type = shortcut[0];}
+console.log(block);
+if (description.match(regex)){type = shortcut[0]; console.log(type);}
 });
 });
 }
@@ -159,18 +132,7 @@ return re
 
 }
 word "Word"
-= l:[a-zA-Z=÷\-×\^%<>≠"'\[\]\+\-_\_\\0-9:/\?,&$#@;☺️*️⃣＞＜]+
-{let re = l.join('')
-for (let [key, value] of Object.entries(replacem)) {
-    if (replacem.hasOwnProperty(key)){
-    	const regex = new RegExp('\\[' + key + '\\]','gi');
-    	re = re.replace(regex,value);
-    }
-}
-return re}/e:emoji+{return e.join().replace(/,/g,'')}
-
-varWord "Variable Word"
-= l:[a-wA-WyzYZ=\%<>≠"'\[\]_\_\\0-9:\?,&$#@;☺️*️⃣]+
+= l:[a-zA-Z=÷\-×\^%<>≠"'\[\]\+\-_\_\\0-9:/\?,&$#@;☺️*️⃣]+
 {let re = l.join('')
 for (let [key, value] of Object.entries(replacem)) {
     if (replacem.hasOwnProperty(key)){
@@ -183,19 +145,36 @@ return re}/e:emoji+{return e.join().replace(/,/g,'')}
 
 type "type"
 = _* "!" type:word
-{return type}
+{console.log(BlockTypes[type],type);return type}
 
 
 
 
 parameter "Parameter"
-= key:wordSpace* _* "("? _* value:variable _* ")"? _* /*next:wordSpace* nextParam:parameter?*/
-{return param(key,{type: "variable",value:value})}
-/ key:wordSpace* _* "(" _* value:parameter+ _* ")" _*
-{return param(key,{type: "parameter",value:value})}
-/ key:wordSpace* _* "(" _* value:wordSpace* _* ")" _*
-{return param(key,{type: "value",value:value.join('')})}
+= key:wordSpace* _* op:"(" _* value:parameterInside? _*  ")" _* /*next:wordSpace* nextParam:parameter?*/
+{if (key) {key = key.join('');}
+if (!value) {return [new Parameter(ParameterTypes.default,key)];}
+const re = [];
 
+const val = new Parameter(42,key,'',[])
+if (value.type == 'value') {
+val.value = value.value
+} else if (value.type == "parameter") {value.value.forEach((parameter)=> {
+parameter.forEach((param)=>{
+val.parameters.push(param);
+});});} else {
+const nval = new Parameter();
+nval.type = ParameterTypes.variable;
+nval.key = value.value[0].key;
+nval.value = value.value[0].value;
+val.parameters = [nval];
+}
+re.push(val);
+/*if (next.join('').length > 0 && nextParam === undefined){
+re.push(new Parameter(ParameterTypes.hide,next.join('')))
+}*/
+return re;}
+/ variable
 
 parameterInside "Variable or parameter or word"
 = value:variable
@@ -206,27 +185,20 @@ parameterInside "Variable or parameter or word"
 {return {type: "value",value:value.join('')}}
 
 variable "Variable"
-= _* owner:wordSpace* "." name:varWordSpace+ _*
+= _* owner:wordSpace* "." name:wordSpace+ _*
 {
-
+console.log(owner);
 if (owner.length == 0) {
 owner = ['📱'];
 }
 name = name.join('');
 owner = owner.join('')
 const re = [new Parameter(ParameterTypes.variable,owner,name)];
-
+console.log(re);
 return re}
 
 wordSpace
 = a:word b:_?
-{if (b) {
-return a + b;
-}
-return a}
-
-varWordSpace
-= a:varWord b:_?
 {if (b) {
 return a + b;
 }

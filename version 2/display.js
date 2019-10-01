@@ -1,8 +1,8 @@
-const fileInput = document.querySelector('#hopscotchInput');
 const output = document.querySelector('#output');
 const input = document.querySelector('#input');
 
-const characterSvgs = {bear:'Bear0.svg',parrot:'ParrotFlying0.svg',bird:'Bird0.svg',penguin:'Penguin0.svg',broom:'Broom0.svg',polarbear:'Polarbear0.svg',cauldron:'Cauldron0.svg',pumpkin:'Pumpkin0.svg',chevron:'Chevron0.svg',raccoon:'Raccoon0.svg',chillanna:'Chillanna0.svg',rectangle:'Rectangle0.svg',circle:'Circle0.svg',rtriangle:'RightTriangle0.svg',corner:'Corner0.svg',robo:'Robo0.svg',cody:'Cosmiccody',roundtriangle:'RoundedRightTriangleFullSize0.svg',crocodile:'Crocodile0.svg',roundsquare:'RoundedSquareFullSize0.svg',cupcake:'Cupcake0.svg',yeti:'ShyYeti0.svg',deer:'Deer0.svg',sleigh:'Sleigh0.svg',dino:'Dino0.svg',sloth:'Sloth0.svg',donut:'Donut0.svg',snowglobe:'SnowGlobe0.svg',elf:'Elf0.svg',gonzalo:'SnowMan0.svg',fanblade:'FanbladeFullSize0.svg',snowflake:'Snowflake0.svg',flower:'Flower0.svg',spacepod:'Spacepod0.svg',frankenrilla:'Frankenrilla0.svg',square:'Square0.svg',frog:'Frog0.svg',squiggle:'Squiggle0.svg',ghoulopus:'Ghoulopus0.svg',squishedbox:'SquishedBox0.svg',gorilla:'Gorilla0.svg',star:'Star0.svg',jody:'Greenman0.svg',stargirl:'Stargirl0.svg',heart:'Heart0.svg',Lshape:'TetrisL0.svg',hexagon:'Hexagon0.svg',platform:'TetrisLine0.svg',hut:'Hut0.svg',Vshape:'TetrisTV30.svg',iguana:'Iguana0.svg',Zshape:'TetrisZ0.svg',jeep:'Jeepers0.svg',fanblade2:'ThreeProngedBoomerang0.svg',witch:'JodyWitch0.svg',toucan:'Toucan0.svg',lantern:'Lantern0.svg',triangle:'Triangle0.svg',mandrill:'Mandrill0.svg',flytrap:'Venus0.svg',misschief:'MissChief0.svg',ana:'WinterQueen0.svg',mistle:'Mistletoe0.svg',Xshape:'XFullSize0.svg',monkey:'Monkey0.svg',zombear:'ZombieBear0.svg',mosquito:'Mosquito0.svg',anteater:'anteater',mustache:'Mustache0.svg',arch:'arch',octo:'Octopus0.svg',banyan:'banyan',parallelogram:'Parallelogram0.svg',bats:'bats',Wparallelogram:'ParallelogramWideV30.svg',bead:'bead'};
+
+
 
 function errorMessage(saying) {
 	const message = document.createElement('div');
@@ -23,9 +23,7 @@ function displayTextForParameter(e,text) {
 	return e;
 }
 
-window.onerror = (msg,url,l,c,error) => {
-output.appendChild(errorMessage(msg + '\n Line: ' + error.location.start.line + ' column: ' + error.location.start.column));
-}
+
 
 function displayParameter(parameter,depth,blockType) {
 const parameterE = document.createElement('span');
@@ -148,44 +146,32 @@ function display(blocks, output) {
 	
 }
 
-fileInput.addEventListener('change', () => {
-	const fr = new FileReader();
-	fr.onload = () => {
-		const result = fr.result;
-		console.log(JSON.parse(result));
-		const parsedProject = parseHopscotchProject(JSON.parse(result));
-		if (!document.querySelector('#images').checked) {
-		const out = document.createElement('div');
-		display(parsedProject,out);
-document.body.appendChild(out);
-		html2canvas(out).then(function(canvas) {
-   			document.body.removeChild(out);
-			const dataURL = canvas.toDataURL();
-			const img = document.createElement('img');
-			img.src = dataURL;
-			output.appendChild(img);
-		});} else {
-			display(parsedProject,output);
-
-		}
+function parseAndDisplay(input) {document.body.classList.add('wide');
+	const readyToParse = input.value;
+	let parsedCode	
+	try {
+	parsedCode = Parser.parse(readyToParse);
+	} catch (error) {
+	output.appendChild(errorMessage(error.message + '\n Line: ' + error.location.start.line + ' column: ' + error.location.start.column));
 	}
-	fr.readAsText(fileInput.files[0]);
-});
-
-input.addEventListener('change', (e) => {
-	const readyToParse = e.target.value;	
-	console.log(readyToParse);
-	const parsedCode = Parser.parse(readyToParse);
 	if (parsedCode){
 console.log(parsedCode);
 		const out = document.createElement('div');
 		display(parsedCode,out);
 document.body.appendChild(out);
+		out.scrollIntoView()
 		html2canvas(out, {backgroundColor: null}).then(function(canvas) {
    			document.body.removeChild(out);
+			let img;
+			try {
 			const dataURL = canvas.toDataURL();
 			const img = document.createElement('img');
 			img.src = dataURL;
+
+			} catch(e) {
+			img = canvas;
+			console.log(e,img)
+			}
 			const newThing = document.createElement('div');
 			newThing.appendChild(img);
 			while (output.firstChild) {
@@ -194,13 +180,11 @@ document.body.appendChild(out);
 			output.appendChild(newThing);
 		});
 	}
+	document.body.classList.remove('wide');}
+
+
+input.addEventListener('input', (e) => {
+	parseAndDisplay(e.target);
 });
 
-const objectsList = document.querySelector('#objectsList');
-for (let [key, value] of Object.entries(characterSvgs)) {
-    if (characterSvgs.hasOwnProperty(key)){
-    	const li = document.createElement('li');
-	li.innerHTML = key + `: <img src=svgs/${value}.svg height=50>`;
-	objectsList.appendChild(li);
-    }
-}
+
